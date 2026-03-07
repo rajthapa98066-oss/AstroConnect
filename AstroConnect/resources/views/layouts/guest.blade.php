@@ -65,8 +65,8 @@
 
             <div>
                 <h4 class="text-yellow-400 mb-3">Services</h4>
-                <p></p>
-                <p></p>
+                <p>Verefied Astrologers</p>
+                <p>Nepali Calendar </p>
                 <p></p>
                 <p></p>
             </div>
