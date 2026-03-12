@@ -1,4 +1,8 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+    @php
+        $astrologerProfile = Auth::user()?->astrologer;
+    @endphp
+
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -15,6 +19,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @if ($astrologerProfile?->verification_status === 'approved')
+                        <x-nav-link :href="route('astrologer.dashboard')" :active="request()->routeIs('astrologer.*')">
+                            {{ __('Astrologer Panel') }}
+                        </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('astrologer.apply')" :active="request()->routeIs('astrologer.apply')">
+                            {{ __('Apply as Astrologer') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -70,6 +84,16 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            @if ($astrologerProfile?->verification_status === 'approved')
+                <x-responsive-nav-link :href="route('astrologer.dashboard')" :active="request()->routeIs('astrologer.*')">
+                    {{ __('Astrologer Panel') }}
+                </x-responsive-nav-link>
+            @else
+                <x-responsive-nav-link :href="route('astrologer.apply')" :active="request()->routeIs('astrologer.apply')">
+                    {{ __('Apply as Astrologer') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
