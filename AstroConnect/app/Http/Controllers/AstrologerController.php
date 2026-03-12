@@ -18,7 +18,7 @@ class AstrologerController extends Controller
             ->latest()
             ->paginate(12);
 
-        return view('astrologers.index', [
+        return view('pages.astrologers.index', [
             'astrologers' => $astrologers,
         ]);
     }
@@ -29,21 +29,21 @@ class AstrologerController extends Controller
 
         $astrologer->load('user');
 
-        return view('astrologers.show', [
+        return view('pages.astrologers.show', [
             'astrologer' => $astrologer,
         ]);
     }
 
     public function dashboard(Request $request): View
     {
-        return view('astrologer.dashboard', [
+        return view('pages.astrologer.dashboard', [
             'astrologer' => $request->user()->astrologer,
         ]);
     }
 
     public function profile(Request $request): View
     {
-        return view('astrologer.profile', [
+        return view('pages.astrologer.profile', [
             'astrologer' => $request->user()->astrologer,
         ]);
     }
@@ -76,6 +76,6 @@ class AstrologerController extends Controller
 
     public function appointments(): View
     {
-        return view('astrologer.appointments');
+        return view('pages.astrologer.appointments');
     }
 }

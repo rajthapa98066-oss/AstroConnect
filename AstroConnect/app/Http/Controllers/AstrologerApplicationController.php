@@ -18,7 +18,7 @@ class AstrologerApplicationController extends Controller
             return Redirect::route('astrologer.dashboard');
         }
 
-        return view('astrologer.apply', [
+        return view('pages.astrologer.apply', [
             'astrologer' => $astrologer,
         ]);
     }

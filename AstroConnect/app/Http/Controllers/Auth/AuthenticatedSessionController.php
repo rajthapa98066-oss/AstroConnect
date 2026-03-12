@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
@@ -28,15 +29,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $user = $request->user();
-        if ($user->role === 'admin') {
-            return redirect()->intended('/admin/dashboard');
-        } elseif ($user->role === 'astrologer') {
-            return redirect()->intended('/astrologer/dashboard');
-        }
+        Log::info('Login redirect decision', [
+            'user_id' => $request->user()?->id,
+            'email' => $request->user()?->email,
+            'role' => $request->user()?->role,
+            'redirect_path' => $request->user()?->redirectPath(),
+            'session_id' => $request->session()->getId(),
+        ]);
 
-        return redirect()->intended('/dashboard');
-
+        return redirect()->to($request->user()->redirectPath());
     }
 
     /**

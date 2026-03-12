@@ -15,7 +15,7 @@ class AdminAstrologerController extends Controller
     {
         $astrologers = Astrologer::with('user')->latest()->paginate(20);
 
-        return view('admin.astrologers.index', [
+        return view('pages.admin.astrologers.index', [
             'astrologers' => $astrologers,
         ]);
     }

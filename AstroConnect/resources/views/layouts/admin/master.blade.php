@@ -29,11 +29,11 @@
 
 
             <!-- Topbar Start -->
-            @include('admin.body.header')
+            @include('layouts.admin.body.header')
             <!-- end Topbar -->
 
             <!-- Left Sidebar Start -->
-            @include('admin.body.sidebar')
+            @include('layouts.admin.body.sidebar')
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -48,7 +48,7 @@
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
-                @include('admin.body.footer')
+                @include('layouts.admin.body.footer')
                 <!-- end Footer -->
 
             </div>

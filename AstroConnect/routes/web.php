@@ -9,9 +9,12 @@ use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\EnsureUserIsAstrologer;
 use App\Http\Middleware\IsUser;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'home')->name('home');
+Route::view('/about', 'pages.about')->name('about');
+Route::view('/services', 'pages.services')->name('services');
+Route::view('/horoscope', 'pages.horoscope')->name('horoscope');
+Route::view('/blog', 'pages.blog')->name('blog');
+Route::view('/contact', 'pages.contact')->name('contact');
 
 Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
 Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
@@ -27,7 +30,7 @@ Route::middleware(['auth', IsUser::class])->group(function () {
 /// only for admin Route
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('dashboard', function () {
-        return view('admin.index');
+        return view('pages.admin.index');
     })->name('admin.dashboard');
 });
 

@@ -1,124 +1,136 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-    @php
-        $astrologerProfile = Auth::user()?->astrologer;
-    @endphp
+@php
+    $astrologerProfile = Auth::check() ? Auth::user()->astrologer : null;
 
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                    </a>
-                </div>
+    $navigationLinks = [
+        ['label' => 'Home', 'href' => url('/'), 'active' => request()->is('/')],
+        ['label' => 'About', 'href' => url('/about'), 'active' => request()->is('about')],
+        ['label' => 'Services', 'href' => url('/services'), 'active' => request()->is('services')],
+        ['label' => 'Astrologers', 'href' => url('/astrologers'), 'active' => request()->is('astrologers') || request()->is('astrologers/*')],
+        ['label' => 'Horoscope', 'href' => url('/horoscope'), 'active' => request()->is('horoscope')],
+        ['label' => 'Blog', 'href' => url('/blog'), 'active' => request()->is('blog')],
+        ['label' => 'Contact', 'href' => url('/contact'), 'active' => request()->is('contact')],
+    ];
+@endphp
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-
-                    @if ($astrologerProfile?->verification_status === 'approved')
-                        <x-nav-link :href="route('astrologer.dashboard')" :active="request()->routeIs('astrologer.*')">
-                            {{ __('Astrologer Panel') }}
-                        </x-nav-link>
-                    @else
-                        <x-nav-link :href="route('astrologer.apply')" :active="request()->routeIs('astrologer.apply')">
-                            {{ __('Apply as Astrologer') }}
-                        </x-nav-link>
-                    @endif
-                </div>
+<header x-data="{ open: false }" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="{{ url('/') }}" class="flex items-center gap-3">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-amber-300/40 bg-amber-300/10 text-lg text-amber-200 shadow-[0_0_30px_rgba(251,191,36,0.18)]">✦</span>
+            <div>
+                <p class="text-xs uppercase tracking-[0.35em] text-amber-200/70">Cosmic Guidance</p>
+                <p class="text-2xl text-white [font-family:'Cormorant_Garamond',serif]">AstroConnect</p>
             </div>
+        </a>
 
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+        <nav class="hidden items-center gap-6 lg:flex">
+            @foreach ($navigationLinks as $link)
+                <a href="{{ $link['href'] }}" class="text-sm font-medium transition {{ $link['active'] ? 'text-amber-300' : 'text-slate-300 hover:text-white' }}">
+                    {{ $link['label'] }}
+                </a>
+            @endforeach
+        </nav>
 
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
+        <div class="hidden items-center gap-3 lg:flex">
+            @auth
+                <a href="{{ route('dashboard') }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:text-white">
+                    Dashboard
+                </a>
 
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
+                @if ($astrologerProfile?->verification_status === 'approved')
+                    <a href="{{ route('astrologer.dashboard') }}" class="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
+                        Astrologer Panel
+                    </a>
+                @else
+                    <a href="{{ route('astrologer.apply') }}" class="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
+                        Apply as Astrologer
+                    </a>
+                @endif
 
-                        <!-- Authentication -->
+                <div x-data="{ menu: false }" class="relative">
+                    <button @click="menu = ! menu" type="button" class="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm text-slate-200 transition hover:border-white/20 hover:text-white">
+                        <span>{{ Auth::user()->name }}</span>
+                        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <div x-show="menu" x-transition @click.outside="menu = false" class="absolute right-0 mt-3 w-52 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/95 shadow-2xl shadow-slate-950/60">
+                        <a href="{{ route('profile.edit') }}" class="block px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5 hover:text-white">
+                            Profile
+                        </a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
+                            <button type="submit" class="block w-full px-4 py-3 text-left text-sm text-slate-200 transition hover:bg-white/5 hover:text-white">
+                                Log Out
+                            </button>
                         </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-
-            @if ($astrologerProfile?->verification_status === 'approved')
-                <x-responsive-nav-link :href="route('astrologer.dashboard')" :active="request()->routeIs('astrologer.*')">
-                    {{ __('Astrologer Panel') }}
-                </x-responsive-nav-link>
+                    </div>
+                </div>
             @else
-                <x-responsive-nav-link :href="route('astrologer.apply')" :active="request()->routeIs('astrologer.apply')">
-                    {{ __('Apply as Astrologer') }}
-                </x-responsive-nav-link>
-            @endif
+                <a href="{{ route('login') }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:text-white">
+                    Log in
+                </a>
+
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
+                        Register
+                    </a>
+                @endif
+            @endauth
         </div>
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
+        <button @click="open = ! open" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-slate-200 transition hover:border-white/20 hover:text-white lg:hidden">
+            <svg x-show="!open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 6.75h14.5M4.75 12h14.5m-14.5 5.25h14.5" />
+            </svg>
+            <svg x-show="open" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75l10.5 10.5m0-10.5l-10.5 10.5" />
+            </svg>
+        </button>
+    </div>
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+    <div x-show="open" x-transition.origin.top class="border-t border-white/10 bg-slate-950/95 lg:hidden">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+            @foreach ($navigationLinks as $link)
+                <a href="{{ $link['href'] }}" class="rounded-2xl px-4 py-3 text-sm font-medium transition {{ $link['active'] ? 'bg-amber-300 text-slate-950' : 'text-slate-200 hover:bg-white/5 hover:text-white' }}">
+                    {{ $link['label'] }}
+                </a>
+            @endforeach
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
+            <div class="mt-3 grid gap-2 border-t border-white/10 pt-3">
+                @auth
+                    <a href="{{ route('dashboard') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                        Dashboard
+                    </a>
+                    @if ($astrologerProfile?->verification_status === 'approved')
+                        <a href="{{ route('astrologer.dashboard') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                            Astrologer Panel
+                        </a>
+                    @else
+                        <a href="{{ route('astrologer.apply') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                            Apply as Astrologer
+                        </a>
+                    @endif
+                    <a href="{{ route('profile.edit') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                        Profile
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="w-full rounded-2xl px-4 py-3 text-left text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                            Log Out
+                        </button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                        Log in
+                    </a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="rounded-2xl bg-amber-300 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
+                            Register
+                        </a>
+                    @endif
+                @endauth
             </div>
         </div>
     </div>
-</nav>
+</header>

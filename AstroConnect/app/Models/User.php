@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Route;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -50,5 +51,18 @@ class User extends Authenticatable implements MustVerifyEmail
     public function astrologer(): HasOne
     {
         return $this->hasOne(Astrologer::class);
+    }
+
+    public function redirectPath(): string
+    {
+        if ($this->role === 'admin' && Route::has('admin.dashboard')) {
+            return route('admin.dashboard', absolute: false);
+        }
+
+        if ($this->astrologer && $this->astrologer->verification_status === 'approved' && Route::has('astrologer.dashboard')) {
+            return route('astrologer.dashboard', absolute: false);
+        }
+
+        return route('dashboard', absolute: false);
     }
 }
