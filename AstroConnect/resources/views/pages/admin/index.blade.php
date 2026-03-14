@@ -1,10 +1,45 @@
 @extends('layouts.admin.master')
 @section('admin')
+    @php
+        $adminCount = \App\Models\User::where('role', 'admin')->count();
+        $astrologerCount = \App\Models\Astrologer::count();
+    @endphp
+
     <div class="container-xxl">
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
                 <h4 class="fs-18 fw-semibold m-0">Dashboard</h4>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="fs-14 mb-1">Total Admins</div>
+                                <div class="fs-22 mb-0 fw-semibold text-black">{{ $adminCount }}</div>
+                            </div>
+                            <i data-feather="shield" class="text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="fs-14 mb-1">Total Astrologers</div>
+                                <div class="fs-22 mb-0 fw-semibold text-black">{{ $astrologerCount }}</div>
+                            </div>
+                            <i data-feather="user-check" class="text-info"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
