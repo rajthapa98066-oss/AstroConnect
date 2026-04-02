@@ -1,7 +1,7 @@
 <div class="app-sidebar-menu">
     <div class="h-100" data-simplebar>
         @php
-            $adminCount = \App\Models\User::where('role', 'admin')->count();
+            $usersCount = \App\Models\User::count();
             $astrologerCount = \App\Models\Astrologer::count();
         @endphp
 
@@ -42,13 +42,11 @@
                     </a>
                 </li>
 
-                <li class="menu-title mt-2">Counts</li>
-
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" class="d-flex align-items-center {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('admin.users.index') }}" class="d-flex align-items-center {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                         <i data-feather="users"></i>
-                        <span>Users (Admins)</span>
-                        <span class="badge bg-primary ms-auto">{{ $adminCount }}</span>
+                        <span>Users</span>
+                        <span class="badge bg-primary ms-auto">{{ $usersCount }}</span>
                     </a>
                 </li>
 

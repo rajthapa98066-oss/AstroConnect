@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AstrologerController;
 use App\Http\Controllers\AstrologerApplicationController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminAstrologerController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\EnsureUserIsAstrologer;
@@ -29,9 +30,8 @@ Route::middleware(['auth', IsUser::class])->group(function () {
 
 /// only for admin Route
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
-    Route::get('dashboard', function () {
-        return view('pages.admin.index');
-    })->name('admin.dashboard');
+    Route::get('dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+    Route::get('/users', [AdminController::class, 'usersIndex'])->name('admin.users.index');
 });
 
 
