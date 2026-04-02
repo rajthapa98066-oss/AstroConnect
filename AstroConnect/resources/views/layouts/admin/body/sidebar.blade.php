@@ -3,6 +3,7 @@
         @php
             $usersCount = \App\Models\User::count();
             $astrologerCount = \App\Models\Astrologer::count();
+            $blogsCount = \App\Models\Blog::count();
         @endphp
 
         <div id="sidebar-menu">
@@ -55,6 +56,16 @@
                         <i data-feather="user-check"></i>
                         <span>Astrologers</span>
                         <span class="badge bg-info ms-auto">{{ $astrologerCount }}</span>
+                    </a>
+                </li>
+
+                <li class="menu-title mt-2">Content</li>
+
+                <li>
+                    <a href="{{ route('admin.blogs.index') }}" class="d-flex align-items-center {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
+                        <i data-feather="book-open"></i>
+                        <span>Blogs</span>
+                        <span class="badge bg-warning text-dark ms-auto">{{ $blogsCount }}</span>
                     </a>
                 </li>
             </ul>

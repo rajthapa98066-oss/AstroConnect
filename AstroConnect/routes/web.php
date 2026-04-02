@@ -4,8 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AstrologerController;
 use App\Http\Controllers\AstrologerApplicationController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminAstrologerController;
+use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\EnsureUserIsAstrologer;
 use App\Http\Middleware\IsUser;
@@ -14,7 +16,8 @@ Route::view('/', 'home')->name('home');
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/services', 'pages.services')->name('services');
 Route::view('/horoscope', 'pages.horoscope')->name('horoscope');
-Route::view('/blog', 'pages.blog')->name('blog');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::view('/contact', 'pages.contact')->name('contact');
 
 Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
@@ -32,6 +35,14 @@ Route::middleware(['auth', IsUser::class])->group(function () {
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
     Route::get('/users', [AdminController::class, 'usersIndex'])->name('admin.users.index');
+
+    Route::get('/blogs', [AdminBlogController::class, 'index'])->name('admin.blogs.index');
+    Route::get('/blogs/create', [AdminBlogController::class, 'create'])->name('admin.blogs.create');
+    Route::post('/blogs', [AdminBlogController::class, 'store'])->name('admin.blogs.store');
+    Route::get('/blogs/{blog}/edit', [AdminBlogController::class, 'edit'])->name('admin.blogs.edit');
+    Route::patch('/blogs/{blog}', [AdminBlogController::class, 'update'])->name('admin.blogs.update');
+    Route::patch('/blogs/{blog}/visibility', [AdminBlogController::class, 'toggleVisibility'])->name('admin.blogs.visibility');
+    Route::delete('/blogs/{blog}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.destroy');
 });
 
 
