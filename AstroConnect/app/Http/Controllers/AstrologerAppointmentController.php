@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Appointment;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class AstrologerAppointmentController extends Controller
+{
+    public function index(Request $request): View
+    {
+        $astrologer = $request->user()->astrologer;
+
+        $appointments = Appointment::query()
+            ->with('user')
+            ->where('astrologer_id', $astrologer->id)
+            ->orderBy('scheduled_at')
+            ->paginate(15);
+
+        return view('pages.astrologer.appointments', [
+            'appointments' => $appointments,
+        ]);
+    }
+
+    public function updateStatus(Request $request, Appointment $appointment): RedirectResponse
+    {
+        $astrologer = $request->user()->astrologer;
+        abort_unless($appointment->astrologer_id === $astrologer->id, 403);
+
+        $validated = $request->validate([
+            'status' => ['required', 'in:pending,confirmed,rejected,completed,cancelled'],
+        ]);
+
+        $appointment->update([
+            'status' => $validated['status'],
+        ]);
+
+        return redirect()
+            ->route('astrologer.appointments')
+            ->with('status', 'appointment-status-updated');
+    }
+}

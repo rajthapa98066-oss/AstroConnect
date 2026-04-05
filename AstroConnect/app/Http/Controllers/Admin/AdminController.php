@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function AdminDashboard()
     {
-        return view('pages.admin.index');
+        return view('pages.admin.dashboard');
     }
 
     public function usersIndex()
@@ -23,7 +23,7 @@ class AdminController extends Controller
             ->latest()
             ->paginate(15);
 
-        return view('pages.admin.users.index', [
+        return view('pages.admin.users-management', [
             'users' => $users,
         ]);
     }

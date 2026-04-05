@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AstrologerController;
 use App\Http\Controllers\AstrologerApplicationController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\AstrologerAppointmentController;
+use App\Http\Controllers\AstrologerBlogController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminAstrologerController;
@@ -13,12 +16,12 @@ use App\Http\Middleware\EnsureUserIsAstrologer;
 use App\Http\Middleware\IsUser;
 
 Route::view('/', 'home')->name('home');
-Route::view('/about', 'pages.about')->name('about');
-Route::view('/services', 'pages.services')->name('services');
-Route::view('/horoscope', 'pages.horoscope')->name('horoscope');
+Route::view('/about', 'pages.user.about')->name('about');
+Route::view('/services', 'pages.user.services')->name('services');
+Route::view('/horoscope', 'pages.user.horoscope')->name('horoscope');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');
-Route::view('/contact', 'pages.contact')->name('contact');
+Route::view('/contact', 'pages.user.contact')->name('contact');
 
 Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
 Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
@@ -29,6 +32,9 @@ Route::middleware(['auth', IsUser::class])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::post('/astrologers/{astrologer}/book', [AppointmentController::class, 'store'])->name('appointments.store');
+    Route::get('/my-appointments', [AppointmentController::class, 'userIndex'])->name('appointments.user.index');
 });
 
 /// only for admin Route
@@ -42,6 +48,8 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::get('/blogs/{blog}/edit', [AdminBlogController::class, 'edit'])->name('admin.blogs.edit');
     Route::patch('/blogs/{blog}', [AdminBlogController::class, 'update'])->name('admin.blogs.update');
     Route::patch('/blogs/{blog}/visibility', [AdminBlogController::class, 'toggleVisibility'])->name('admin.blogs.visibility');
+    Route::patch('/blogs/{blog}/approve', [AdminBlogController::class, 'approve'])->name('admin.blogs.approve');
+    Route::patch('/blogs/{blog}/reject', [AdminBlogController::class, 'reject'])->name('admin.blogs.reject');
     Route::delete('/blogs/{blog}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.destroy');
 });
 
@@ -60,7 +68,14 @@ Route::prefix('astrologer')->middleware(['auth', EnsureUserIsAstrologer::class])
     Route::get('/dashboard', [AstrologerController::class, 'dashboard'])->name('astrologer.dashboard');
     Route::get('/profile', [AstrologerController::class, 'profile'])->name('astrologer.profile');
     Route::patch('/profile', [AstrologerController::class, 'update'])->name('astrologer.profile.update');
-    Route::get('/appointments', [AstrologerController::class, 'appointments'])->name('astrologer.appointments');
+    Route::get('/appointments', [AstrologerAppointmentController::class, 'index'])->name('astrologer.appointments');
+    Route::patch('/appointments/{appointment}/status', [AstrologerAppointmentController::class, 'updateStatus'])->name('astrologer.appointments.status');
+
+    Route::get('/blogs', [AstrologerBlogController::class, 'index'])->name('astrologer.blogs.index');
+    Route::get('/blogs/create', [AstrologerBlogController::class, 'create'])->name('astrologer.blogs.create');
+    Route::post('/blogs', [AstrologerBlogController::class, 'store'])->name('astrologer.blogs.store');
+    Route::get('/blogs/{blog}/edit', [AstrologerBlogController::class, 'edit'])->name('astrologer.blogs.edit');
+    Route::patch('/blogs/{blog}', [AstrologerBlogController::class, 'update'])->name('astrologer.blogs.update');
 });
 
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {

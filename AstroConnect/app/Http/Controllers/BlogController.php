@@ -10,21 +10,23 @@ class BlogController extends Controller
     public function index(): View
     {
         $posts = Blog::query()
+            ->where('review_status', 'approved')
             ->where('is_published', true)
             ->orderByDesc('published_at')
             ->orderByDesc('id')
             ->paginate(9);
 
-        return view('pages.blog', [
+        return view('pages.user.blog', [
             'posts' => $posts,
         ]);
     }
 
     public function show(Blog $blog): View
     {
-        abort_unless($blog->is_published, 404);
+        abort_unless($blog->is_published && $blog->review_status === 'approved', 404);
 
         $relatedPosts = Blog::query()
+            ->where('review_status', 'approved')
             ->where('is_published', true)
             ->whereKeyNot($blog->id)
             ->orderByDesc('published_at')
@@ -32,7 +34,7 @@ class BlogController extends Controller
             ->limit(3)
             ->get();
 
-        return view('pages.blog-show', [
+        return view('pages.user.blog-show', [
             'post' => $blog,
             'relatedPosts' => $relatedPosts,
         ]);

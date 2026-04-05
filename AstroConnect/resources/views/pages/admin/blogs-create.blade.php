@@ -12,7 +12,7 @@
             <div class="card-body">
                 <form method="POST" action="{{ route('admin.blogs.store') }}" class="row g-3">
                     @csrf
-                    @include('pages.admin.blogs.partials.form')
+                    @include('pages.admin.blog-form')
                 </form>
             </div>
         </div>

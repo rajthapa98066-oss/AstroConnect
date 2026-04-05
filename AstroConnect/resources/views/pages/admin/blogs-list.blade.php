@@ -23,8 +23,10 @@
                             <tr>
                                 <th>#</th>
                                 <th>Title</th>
+                                <th>Author</th>
                                 <th>Category</th>
                                 <th>Slug</th>
+                                <th>Review</th>
                                 <th>Status</th>
                                 <th>Published At</th>
                                 <th>Actions</th>
@@ -35,8 +37,24 @@
                                 <tr>
                                     <td>{{ $blog->id }}</td>
                                     <td>{{ $blog->title }}</td>
+                                    <td>
+                                        @if ($blog->astrologer)
+                                            {{ $blog->astrologer->user->name }} <span class="badge bg-info ms-1">Astrologer</span>
+                                        @else
+                                            Admin
+                                        @endif
+                                    </td>
                                     <td>{{ $blog->category ?: '-' }}</td>
                                     <td><code>{{ $blog->slug }}</code></td>
+                                    <td>
+                                        @if ($blog->review_status === 'approved')
+                                            <span class="badge bg-success">Approved</span>
+                                        @elseif ($blog->review_status === 'rejected')
+                                            <span class="badge bg-danger">Rejected</span>
+                                        @else
+                                            <span class="badge bg-warning text-dark">Pending</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         @if ($blog->is_published)
                                             <span class="badge bg-success">Visible on user page</span>
@@ -48,6 +66,22 @@
                                     <td>
                                         <div class="d-flex flex-wrap gap-2">
                                             <a href="{{ route('admin.blogs.edit', $blog) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+
+                                            @if ($blog->review_status !== 'approved')
+                                                <form method="POST" action="{{ route('admin.blogs.approve', $blog) }}">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                                                </form>
+                                            @endif
+
+                                            @if ($blog->review_status !== 'rejected')
+                                                <form method="POST" action="{{ route('admin.blogs.reject', $blog) }}">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-sm btn-warning">Reject</button>
+                                                </form>
+                                            @endif
 
                                             <form method="POST" action="{{ route('admin.blogs.visibility', $blog) }}">
                                                 @csrf
@@ -67,7 +101,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center">No blog posts found.</td>
+                                    <td colspan="9" class="text-center">No blog posts found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

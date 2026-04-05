@@ -71,8 +71,8 @@
         <!-- Apexcharts JS -->
         <script src="{{asset('backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
-        <!-- for basic area chart -->
-        <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
+        <!-- Local fallback for stock sample series -->
+        <script src="{{ asset('backend/assets/js/pages/stock-prices.js') }}"></script>
 
         <!-- Widgets Init Js -->
         <script src="{{asset('backend/assets/js/pages/analytics-dashboard.init.js')}}"></script>

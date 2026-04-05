@@ -13,7 +13,7 @@
                 <form method="POST" action="{{ route('admin.blogs.update', $blog) }}" class="row g-3">
                     @csrf
                     @method('PATCH')
-                    @include('pages.admin.blogs.partials.form', ['blog' => $blog])
+                    @include('pages.admin.blog-form', ['blog' => $blog])
                 </form>
             </div>
         </div>

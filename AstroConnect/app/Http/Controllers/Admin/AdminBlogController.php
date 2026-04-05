@@ -16,23 +16,26 @@ class AdminBlogController extends Controller
     public function index(): View
     {
         $blogs = Blog::query()
+            ->with(['astrologer.user', 'reviewer'])
             ->latest()
             ->paginate(15);
 
-        return view('pages.admin.blogs.index', [
+        return view('pages.admin.blogs-list', [
             'blogs' => $blogs,
         ]);
     }
 
     public function create(): View
     {
-        return view('pages.admin.blogs.create');
+        return view('pages.admin.blogs-create');
     }
 
     public function store(Request $request): RedirectResponse
     {
         $validated = $this->validateBlog($request);
         $validated['slug'] = $this->resolveUniqueSlug($validated['slug'] ?? null, $validated['title']);
+        $validated['review_status'] = 'approved';
+        $validated['reviewed_by'] = $request->user()->id;
 
         if ($validated['is_published']) {
             $validated['published_at'] = Carbon::now();
@@ -47,7 +50,7 @@ class AdminBlogController extends Controller
 
     public function edit(Blog $blog): View
     {
-        return view('pages.admin.blogs.edit', [
+        return view('pages.admin.blogs-edit', [
             'blog' => $blog,
         ]);
     }
@@ -56,6 +59,8 @@ class AdminBlogController extends Controller
     {
         $validated = $this->validateBlog($request, $blog);
         $validated['slug'] = $this->resolveUniqueSlug($validated['slug'] ?? null, $validated['title'], $blog->id);
+        $validated['review_status'] = 'approved';
+        $validated['reviewed_by'] = $request->user()->id;
 
         if ($validated['is_published'] && ! $blog->is_published) {
             $validated['published_at'] = Carbon::now();
@@ -74,6 +79,12 @@ class AdminBlogController extends Controller
 
     public function toggleVisibility(Blog $blog): RedirectResponse
     {
+        if ($blog->review_status !== 'approved') {
+            return redirect()
+                ->route('admin.blogs.index')
+                ->with('status', 'approve-before-publish');
+        }
+
         $isPublished = ! $blog->is_published;
 
         $blog->update([
@@ -84,6 +95,32 @@ class AdminBlogController extends Controller
         return redirect()
             ->route('admin.blogs.index')
             ->with('status', $isPublished ? 'blog-published' : 'blog-unpublished');
+    }
+
+    public function approve(Request $request, Blog $blog): RedirectResponse
+    {
+        $blog->update([
+            'review_status' => 'approved',
+            'reviewed_by' => $request->user()->id,
+        ]);
+
+        return redirect()
+            ->route('admin.blogs.index')
+            ->with('status', 'blog-approved');
+    }
+
+    public function reject(Request $request, Blog $blog): RedirectResponse
+    {
+        $blog->update([
+            'review_status' => 'rejected',
+            'reviewed_by' => $request->user()->id,
+            'is_published' => false,
+            'published_at' => null,
+        ]);
+
+        return redirect()
+            ->route('admin.blogs.index')
+            ->with('status', 'blog-rejected');
     }
 
     public function destroy(Blog $blog): RedirectResponse

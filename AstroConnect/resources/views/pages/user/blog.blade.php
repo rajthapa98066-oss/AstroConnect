@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user.master')
 
 @section('title', 'AstroConnect | Blog')
 
@@ -13,7 +13,7 @@
     <div class="grid gap-6 lg:grid-cols-3">
         @forelse ($posts as $post)
             <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
-                <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">{{ $post->category ?: 'Astrology' }}</p>
+                <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">{{ $post->category 09?: 'Astrology' }}</p>
                 <h2 class="mt-4 text-3xl text-white [font-family:'Cormorant_Garamond',serif]">{{ $post->title }}</h2>
                 <p class="mt-4 text-sm text-slate-400">{{ $post->published_at?->format('M d, Y') ?: $post->created_at?->format('M d, Y') }}</p>
                 <p class="mt-4 text-base leading-7 text-slate-300">{{ $post->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($post->content), 140) }}</p>

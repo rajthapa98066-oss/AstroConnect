@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Astrologer;
+use App\Models\Appointment;
+use App\Models\Blog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -18,7 +20,7 @@ class AstrologerController extends Controller
             ->latest()
             ->paginate(12);
 
-        return view('pages.astrologers.index', [
+        return view('pages.user.astrologers-list', [
             'astrologers' => $astrologers,
         ]);
     }
@@ -29,15 +31,39 @@ class AstrologerController extends Controller
 
         $astrologer->load('user');
 
-        return view('pages.astrologers.show', [
+        return view('pages.user.astrologer-profile', [
             'astrologer' => $astrologer,
         ]);
     }
 
     public function dashboard(Request $request): View
     {
+        $astrologer = $request->user()->astrologer;
+
+        $appointmentCounts = Appointment::query()
+            ->where('astrologer_id', $astrologer->id)
+            ->selectRaw('status, COUNT(*) as total')
+            ->groupBy('status')
+            ->pluck('total', 'status');
+
+        $recentAppointments = Appointment::query()
+            ->with('user')
+            ->where('astrologer_id', $astrologer->id)
+            ->orderByDesc('scheduled_at')
+            ->limit(5)
+            ->get();
+
+        $blogCounts = Blog::query()
+            ->where('astrologer_id', $astrologer->id)
+            ->selectRaw('review_status, COUNT(*) as total')
+            ->groupBy('review_status')
+            ->pluck('total', 'review_status');
+
         return view('pages.astrologer.dashboard', [
-            'astrologer' => $request->user()->astrologer,
+            'astrologer' => $astrologer,
+            'appointmentCounts' => $appointmentCounts,
+            'recentAppointments' => $recentAppointments,
+            'blogCounts' => $blogCounts,
         ]);
     }
 

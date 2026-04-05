@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.astrologer.master')
 
 @section('title', 'AstroConnect | Astrologer Profile')
 
