@@ -1,3 +1,4 @@
+{{-- View: resources\views\layouts\admin\body\footer.blade.php --}}
 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">

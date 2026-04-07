@@ -2,22 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Appointment extends Model
+class Review extends Model
 {
+    use HasFactory;
+
     /**
      * @var list<string>
      */
     protected $fillable = [
         'user_id',
         'astrologer_id',
-        'scheduled_at',
-        'duration_minutes',
-        'topic',
-        'message',
-        'status',
+        'rating',
+        'comment',
     ];
 
     /**
@@ -26,13 +26,12 @@ class Appointment extends Model
     protected function casts(): array
     {
         return [
-            'scheduled_at' => 'datetime',
-            'duration_minutes' => 'integer',
+            'rating' => 'integer',
         ];
     }
 
     /**
-     * User who created the appointment.
+     * User who wrote the review.
      */
     public function user(): BelongsTo
     {
@@ -40,7 +39,7 @@ class Appointment extends Model
     }
 
     /**
-     * Astrologer selected for the appointment.
+     * Astrologer being reviewed.
      */
     public function astrologer(): BelongsTo
     {

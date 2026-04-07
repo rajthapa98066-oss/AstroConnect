@@ -1,20 +1,24 @@
+{{-- View: resources\views\pages\astrologer\appointments.blade.php --}}
 @extends('layouts.astrologer.master')
 
 @section('title', 'AstroConnect | Astrologer Appointments')
 
 @section('content')
+{{-- Appointments heading and page context. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <p class="text-sm uppercase tracking-[0.35em] text-amber-200/70">Appointments</p>
     <h1 class="mt-4 text-5xl text-white sm:text-6xl [font-family:'Cormorant_Garamond',serif]">Manage user booking requests and session status.</h1>
 </section>
 
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    {{-- Action feedback after status updates. --}}
     @if (session('status'))
         <div class="mb-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-5 py-4 text-sm text-emerald-200">
             Action completed: {{ str_replace('-', ' ', session('status')) }}
         </div>
     @endif
 
+    {{-- Appointment table and inline status update form. --}}
     <div class="rounded-[2rem] border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-slate-950/30 sm:p-8">
         <div class="overflow-x-auto">
             <table class="min-w-full text-left text-sm text-slate-300">

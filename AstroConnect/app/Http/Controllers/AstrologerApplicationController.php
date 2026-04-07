@@ -10,6 +10,9 @@ use Illuminate\View\View;
 
 class AstrologerApplicationController extends Controller
 {
+    /**
+     * Show the astrologer application form or redirect approved astrologers.
+     */
     public function create(Request $request): View|RedirectResponse
     {
         $astrologer = $request->user()->astrologer;
@@ -23,6 +26,9 @@ class AstrologerApplicationController extends Controller
         ]);
     }
 
+    /**
+     * Submit or update astrologer application details.
+     */
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([

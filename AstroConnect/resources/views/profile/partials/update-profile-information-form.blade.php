@@ -1,3 +1,4 @@
+{{-- View: resources\views\profile\partials\update-profile-information-form.blade.php --}}
 <section>
     <header>
         <h2 class="text-2xl text-white [font-family:'Cormorant_Garamond',serif]">

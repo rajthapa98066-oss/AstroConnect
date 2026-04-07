@@ -13,6 +13,9 @@ use Illuminate\View\View;
 
 class AdminBlogController extends Controller
 {
+    /**
+     * Show all blogs for admin review and moderation.
+     */
     public function index(): View
     {
         $blogs = Blog::query()
@@ -20,16 +23,25 @@ class AdminBlogController extends Controller
             ->latest()
             ->paginate(15);
 
-        return view('pages.admin.blogs-list', [
+        return view('pages.admin.blog', [
+            'mode' => 'list',
             'blogs' => $blogs,
         ]);
     }
 
+    /**
+     * Render admin create blog form.
+     */
     public function create(): View
     {
-        return view('pages.admin.blogs-create');
+        return view('pages.admin.blog', [
+            'mode' => 'create',
+        ]);
     }
 
+    /**
+     * Store a blog as admin-authored and auto-approved.
+     */
     public function store(Request $request): RedirectResponse
     {
         $validated = $this->validateBlog($request);
@@ -48,13 +60,20 @@ class AdminBlogController extends Controller
             ->with('status', 'blog-created');
     }
 
+    /**
+     * Render admin edit form for a selected blog.
+     */
     public function edit(Blog $blog): View
     {
-        return view('pages.admin.blogs-edit', [
+        return view('pages.admin.blog', [
+            'mode' => 'edit',
             'blog' => $blog,
         ]);
     }
 
+    /**
+     * Update blog content and keep moderation ownership with admin.
+     */
     public function update(Request $request, Blog $blog): RedirectResponse
     {
         $validated = $this->validateBlog($request, $blog);
@@ -77,6 +96,9 @@ class AdminBlogController extends Controller
             ->with('status', 'blog-updated');
     }
 
+    /**
+     * Toggle published visibility for approved blogs only.
+     */
     public function toggleVisibility(Blog $blog): RedirectResponse
     {
         if ($blog->review_status !== 'approved') {
@@ -97,6 +119,9 @@ class AdminBlogController extends Controller
             ->with('status', $isPublished ? 'blog-published' : 'blog-unpublished');
     }
 
+    /**
+     * Approve a submitted blog.
+     */
     public function approve(Request $request, Blog $blog): RedirectResponse
     {
         $blog->update([
@@ -109,6 +134,9 @@ class AdminBlogController extends Controller
             ->with('status', 'blog-approved');
     }
 
+    /**
+     * Reject a submitted blog and force it hidden.
+     */
     public function reject(Request $request, Blog $blog): RedirectResponse
     {
         $blog->update([
@@ -123,6 +151,9 @@ class AdminBlogController extends Controller
             ->with('status', 'blog-rejected');
     }
 
+    /**
+     * Permanently delete a blog.
+     */
     public function destroy(Blog $blog): RedirectResponse
     {
         $blog->delete();
@@ -133,6 +164,8 @@ class AdminBlogController extends Controller
     }
 
     /**
+     * Validate create/update payload from admin form.
+     *
      * @return array<string, mixed>
      */
     private function validateBlog(Request $request, ?Blog $blog = null): array
@@ -156,6 +189,9 @@ class AdminBlogController extends Controller
         return $validated;
     }
 
+    /**
+     * Generate a unique slug, appending an increment if needed.
+     */
     private function resolveUniqueSlug(?string $slug, string $title, ?int $ignoreId = null): string
     {
         $baseSlug = Str::slug($slug ?: $title);

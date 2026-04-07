@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+/**
+ * Validate user profile update input.
+ */
 class ProfileUpdateRequest extends FormRequest
 {
     /**

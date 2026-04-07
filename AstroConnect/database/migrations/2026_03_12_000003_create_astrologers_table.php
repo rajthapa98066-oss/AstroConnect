@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// Creates the astrologers profile table linked one-to-one with users.
 return new class extends Migration
 {
     /**

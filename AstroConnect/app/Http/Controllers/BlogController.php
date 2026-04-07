@@ -7,6 +7,9 @@ use Illuminate\View\View;
 
 class BlogController extends Controller
 {
+    /**
+     * Display paginated, approved, published blog posts for end users.
+     */
     public function index(): View
     {
         $posts = Blog::query()
@@ -21,6 +24,9 @@ class BlogController extends Controller
         ]);
     }
 
+    /**
+     * Display a single blog post if it is approved and publicly visible.
+     */
     public function show(Blog $blog): View
     {
         abort_unless($blog->is_published && $blog->review_status === 'approved', 404);

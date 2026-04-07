@@ -34,16 +34,25 @@ class Blog extends Model
         ];
     }
 
+    /**
+     * Astrologer author of the blog (null for admin-authored posts).
+     */
     public function astrologer(): BelongsTo
     {
         return $this->belongsTo(Astrologer::class);
     }
 
+    /**
+     * Admin user who last reviewed this blog.
+     */
     public function reviewer(): BelongsTo
     {
         return $this->belongsTo(User::class, 'reviewed_by');
     }
 
+    /**
+     * Use slug for implicit route model binding.
+     */
     public function getRouteKeyName(): string
     {
         return 'slug';

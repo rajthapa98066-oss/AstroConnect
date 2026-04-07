@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+/**
+ * Seed minimal starter data for local development/testing.
+ */
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;

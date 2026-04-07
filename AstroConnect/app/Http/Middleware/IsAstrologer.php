@@ -6,6 +6,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Restrict route access to users with astrologer role.
+ */
 class IsAstrologer
 {
     /**

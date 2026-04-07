@@ -1,3 +1,4 @@
+{{-- View: resources\views\layouts\admin\master.blade.php --}}
 <!DOCTYPE html>
 <html lang="en">
 

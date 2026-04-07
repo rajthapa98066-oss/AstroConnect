@@ -1,8 +1,10 @@
+{{-- View: resources\views\pages\user\contact.blade.php --}}
 @extends('layouts.user.master')
 
 @section('title', 'AstroConnect | Contact')
 
 @section('content')
+{{-- Contact hero and support context messaging. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
@@ -15,6 +17,7 @@
             </div>
         </div>
 
+        {{-- Contact form UI for inquiry capture. --}}
         <div class="rounded-[2.5rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/30">
             <form class="grid gap-5">
                 <div class="grid gap-5 sm:grid-cols-2">

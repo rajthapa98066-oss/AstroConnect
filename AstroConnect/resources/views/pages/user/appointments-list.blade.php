@@ -1,13 +1,16 @@
+{{-- View: resources\views\pages\user\appointments-list.blade.php --}}
 @extends('layouts.user.master')
 
 @section('title', 'AstroConnect | My Appointments')
 
 @section('content')
+{{-- Appointments page heading for logged-in users. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <p class="text-sm uppercase tracking-[0.35em] text-amber-200/70">My Appointments</p>
     <h1 class="mt-4 text-5xl text-white sm:text-6xl [font-family:'Cormorant_Garamond',serif]">Track your consultation requests and upcoming sessions.</h1>
 </section>
 
+{{-- Paginated appointment table and status badges. --}}
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-slate-950/30 sm:p-8">
         <div class="overflow-x-auto">
@@ -39,6 +42,7 @@
             </table>
         </div>
 
+        {{-- Pagination controls with shared user-theme styling. --}}
         <div class="mt-8 [&_nav]:flex [&_nav]:justify-center [&_nav]:text-slate-300 [&_span]:border-white/10 [&_span]:bg-white/5 [&_span]:text-slate-300 [&_a]:border-white/10 [&_a]:bg-white/5 [&_a]:text-slate-200 [&_a:hover]:bg-white/10">
             {{ $appointments->links() }}
         </div>

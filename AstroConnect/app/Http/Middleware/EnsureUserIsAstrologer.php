@@ -6,6 +6,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Ensure the authenticated user has an approved astrologer profile.
+ */
 class EnsureUserIsAstrologer
 {
     /**

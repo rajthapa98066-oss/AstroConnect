@@ -1,3 +1,4 @@
+{{-- View: resources\views\pages\astrologer\apply.blade.php --}}
 @extends('layouts.astrologer.master')
 
 @section('title', 'AstroConnect | Apply as Astrologer')

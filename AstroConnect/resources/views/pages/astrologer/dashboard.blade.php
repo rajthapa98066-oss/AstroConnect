@@ -1,8 +1,10 @@
+{{-- View: resources\views\pages\astrologer\dashboard.blade.php --}}
 @extends('layouts.astrologer.master')
 
 @section('title', 'AstroConnect | Astrologer Dashboard')
 
 @section('content')
+{{-- Hero area with primary actions and current availability summary. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
@@ -32,6 +34,7 @@
 </section>
 
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    {{-- Profile snapshot cards for specialization, experience, and fee. --}}
     <div class="grid gap-6 md:grid-cols-3">
         <article class="rounded-[2rem] border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-slate-950/30">
             <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Specialization</p>
@@ -49,6 +52,7 @@
         </article>
     </div>
 
+    {{-- Operational counters for appointment and blog review states. --}}
     <div class="mt-6 grid gap-6 md:grid-cols-3">
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6">
             <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Appointments</p>
@@ -67,6 +71,7 @@
         </article>
     </div>
 
+    {{-- Latest appointment feed with quick status visibility. --}}
     <div class="mt-6 rounded-[2rem] border border-white/10 bg-slate-900/70 p-6">
         <div class="mb-4 flex items-center justify-between">
             <h3 class="text-2xl text-white [font-family:'Cormorant_Garamond',serif]">Recent appointments</h3>

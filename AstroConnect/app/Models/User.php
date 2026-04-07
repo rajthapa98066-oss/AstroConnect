@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -49,16 +50,33 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
+    /**
+     * Linked astrologer profile for this user, if one exists.
+     */
     public function astrologer(): HasOne
     {
         return $this->hasOne(Astrologer::class);
     }
 
+    /**
+     * Appointments booked by this user.
+     */
     public function appointments(): HasMany
     {
         return $this->hasMany(Appointment::class);
     }
 
+    /**
+     * Reviews written by this user.
+     */
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    /**
+     * Resolve post-login redirect path based on role and approval status.
+     */
     public function redirectPath(): string
     {
         if ($this->role === 'admin' && Route::has('admin.dashboard')) {

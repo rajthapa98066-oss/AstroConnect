@@ -5,6 +5,9 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
+/**
+ * Wrapper component for authenticated application pages.
+ */
 class AppLayout extends Component
 {
     /**

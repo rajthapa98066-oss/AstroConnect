@@ -1,3 +1,4 @@
+{{-- View: resources\views\layouts\admin\body\sidebar.blade.php --}}
 <div class="app-sidebar-menu">
     <div class="h-100" data-simplebar>
         @php

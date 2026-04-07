@@ -1,3 +1,4 @@
+{{-- View: resources\views\layouts\admin\body\header.blade.php --}}
 <div class="topbar-custom">
     <div class="container-xxl">
         <div class="d-flex justify-content-between">

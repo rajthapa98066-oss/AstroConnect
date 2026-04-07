@@ -2,13 +2,16 @@
 
 use App\Models\User;
 
+// Login/logout flow coverage.
 test('login screen can be rendered', function () {
+    /** @var \Tests\TestCase $this */
     $response = $this->get('/login');
 
     $response->assertStatus(200);
 });
 
 test('users can authenticate using the login screen', function () {
+    /** @var \Tests\TestCase $this */
     $user = User::factory()->create();
 
     $response = $this->post('/login', [
@@ -21,6 +24,7 @@ test('users can authenticate using the login screen', function () {
 });
 
 test('users can not authenticate with invalid password', function () {
+    /** @var \Tests\TestCase $this */
     $user = User::factory()->create();
 
     $this->post('/login', [
@@ -32,6 +36,7 @@ test('users can not authenticate with invalid password', function () {
 });
 
 test('users can logout', function () {
+    /** @var \Tests\TestCase $this */
     $user = User::factory()->create();
 
     $response = $this->actingAs($user)->post('/logout');

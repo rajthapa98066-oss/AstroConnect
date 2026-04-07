@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// Core Laravel user/auth/session tables with role field for access control.
 return new class extends Migration
 {
     /**

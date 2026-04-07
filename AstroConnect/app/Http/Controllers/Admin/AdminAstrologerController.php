@@ -11,6 +11,9 @@ use Illuminate\View\View;
 
 class AdminAstrologerController extends Controller
 {
+    /**
+     * Show astrologer applications and profile details for admin review.
+     */
     public function index(): View
     {
         $astrologers = Astrologer::with('user')->latest()->paginate(20);
@@ -20,6 +23,9 @@ class AdminAstrologerController extends Controller
         ]);
     }
 
+    /**
+     * Approve an astrologer application.
+     */
     public function approve(Astrologer $astrologer): RedirectResponse
     {
         $astrologer->update(['verification_status' => 'approved']);
@@ -27,6 +33,9 @@ class AdminAstrologerController extends Controller
         return Redirect::route('admin.astrologers.index')->with('status', 'astrologer-approved');
     }
 
+    /**
+     * Reject an astrologer application.
+     */
     public function reject(Astrologer $astrologer): RedirectResponse
     {
         $astrologer->update(['verification_status' => 'rejected']);
@@ -34,6 +43,9 @@ class AdminAstrologerController extends Controller
         return Redirect::route('admin.astrologers.index')->with('status', 'astrologer-rejected');
     }
 
+    /**
+     * Update editable astrologer fields from admin panel.
+     */
     public function update(Request $request, Astrologer $astrologer): RedirectResponse
     {
         $validated = $request->validate([

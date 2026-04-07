@@ -10,6 +10,9 @@ use Illuminate\View\View;
 
 class AppointmentController extends Controller
 {
+    /**
+     * Create a new appointment request for an approved astrologer.
+     */
     public function store(Request $request, Astrologer $astrologer): RedirectResponse
     {
         abort_if($astrologer->verification_status !== 'approved', 404);
@@ -34,6 +37,9 @@ class AppointmentController extends Controller
             ->with('status', 'appointment-booked');
     }
 
+    /**
+     * List appointments booked by the currently authenticated user.
+     */
     public function userIndex(Request $request): View
     {
         $appointments = Appointment::query()

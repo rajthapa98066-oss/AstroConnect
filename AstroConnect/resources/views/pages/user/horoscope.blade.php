@@ -1,9 +1,11 @@
+{{-- View: resources\views\pages\user\horoscope.blade.php --}}
 @extends('layouts.user.master')
 
 @section('title', 'AstroConnect | Horoscope')
 
 @section('content')
 @php
+    // Static zodiac metadata rendered into the horoscope grid.
     $signs = [
         ['name' => 'Aries', 'dates' => 'Mar 21 - Apr 19'],
         ['name' => 'Taurus', 'dates' => 'Apr 20 - May 20'],
@@ -20,12 +22,14 @@
     ];
 @endphp
 
+{{-- Horoscope page hero with explanatory intro. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <p class="text-sm uppercase tracking-[0.35em] text-amber-200/70">Horoscope</p>
     <h1 class="mt-4 max-w-4xl text-5xl text-white sm:text-6xl [font-family:'Cormorant_Garamond',serif]">Explore zodiac energies through a clear, responsive horoscope grid.</h1>
     <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Choose your sign and begin with the symbolic rhythm that fits your season, temperament, and current path.</p>
 </section>
 
+{{-- Zodiac card grid for all 12 signs. --}}
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
     <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         @foreach ($signs as $sign)

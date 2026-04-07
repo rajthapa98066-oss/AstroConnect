@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -36,18 +37,35 @@ class Astrologer extends Model
         ];
     }
 
+    /**
+     * User account that owns this astrologer profile.
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Appointments assigned to this astrologer.
+     */
     public function appointments(): HasMany
     {
         return $this->hasMany(Appointment::class);
     }
 
+    /**
+     * Blogs authored by this astrologer.
+     */
     public function blogs(): HasMany
     {
         return $this->hasMany(Blog::class);
+    }
+
+    /**
+     * Reviews left by users for this astrologer.
+     */
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
     }
 }

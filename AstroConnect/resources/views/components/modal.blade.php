@@ -1,3 +1,4 @@
+{{-- View: resources\views\components\modal.blade.php --}}
 @props([
     'name',
     'show' => false,

@@ -7,6 +7,7 @@ use App\Http\Controllers\AstrologerApplicationController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AstrologerAppointmentController;
 use App\Http\Controllers\AstrologerBlogController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminAstrologerController;
@@ -26,7 +27,6 @@ Route::view('/contact', 'pages.user.contact')->name('contact');
 Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
 Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
 
-/// only for user Route
 Route::middleware(['auth', IsUser::class])->group(function () {
     // User-specific routes
     Route::get('/dashboard', function () {
@@ -34,10 +34,10 @@ Route::middleware(['auth', IsUser::class])->group(function () {
     })->name('dashboard');
 
     Route::post('/astrologers/{astrologer}/book', [AppointmentController::class, 'store'])->name('appointments.store');
+    Route::post('/astrologers/{astrologer}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     Route::get('/my-appointments', [AppointmentController::class, 'userIndex'])->name('appointments.user.index');
 });
 
-/// only for admin Route
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
     Route::get('dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
     Route::get('/users', [AdminController::class, 'usersIndex'])->name('admin.users.index');
@@ -52,8 +52,6 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::patch('/blogs/{blog}/reject', [AdminBlogController::class, 'reject'])->name('admin.blogs.reject');
     Route::delete('/blogs/{blog}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.destroy');
 });
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

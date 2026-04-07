@@ -1,3 +1,4 @@
+{{-- View: resources\views\pages\astrologer\blog.blade.php --}}
 @extends('layouts.astrologer.master')
 
 @php

@@ -9,6 +9,9 @@ use Illuminate\View\View;
 
 class AstrologerAppointmentController extends Controller
 {
+    /**
+     * Show appointments assigned to the logged-in astrologer.
+     */
     public function index(Request $request): View
     {
         $astrologer = $request->user()->astrologer;
@@ -24,6 +27,9 @@ class AstrologerAppointmentController extends Controller
         ]);
     }
 
+    /**
+     * Update appointment status, restricted to owning astrologer.
+     */
     public function updateStatus(Request $request, Appointment $appointment): RedirectResponse
     {
         $astrologer = $request->user()->astrologer;

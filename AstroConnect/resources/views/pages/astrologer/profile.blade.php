@@ -1,8 +1,10 @@
+{{-- View: resources\views\pages\astrologer\profile.blade.php --}}
 @extends('layouts.astrologer.master')
 
 @section('title', 'AstroConnect | Astrologer Profile')
 
 @section('content')
+{{-- Profile hero and quick metadata cards. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
@@ -28,6 +30,7 @@
 </section>
 
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    {{-- Main profile edit form with validation and photo upload support. --}}
     <div class="rounded-[2rem] border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-slate-950/30 sm:p-8">
         @if (session('status') === 'profile-updated')
             <div class="mb-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-5 py-4 text-sm font-medium text-emerald-200">

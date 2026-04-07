@@ -11,6 +11,9 @@ use Illuminate\View\View;
 
 class AstrologerBlogController extends Controller
 {
+    /**
+     * Show blogs created by the logged-in astrologer.
+     */
     public function index(Request $request): View
     {
         $astrologer = $request->user()->astrologer;
@@ -26,6 +29,9 @@ class AstrologerBlogController extends Controller
         ]);
     }
 
+    /**
+     * Render the astrologer blog creation form.
+     */
     public function create(): View
     {
         return view('pages.astrologer.blog', [
@@ -33,6 +39,9 @@ class AstrologerBlogController extends Controller
         ]);
     }
 
+    /**
+     * Save a new astrologer blog as pending and hidden until admin review.
+     */
     public function store(Request $request): RedirectResponse
     {
         $validated = $this->validateBlog($request);
@@ -56,6 +65,9 @@ class AstrologerBlogController extends Controller
             ->with('status', 'blog-submitted');
     }
 
+    /**
+     * Render edit form for astrologer's own blog only.
+     */
     public function edit(Request $request, Blog $blog): View
     {
         $astrologer = $request->user()->astrologer;
@@ -67,6 +79,9 @@ class AstrologerBlogController extends Controller
         ]);
     }
 
+    /**
+     * Update astrologer blog and reset it to pending review.
+     */
     public function update(Request $request, Blog $blog): RedirectResponse
     {
         $astrologer = $request->user()->astrologer;
@@ -93,6 +108,8 @@ class AstrologerBlogController extends Controller
     }
 
     /**
+     * Validate blog payload from astrologer create/update forms.
+     *
      * @return array<string, mixed>
      */
     private function validateBlog(Request $request, ?Blog $blog = null): array
@@ -111,6 +128,9 @@ class AstrologerBlogController extends Controller
         ]);
     }
 
+    /**
+     * Generate a unique slug, appending an increment if needed.
+     */
     private function resolveUniqueSlug(?string $slug, string $title, ?int $ignoreId = null): string
     {
         $baseSlug = Str::slug($slug ?: $title);

@@ -1,8 +1,10 @@
+{{-- View: resources\views\pages\user\about.blade.php --}}
 @extends('layouts.user.master')
 
 @section('title', 'AstroConnect | About')
 
 @section('content')
+{{-- About hero and brand positioning copy. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <div class="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
         <div>
@@ -25,6 +27,7 @@
     </div>
 </section>
 
+{{-- Three-value pillars explaining platform principles. --}}
 <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
     <div class="grid gap-6 lg:grid-cols-3">
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
@@ -42,6 +45,7 @@
     </div>
 </section>
 
+{{-- Final philosophy strip highlighting service approach. --}}
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
     <div class="rounded-[2.5rem] border border-amber-300/20 bg-[linear-gradient(135deg,rgba(120,53,15,0.18),rgba(15,23,42,0.88),rgba(2,6,23,1))] p-8 sm:p-12">
         <p class="text-sm uppercase tracking-[0.35em] text-amber-200/80">Our approach</p>

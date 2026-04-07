@@ -1,7 +1,9 @@
+{{-- View: resources\views\pages\admin\astrologers-management.blade.php --}}
 @extends('layouts.admin.master')
 
 @section('admin')
     <div class="container-xxl">
+        {{-- Page title and context for moderation queue. --}}
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
                 <h4 class="fs-18 fw-semibold m-0">Astrologer Applications</h4>
@@ -12,6 +14,7 @@
             <div class="alert alert-success">Action completed: {{ session('status') }}</div>
         @endif
 
+        {{-- Paginated application table with direct approve/reject actions. --}}
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -40,6 +43,7 @@
                                     <td>
                                         <span class="badge bg-secondary">{{ ucfirst($astrologer->verification_status) }}</span>
                                     </td>
+                                    {{-- Admin moderation actions per astrologer profile. --}}
                                     <td class="d-flex gap-2">
                                         <form method="POST" action="{{ route('admin.astrologers.approve', $astrologer) }}">
                                             @csrf

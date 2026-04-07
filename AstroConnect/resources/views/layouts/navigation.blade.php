@@ -1,3 +1,4 @@
+{{-- View: resources\views\layouts\navigation.blade.php --}}
 @php
     $astrologerProfile = Auth::check() ? Auth::user()->astrologer : null;
 

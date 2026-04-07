@@ -8,11 +8,17 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
+    /**
+     * Render admin dashboard landing page.
+     */
     public function AdminDashboard()
     {
         return view('pages.admin.dashboard');
     }
 
+    /**
+     * List non-admin users and unapproved astrologer accounts.
+     */
     public function usersIndex()
     {
         $users = User::with('astrologer')

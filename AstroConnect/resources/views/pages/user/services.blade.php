@@ -1,14 +1,17 @@
+{{-- View: resources\views\pages\user\services.blade.php --}}
 @extends('layouts.user.master')
 
 @section('title', 'AstroConnect | Services')
 
 @section('content')
+{{-- Services hero describing available guidance formats. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <p class="text-sm uppercase tracking-[0.35em] text-amber-200/70">Services</p>
     <h1 class="mt-4 max-w-4xl text-5xl text-white sm:text-6xl [font-family:'Cormorant_Garamond',serif]">Guidance formats designed for different questions, seasons, and life transitions.</h1>
     <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Choose from focused readings, relationship insights, and horoscope guidance shaped around the way people actually seek clarity.</p>
 </section>
 
+{{-- Service cards listing the six core offering types. --}}
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">

@@ -1,8 +1,10 @@
+{{-- View: resources\views\pages\user\astrologers-list.blade.php --}}
 @extends('layouts.user.master')
 
 @section('title', 'AstroConnect | Astrologers')
 
 @section('content')
+{{-- Directory hero with summary counters for available astrologers. --}}
 <section class="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
     <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
@@ -27,6 +29,7 @@
 </section>
 
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    {{-- Astrologer profile cards for discovery and navigation to detail pages. --}}
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         @forelse ($astrologers as $astrologer)
             <article class="rounded-[2rem] border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-slate-950/30">
@@ -66,6 +69,7 @@
         @endforelse
     </div>
 
+    {{-- Pagination controls for long result sets. --}}
     <div class="mt-10 [&_nav]:flex [&_nav]:justify-center [&_nav]:text-slate-300 [&_span]:border-white/10 [&_span]:bg-white/5 [&_span]:text-slate-300 [&_a]:border-white/10 [&_a]:bg-white/5 [&_a]:text-slate-200 [&_a:hover]:bg-white/10">
         {{ $astrologers->links() }}
     </div>

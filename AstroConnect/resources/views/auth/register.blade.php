@@ -1,3 +1,4 @@
+{{-- View: resources\views\auth\register.blade.php --}}
 <x-guest-layout>
 
 <section class="flex min-h-[calc(100vh-5rem)] items-center justify-center px-4 py-16 sm:px-6">

@@ -3,7 +3,9 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+// Password change flow from profile settings.
 test('password can be updated', function () {
+    /** @var \Tests\TestCase $this */
     $user = User::factory()->create();
 
     $response = $this
@@ -23,6 +25,7 @@ test('password can be updated', function () {
 });
 
 test('correct password must be provided to update password', function () {
+    /** @var \Tests\TestCase $this */
     $user = User::factory()->create();
 
     $response = $this

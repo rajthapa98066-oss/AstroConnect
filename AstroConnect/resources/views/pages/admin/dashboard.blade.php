@@ -1,6 +1,8 @@
+{{-- View: resources\views\pages\admin\dashboard.blade.php --}}
 @extends('layouts.admin.master')
 @section('admin')
     @php
+        // Quick dashboard counters used by the first KPI cards.
         $adminCount = \App\Models\User::where('role', 'admin')->count();
         $astrologerCount = \App\Models\Astrologer::count();
     @endphp
@@ -13,6 +15,7 @@
             </div>
         </div>
 
+        {{-- Top KPI cards for platform admin overview. --}}
         <div class="row g-3 mb-3">
             <div class="col-md-6 col-xl-3">
                 <div class="card">
@@ -43,7 +46,7 @@
             </div>
         </div>
 
-        <!-- start row -->
+        {{-- Analytics widget row sourced from dashboard theme sample metrics. --}}
         <div class="row">
             <div class="col-md-12 col-xl-12">
                 <div class="row g-3">
@@ -257,8 +260,9 @@
                 </div>
             </div>
         </div>
-        <!-- End Monthly Sales -->
+        {{-- Monthly sales and source distribution widgets. --}}
 
+        {{-- Audience timing and most-visited-pages tables. --}}
         <div class="row">
             <div class="col-md-6 col-xl-6">
                 <div class="card">

@@ -1,3 +1,4 @@
+{{-- View: resources\views\layouts\partials\navbar.blade.php --}}
 @php
     $astrologerProfile = Auth::check() ? Auth::user()->astrologer : null;
 @endphp

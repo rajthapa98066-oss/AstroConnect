@@ -1,3 +1,4 @@
+{{-- View: resources\views\pages\admin\users-management.blade.php --}}
 @extends('layouts.admin.master')
 
 @section('admin')
