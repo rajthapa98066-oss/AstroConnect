@@ -75,6 +75,30 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * True when this user owns an approved astrologer profile.
+     */
+    public function hasApprovedAstrologerProfile(): bool
+    {
+        return $this->astrologer?->verification_status === 'approved';
+    }
+
+    /**
+     * True when account role is a regular user account.
+     */
+    public function isStandardUser(): bool
+    {
+        return $this->role === 'user';
+    }
+
+    /**
+     * Whether the account is allowed to use user-side booking/review flows.
+     */
+    public function canAccessUserPanel(): bool
+    {
+        return $this->isStandardUser() && ! $this->hasApprovedAstrologerProfile();
+    }
+
+    /**
      * Resolve post-login redirect path based on role and approval status.
      */
     public function redirectPath(): string
@@ -83,7 +107,7 @@ class User extends Authenticatable implements MustVerifyEmail
             return route('admin.dashboard', absolute: false);
         }
 
-        if ($this->astrologer && $this->astrologer->verification_status === 'approved' && Route::has('astrologer.dashboard')) {
+        if ($this->hasApprovedAstrologerProfile() && Route::has('astrologer.dashboard')) {
             return route('astrologer.dashboard', absolute: false);
         }
 

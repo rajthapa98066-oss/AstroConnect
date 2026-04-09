@@ -44,6 +44,14 @@
                         <span class="text-base font-semibold text-white">No reviews yet</span>
                     @endif
                 </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
+                    Session Ratings<br>
+                    @if ($astrologer->rated_sessions_count > 0 && $astrologer->appointments_avg_rating)
+                        <span class="text-base font-semibold text-white">{{ number_format((float) $astrologer->appointments_avg_rating, 1) }}/5 from {{ $astrologer->rated_sessions_count }} sessions</span>
+                    @else
+                        <span class="text-base font-semibold text-white">No session ratings yet</span>
+                    @endif
+                </div>
             </div>
         </aside>
 
@@ -142,39 +150,48 @@
 
                 @auth
                     @if (auth()->user()->role === 'user')
-                        <div class="mt-8 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-5">
-                            <p class="text-sm uppercase tracking-[0.25em] text-amber-200/70">Leave a review</p>
-                            <p class="mt-2 text-sm text-slate-200">Share your experience after signing in as a user.</p>
+                        @if ($hasCompletedSession)
+                            <div class="mt-8 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-5">
+                                <p class="text-sm uppercase tracking-[0.25em] text-amber-200/70">Leave a review</p>
+                                <p class="mt-2 text-sm text-slate-200">You can review this astrologer because you have completed at least one session.</p>
 
-                            <form method="POST" action="{{ route('reviews.store', $astrologer) }}" class="mt-5 space-y-4">
-                                @csrf
+                                <form method="POST" action="{{ route('reviews.store', $astrologer) }}" class="mt-5 space-y-4">
+                                    @csrf
+                                    <input type="hidden" name="appointment_id" value="{{ $reviewAppointmentId }}">
+                                    <input type="hidden" name="redirect_to" value="profile">
 
-                                <div>
-                                    <label for="rating" class="text-xs uppercase tracking-[0.18em] text-slate-400">Rating</label>
-                                    <select id="rating" name="rating" class="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/30" required>
-                                        <option value="" disabled {{ old('rating', $myReview?->rating ?? '') === '' ? 'selected' : '' }}>Select rating</option>
-                                        @for ($rating = 5; $rating >= 1; $rating--)
-                                            <option value="{{ $rating }}" @selected((string) old('rating', $myReview?->rating ?? '') === (string) $rating)>{{ $rating }}/5</option>
-                                        @endfor
-                                    </select>
-                                    @error('rating')
-                                        <p class="mt-2 text-sm text-rose-300">{{ $message }}</p>
-                                    @enderror
-                                </div>
+                                    <div>
+                                        <label for="rating" class="text-xs uppercase tracking-[0.18em] text-slate-400">Rating</label>
+                                        <select id="rating" name="rating" class="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/30" required>
+                                            <option value="" disabled {{ old('rating', $myReview?->rating ?? '') === '' ? 'selected' : '' }} class="bg-slate-100 text-slate-900">Select rating</option>
+                                            @for ($rating = 5; $rating >= 1; $rating--)
+                                                <option value="{{ $rating }}" @selected((string) old('rating', $myReview?->rating ?? '') === (string) $rating) class="bg-slate-100 text-slate-900">{{ $rating }}/5</option>
+                                            @endfor
+                                        </select>
+                                        @error('rating')
+                                            <p class="mt-2 text-sm text-rose-300">{{ $message }}</p>
+                                        @enderror
+                                    </div>
 
-                                <div>
-                                    <label for="comment" class="text-xs uppercase tracking-[0.18em] text-slate-400">Review</label>
-                                    <textarea id="comment" name="comment" rows="4" class="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/30" required>{{ old('comment', $myReview?->comment ?? '') }}</textarea>
-                                    @error('comment')
-                                        <p class="mt-2 text-sm text-rose-300">{{ $message }}</p>
-                                    @enderror
-                                </div>
+                                    <div>
+                                        <label for="comment" class="text-xs uppercase tracking-[0.18em] text-slate-400">Review</label>
+                                        <textarea id="comment" name="comment" rows="4" class="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/30" required>{{ old('comment', $myReview?->comment ?? '') }}</textarea>
+                                        @error('comment')
+                                            <p class="mt-2 text-sm text-rose-300">{{ $message }}</p>
+                                        @enderror
+                                    </div>
 
-                                <button type="submit" class="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 transition hover:bg-amber-200">
-                                    {{ $myReview ? 'Update Review' : 'Submit Review' }}
-                                </button>
-                            </form>
-                        </div>
+                                    <button type="submit" class="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 transition hover:bg-amber-200">
+                                        {{ $myReview ? 'Update Review' : 'Submit Review' }}
+                                    </button>
+                                </form>
+                            </div>
+                        @else
+                            <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+                                <p class="text-sm uppercase tracking-[0.25em] text-amber-200/70">Review after session</p>
+                                <p class="mt-2 text-sm leading-7 text-slate-300">You can submit a review only after at least one appointment is marked completed.</p>
+                            </div>
+                        @endif
                     @endif
                 @else
                     <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">

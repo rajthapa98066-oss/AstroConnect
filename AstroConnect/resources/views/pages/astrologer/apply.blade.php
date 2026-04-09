@@ -72,9 +72,9 @@
                 <select id="availability_status" name="availability_status" required
                     class="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none transition focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/30">
                     @php($availability = old('availability_status', $astrologer?->availability_status ?? 'available'))
-                    <option value="available" @selected($availability === 'available')>Available</option>
-                    <option value="busy" @selected($availability === 'busy')>Busy</option>
-                    <option value="unavailable" @selected($availability === 'unavailable')>Unavailable</option>
+                    <option value="available" @selected($availability === 'available') class="bg-slate-100 text-slate-900">Available</option>
+                    <option value="busy" @selected($availability === 'busy') class="bg-slate-100 text-slate-900">Busy</option>
+                    <option value="unavailable" @selected($availability === 'unavailable') class="bg-slate-100 text-slate-900">Unavailable</option>
                 </select>
             </div>
 

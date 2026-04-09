@@ -18,6 +18,8 @@ class Appointment extends Model
         'topic',
         'message',
         'status',
+        'rating',
+        'rated_at',
     ];
 
     /**
@@ -28,6 +30,8 @@ class Appointment extends Model
         return [
             'scheduled_at' => 'datetime',
             'duration_minutes' => 'integer',
+            'rating' => 'integer',
+            'rated_at' => 'datetime',
         ];
     }
 

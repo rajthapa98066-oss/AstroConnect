@@ -40,6 +40,10 @@ class AstrologerController extends Controller
             ->with('user')
             ->withCount('reviews')
             ->withAvg('reviews', 'rating')
+            ->withCount(['appointments as rated_sessions_count' => function ($query) {
+                $query->whereNotNull('rating');
+            }])
+            ->withAvg('appointments', 'rating')
             ->findOrFail($astrologer->id);
 
         $reviews = Review::query()
@@ -49,18 +53,32 @@ class AstrologerController extends Controller
             ->get();
 
         $myReview = null;
+        $reviewAppointmentId = null;
+        $hasCompletedSession = false;
 
         if ($request->user()?->role === 'user') {
             $myReview = Review::query()
                 ->where('astrologer_id', $astrologer->id)
                 ->where('user_id', $request->user()->id)
                 ->first();
+
+            $completedAppointment = Appointment::query()
+                ->where('astrologer_id', $astrologer->id)
+                ->where('user_id', $request->user()->id)
+                ->where('status', 'completed')
+                ->latest('scheduled_at')
+                ->first();
+
+            $hasCompletedSession = $completedAppointment !== null;
+            $reviewAppointmentId = $completedAppointment?->id;
         }
 
         return view('pages.user.astrologer-profile', [
             'astrologer' => $astrologer,
             'reviews' => $reviews,
             'myReview' => $myReview,
+            'hasCompletedSession' => $hasCompletedSession,
+            'reviewAppointmentId' => $reviewAppointmentId,
         ]);
     }
 
@@ -103,8 +121,17 @@ class AstrologerController extends Controller
      */
     public function profile(Request $request): View
     {
+        $astrologer = Astrologer::query()
+            ->withCount('reviews')
+            ->withAvg('reviews', 'rating')
+            ->withCount(['appointments as rated_sessions_count' => function ($query) {
+                $query->whereNotNull('rating');
+            }])
+            ->withAvg('appointments', 'rating')
+            ->findOrFail($request->user()->astrologer->id);
+
         return view('pages.astrologer.profile', [
-            'astrologer' => $request->user()->astrologer,
+            'astrologer' => $astrologer,
         ]);
     }
 

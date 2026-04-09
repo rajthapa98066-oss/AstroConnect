@@ -48,7 +48,7 @@
                                     @method('PATCH')
                                     <select name="status" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs uppercase tracking-[0.16em] text-slate-100 outline-none">
                                         @foreach (['pending', 'confirmed', 'rejected', 'completed', 'cancelled'] as $status)
-                                            <option value="{{ $status }}" @selected($appointment->status === $status)>{{ $status }}</option>
+                                            <option value="{{ $status }}" @selected($appointment->status === $status) class="bg-slate-100 text-slate-900">{{ $status }}</option>
                                         @endforeach
                                     </select>
                                     <button type="submit" class="rounded-full bg-amber-300 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-950">Save</button>

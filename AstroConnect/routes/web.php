@@ -15,25 +15,29 @@ use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\EnsureUserIsAstrologer;
 use App\Http\Middleware\IsUser;
+use App\Http\Middleware\RedirectApprovedAstrologerFromUserSide;
 
-Route::view('/', 'home')->name('home');
-Route::view('/about', 'pages.user.about')->name('about');
-Route::view('/services', 'pages.user.services')->name('services');
-Route::view('/horoscope', 'pages.user.horoscope')->name('horoscope');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');
-Route::view('/contact', 'pages.user.contact')->name('contact');
+Route::middleware([RedirectApprovedAstrologerFromUserSide::class])->group(function () {
+    Route::view('/', 'home')->name('home');
+    Route::view('/about', 'pages.user.about')->name('about');
+    Route::view('/services', 'pages.user.services')->name('services');
+    Route::view('/horoscope', 'pages.user.horoscope')->name('horoscope');
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');
+    Route::view('/contact', 'pages.user.contact')->name('contact');
 
-Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
-Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
+    Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
+    Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
+});
 
-Route::middleware(['auth', IsUser::class])->group(function () {
+Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class, IsUser::class])->group(function () {
     // User-specific routes
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
     Route::post('/astrologers/{astrologer}/book', [AppointmentController::class, 'store'])->name('appointments.store');
+    Route::patch('/appointments/{appointment}/rating', [AppointmentController::class, 'rate'])->name('appointments.rate');
     Route::post('/astrologers/{astrologer}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     Route::get('/my-appointments', [AppointmentController::class, 'userIndex'])->name('appointments.user.index');
 });
@@ -53,7 +57,7 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::delete('/blogs/{blog}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.destroy');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

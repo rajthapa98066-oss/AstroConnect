@@ -23,6 +23,36 @@
                     <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Experience</p>
                     <p class="mt-2 text-2xl text-amber-200 [font-family:'Cormorant_Garamond',serif]">{{ $astrologer->experience_years }} Years</p>
                 </div>
+                <div class="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+                    <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Session Ratings</p>
+                    @if ($astrologer->rated_sessions_count > 0 && $astrologer->appointments_avg_rating)
+                        @php($sessionRating = (float) $astrologer->appointments_avg_rating)
+                        @php($sessionStars = (int) round($sessionRating))
+                        <div class="mt-2 flex items-center gap-1" aria-label="Session rating {{ number_format($sessionRating, 1) }} out of 5">
+                            @for ($star = 1; $star <= 5; $star++)
+                                <span class="text-2xl leading-none {{ $star <= $sessionStars ? 'text-amber-300' : 'text-slate-600' }}">&#9733;</span>
+                            @endfor
+                        </div>
+                        <p class="mt-2 text-xs uppercase tracking-[0.2em] text-slate-400">From {{ $astrologer->rated_sessions_count }} sessions</p>
+                    @else
+                        <p class="mt-2 text-xl text-slate-300 [font-family:'Cormorant_Garamond',serif]">No ratings yet</p>
+                    @endif
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+                    <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Profile Reviews</p>
+                    @if ($astrologer->reviews_count > 0 && $astrologer->reviews_avg_rating)
+                        @php($reviewRating = (float) $astrologer->reviews_avg_rating)
+                        @php($reviewStars = (int) round($reviewRating))
+                        <div class="mt-2 flex items-center gap-1" aria-label="Profile review rating {{ number_format($reviewRating, 1) }} out of 5">
+                            @for ($star = 1; $star <= 5; $star++)
+                                <span class="text-2xl leading-none {{ $star <= $reviewStars ? 'text-amber-300' : 'text-slate-600' }}">&#9733;</span>
+                            @endfor
+                        </div>
+                        <p class="mt-2 text-xs uppercase tracking-[0.2em] text-slate-400">From {{ $astrologer->reviews_count }} users</p>
+                    @else
+                        <p class="mt-2 text-xl text-slate-300 [font-family:'Cormorant_Garamond',serif]">No reviews yet</p>
+                    @endif
+                </div>
             </div>
             <p class="mt-6 text-sm leading-7 text-slate-300">A clear profile improves trust and helps users choose the right astrologer faster.</p>
         </div>
@@ -75,9 +105,9 @@
                 <select id="availability_status" name="availability_status" required
                     class="mt-2 block w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-100 outline-none transition focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/30">
                     @php($availability = old('availability_status', $astrologer->availability_status))
-                    <option value="available" @selected($availability === 'available')>Available</option>
-                    <option value="busy" @selected($availability === 'busy')>Busy</option>
-                    <option value="unavailable" @selected($availability === 'unavailable')>Unavailable</option>
+                    <option value="available" @selected($availability === 'available') class="bg-slate-100 text-slate-900">Available</option>
+                    <option value="busy" @selected($availability === 'busy') class="bg-slate-100 text-slate-900">Busy</option>
+                    <option value="unavailable" @selected($availability === 'unavailable') class="bg-slate-100 text-slate-900">Unavailable</option>
                 </select>
             </div>
 

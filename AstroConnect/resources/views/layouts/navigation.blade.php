@@ -1,6 +1,7 @@
 {{-- View: resources\views\layouts\navigation.blade.php --}}
 @php
     $astrologerProfile = Auth::check() ? Auth::user()->astrologer : null;
+    $isApprovedAstrologer = $astrologerProfile?->verification_status === 'approved';
 
     $navigationLinks = [
         ['label' => 'Home', 'href' => url('/'), 'active' => request()->is('/')],
@@ -33,15 +34,11 @@
 
         <div class="hidden items-center gap-3 lg:flex">
             @auth
-                <a href="{{ route('dashboard') }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:text-white">
-                    Dashboard
+                <a href="{{ $isApprovedAstrologer ? route('astrologer.dashboard') : route('dashboard') }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:text-white">
+                    {{ $isApprovedAstrologer ? 'Astrologer Panel' : 'Dashboard' }}
                 </a>
 
-                @if ($astrologerProfile?->verification_status === 'approved')
-                    <a href="{{ route('astrologer.dashboard') }}" class="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
-                        Astrologer Panel
-                    </a>
-                @else
+                @if (! $isApprovedAstrologer)
                     <a href="{{ route('astrologer.apply') }}" class="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
                         Apply as Astrologer
                     </a>
@@ -56,7 +53,7 @@
                     </button>
 
                     <div x-show="menu" x-transition @click.outside="menu = false" class="absolute right-0 mt-3 w-52 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/95 shadow-2xl shadow-slate-950/60">
-                        @if (Auth::user()->role === 'user')
+                        @if (Auth::user()->role === 'user' && ! $isApprovedAstrologer)
                             <a href="{{ route('appointments.user.index') }}" class="block px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5 hover:text-white">
                                 My Appointments
                             </a>
@@ -105,19 +102,15 @@
 
             <div class="mt-3 grid gap-2 border-t border-white/10 pt-3">
                 @auth
-                    <a href="{{ route('dashboard') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
-                        Dashboard
+                    <a href="{{ $isApprovedAstrologer ? route('astrologer.dashboard') : route('dashboard') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                        {{ $isApprovedAstrologer ? 'Astrologer Panel' : 'Dashboard' }}
                     </a>
-                    @if ($astrologerProfile?->verification_status === 'approved')
-                        <a href="{{ route('astrologer.dashboard') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
-                            Astrologer Panel
-                        </a>
-                    @else
+                    @if (! $isApprovedAstrologer)
                         <a href="{{ route('astrologer.apply') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
                             Apply as Astrologer
                         </a>
                     @endif
-                    @if (Auth::user()->role === 'user')
+                    @if (Auth::user()->role === 'user' && ! $isApprovedAstrologer)
                         <a href="{{ route('appointments.user.index') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
                             My Appointments
                         </a>

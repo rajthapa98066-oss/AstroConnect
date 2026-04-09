@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Allow user-side routes only for standard user accounts.
+ * Redirect approved astrologers away from user-side pages.
  */
-class IsUser
+class RedirectApprovedAstrologerFromUserSide
 {
     /**
      * Handle an incoming request.
@@ -20,12 +20,8 @@ class IsUser
     {
         $user = $request->user();
 
-        if (! $user) {
-            abort(403, 'Unauthorized');
-        }
-
-        if (! $user->isStandardUser()) {
-            abort(403, 'Unauthorized');
+        if ($user?->hasApprovedAstrologerProfile()) {
+            return redirect()->route('astrologer.dashboard');
         }
 
         return $next($request);
