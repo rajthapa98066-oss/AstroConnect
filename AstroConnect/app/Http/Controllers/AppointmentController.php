@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Astrologer;
 use App\Models\Review;
+use App\Notifications\AppointmentBookedAstrologerNotification;
+use App\Notifications\AppointmentBookedUserNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -26,14 +28,20 @@ class AppointmentController extends Controller
             'message' => ['nullable', 'string', 'max:2000'],
         ]);
 
-        Appointment::create([
+        $appointment = Appointment::create([
             'user_id' => $request->user()->id,
             'astrologer_id' => $astrologer->id,
             'scheduled_at' => $validated['scheduled_at'],
             'topic' => $validated['topic'],
             'message' => $validated['message'] ?? null,
             'status' => 'pending',
-        ]);
+        ])->loadMissing(['user', 'astrologer.user']);
+
+        $request->user()->notify(new AppointmentBookedUserNotification($appointment));
+
+        if ($astrologer->user) {
+            $astrologer->user->notify(new AppointmentBookedAstrologerNotification($appointment));
+        }
 
         return redirect()
             ->route('astrologers.show', $astrologer)

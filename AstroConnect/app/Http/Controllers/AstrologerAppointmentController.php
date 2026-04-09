@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Notifications\AppointmentStatusUpdatedNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -42,6 +43,11 @@ class AstrologerAppointmentController extends Controller
         $appointment->update([
             'status' => $validated['status'],
         ]);
+
+        if ($appointment->wasChanged('status') && $appointment->user) {
+            $appointment->loadMissing('astrologer.user');
+            $appointment->user->notify(new AppointmentStatusUpdatedNotification($appointment));
+        }
 
         return redirect()
             ->route('astrologer.appointments')

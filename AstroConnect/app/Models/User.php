@@ -91,6 +91,14 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * True when the account is an admin user.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
      * Whether the account is allowed to use user-side booking/review flows.
      */
     public function canAccessUserPanel(): bool
@@ -99,15 +107,32 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Whether this user can submit a report for an astrologer.
+     */
+    public function canReportAstrologer(): bool
+    {
+        return $this->canAccessUserPanel();
+    }
+
+    /**
+     * True when the approved astrologer profile is still allowed to access astrologer tools.
+     */
+    public function canAccessAstrologerPanel(): bool
+    {
+        return $this->hasApprovedAstrologerProfile()
+            && ($this->astrologer?->moderation_status ?? 'active') !== 'disabled';
+    }
+
+    /**
      * Resolve post-login redirect path based on role and approval status.
      */
     public function redirectPath(): string
     {
-        if ($this->role === 'admin' && Route::has('admin.dashboard')) {
+        if ($this->isAdmin() && Route::has('admin.dashboard')) {
             return route('admin.dashboard', absolute: false);
         }
 
-        if ($this->hasApprovedAstrologerProfile() && Route::has('astrologer.dashboard')) {
+        if ($this->canAccessAstrologerPanel() && Route::has('astrologer.dashboard')) {
             return route('astrologer.dashboard', absolute: false);
         }
 

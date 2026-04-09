@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Astrologer;
+use App\Models\User;
+use App\Notifications\AstrologerApplicationSubmittedAdminNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -15,6 +17,8 @@ class AstrologerApplicationController extends Controller
      */
     public function create(Request $request): View|RedirectResponse
     {
+        abort_unless($request->user()?->canAccessUserPanel(), 403);
+
         $astrologer = $request->user()->astrologer;
 
         if ($astrologer?->verification_status === 'approved') {
@@ -31,6 +35,8 @@ class AstrologerApplicationController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        abort_unless($request->user()?->canAccessUserPanel(), 403);
+
         $validated = $request->validate([
             'specialization' => ['required', 'string', 'max:255'],
             'experience_years' => ['required', 'integer', 'min:0', 'max:80'],
@@ -50,10 +56,19 @@ class AstrologerApplicationController extends Controller
 
         $validated['verification_status'] = 'pending';
 
-        Astrologer::updateOrCreate(
+        $astrologer = Astrologer::updateOrCreate(
             ['user_id' => $request->user()->id],
             $validated
         );
+
+        $astrologer->loadMissing('user');
+
+        User::query()
+            ->where('role', 'admin')
+            ->get()
+            ->each(function (User $admin) use ($astrologer): void {
+                $admin->notify(new AstrologerApplicationSubmittedAdminNotification($astrologer));
+            });
 
         return Redirect::route('astrologer.apply')->with('status', 'application-submitted');
     }

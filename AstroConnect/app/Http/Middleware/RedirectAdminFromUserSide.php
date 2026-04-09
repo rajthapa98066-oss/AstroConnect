@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Restrict route access to users with admin role.
+ * Redirect admin users away from user-side pages.
  */
-class IsAdmin
+class RedirectAdminFromUserSide
 {
     /**
      * Handle an incoming request.
@@ -18,8 +18,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (! $request->user()?->isAdmin()) {
-            abort(403, 'Unauthorized');
+        $user = $request->user();
+
+        if ($user?->isAdmin()) {
+            return redirect()->route('admin.dashboard');
         }
 
         return $next($request);

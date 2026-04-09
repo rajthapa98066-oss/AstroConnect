@@ -54,7 +54,7 @@
                 <ul class="mt-6 space-y-5 text-[15px] text-slate-300">
                     <li class="flex gap-3">
                         <span class="mt-1 text-xl text-amber-300">⌂</span>
-                        <span>Gotham Hall, 1356 Broadway square, NY 10018, California, USA</span>
+                        <span>Pokhara Nepal</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="mt-1 text-xl text-amber-300">✉</span>
@@ -62,7 +62,7 @@
                     </li>
                     <li class="flex gap-3">
                         <span class="mt-1 text-xl text-amber-300">☎</span>
-                        <span>+ (91) 1800-124-105<br>+ (91) 1800-326-324</span>
+                        <span>+ (977) 1800-124-105<br>+ (977) 1800-326-324</span>
                     </li>
                 </ul>
             </div>
@@ -71,7 +71,7 @@
 
     <div class="border-t border-white/10 bg-slate-950/95">
         <div class="mx-auto max-w-7xl px-4 py-4 text-center text-sm text-slate-400 sm:px-6 lg:px-8">
-            Copyright &copy; {{ date('Y') }} AstroConnect. All Right Reserved.
+            Copyright &copy; {{ date('          Y') }} AstroConnect. All Right Reserved.
         </div>
     </div>
 </footer>

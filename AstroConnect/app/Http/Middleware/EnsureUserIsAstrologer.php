@@ -20,7 +20,7 @@ class EnsureUserIsAstrologer
     {
         $astrologer = $request->user()?->astrologer;
 
-        if (! $astrologer || $astrologer->verification_status !== 'approved') {
+        if (! $astrologer || ! $request->user()?->canAccessAstrologerPanel()) {
             abort(403, 'Astrologer access is restricted to approved astrologers.');
         }
 

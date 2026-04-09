@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\User;
+use App\Notifications\BlogSubmittedForReviewAdminNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -47,7 +49,7 @@ class AstrologerBlogController extends Controller
         $validated = $this->validateBlog($request);
         $validated['slug'] = $this->resolveUniqueSlug($validated['slug'] ?? null, $validated['title']);
 
-        Blog::create([
+        $blog = Blog::create([
             'astrologer_id' => $request->user()->astrologer->id,
             'title' => $validated['title'],
             'slug' => $validated['slug'],
@@ -58,7 +60,14 @@ class AstrologerBlogController extends Controller
             'published_at' => null,
             'review_status' => 'pending',
             'reviewed_by' => null,
-        ]);
+        ])->loadMissing('astrologer.user');
+
+        User::query()
+            ->where('role', 'admin')
+            ->get()
+            ->each(function (User $admin) use ($blog): void {
+                $admin->notify(new BlogSubmittedForReviewAdminNotification($blog));
+            });
 
         return redirect()
             ->route('astrologer.blogs.index')
@@ -101,6 +110,15 @@ class AstrologerBlogController extends Controller
             'review_status' => 'pending',
             'reviewed_by' => null,
         ]);
+
+        $blog->loadMissing('astrologer.user');
+
+        User::query()
+            ->where('role', 'admin')
+            ->get()
+            ->each(function (User $admin) use ($blog): void {
+                $admin->notify(new BlogSubmittedForReviewAdminNotification($blog));
+            });
 
         return redirect()
             ->route('astrologer.blogs.index')

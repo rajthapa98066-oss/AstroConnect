@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Astrologer;
+use App\Notifications\AstrologerApplicationReviewedNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -28,7 +29,16 @@ class AdminAstrologerController extends Controller
      */
     public function approve(Astrologer $astrologer): RedirectResponse
     {
-        $astrologer->update(['verification_status' => 'approved']);
+        $astrologer->update([
+            'verification_status' => 'approved',
+            'moderation_status' => 'active',
+        ]);
+
+        $astrologer->loadMissing('user');
+
+        if ($astrologer->user) {
+            $astrologer->user->notify(new AstrologerApplicationReviewedNotification($astrologer));
+        }
 
         return Redirect::route('admin.astrologers.index')->with('status', 'astrologer-approved');
     }
@@ -39,6 +49,12 @@ class AdminAstrologerController extends Controller
     public function reject(Astrologer $astrologer): RedirectResponse
     {
         $astrologer->update(['verification_status' => 'rejected']);
+
+        $astrologer->loadMissing('user');
+
+        if ($astrologer->user) {
+            $astrologer->user->notify(new AstrologerApplicationReviewedNotification($astrologer));
+        }
 
         return Redirect::route('admin.astrologers.index')->with('status', 'astrologer-rejected');
     }

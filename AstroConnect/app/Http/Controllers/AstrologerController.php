@@ -21,6 +21,9 @@ class AstrologerController extends Controller
     {
         $astrologers = Astrologer::with('user')
             ->where('verification_status', 'approved')
+            ->where(function ($query) {
+                $query->whereNull('moderation_status')->orWhere('moderation_status', '!=', 'disabled');
+            })
             ->latest()
             ->paginate(12);
 
@@ -34,7 +37,7 @@ class AstrologerController extends Controller
      */
     public function show(Request $request, Astrologer $astrologer): View
     {
-        abort_if($astrologer->verification_status !== 'approved', 404);
+        abort_if($astrologer->verification_status !== 'approved' || $astrologer->isDisabled(), 404);
 
         $astrologer = Astrologer::query()
             ->with('user')
@@ -87,6 +90,8 @@ class AstrologerController extends Controller
      */
     public function dashboard(Request $request): View
     {
+        abort_unless($request->user()?->canAccessAstrologerPanel(), 403);
+
         $astrologer = $request->user()->astrologer;
 
         $appointmentCounts = Appointment::query()
@@ -121,6 +126,8 @@ class AstrologerController extends Controller
      */
     public function profile(Request $request): View
     {
+        abort_unless($request->user()?->canAccessAstrologerPanel(), 403);
+
         $astrologer = Astrologer::query()
             ->withCount('reviews')
             ->withAvg('reviews', 'rating')
@@ -140,6 +147,8 @@ class AstrologerController extends Controller
      */
     public function update(Request $request): RedirectResponse
     {
+        abort_unless($request->user()?->canAccessAstrologerPanel(), 403);
+
         $astrologer = $request->user()->astrologer;
 
         $validated = $request->validate([

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Review;
+use App\Models\AstrologerReport;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -24,6 +25,7 @@ class Astrologer extends Model
         'availability_status',
         'profile_photo',
         'verification_status',
+        'moderation_status',
     ];
 
     /**
@@ -67,5 +69,21 @@ class Astrologer extends Model
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);
+    }
+
+    /**
+     * Reports filed against this astrologer.
+     */
+    public function reports(): HasMany
+    {
+        return $this->hasMany(AstrologerReport::class);
+    }
+
+    /**
+     * Whether this account has been disabled by admin moderation.
+     */
+    public function isDisabled(): bool
+    {
+        return ($this->moderation_status ?? 'active') === 'disabled';
     }
 }
