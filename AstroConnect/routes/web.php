@@ -7,17 +7,21 @@ use App\Http\Controllers\AstrologerApplicationController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AstrologerAppointmentController;
 use App\Http\Controllers\AstrologerBlogController;
+use App\Http\Controllers\AstrologerReportController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminAstrologerController;
 use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminReportController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\EnsureUserIsAstrologer;
 use App\Http\Middleware\IsUser;
 use App\Http\Middleware\RedirectApprovedAstrologerFromUserSide;
+use App\Http\Middleware\RedirectAdminFromUserSide;
+use Illuminate\Http\Request;
 
-Route::middleware([RedirectApprovedAstrologerFromUserSide::class])->group(function () {
+Route::middleware([RedirectApprovedAstrologerFromUserSide::class, RedirectAdminFromUserSide::class])->group(function () {
     Route::view('/', 'home')->name('home');
     Route::view('/about', 'pages.user.about')->name('about');
     Route::view('/services', 'pages.user.services')->name('services');
@@ -30,15 +34,20 @@ Route::middleware([RedirectApprovedAstrologerFromUserSide::class])->group(functi
     Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
 });
 
-Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class, IsUser::class])->group(function () {
+Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class, RedirectAdminFromUserSide::class, IsUser::class])->group(function () {
     // User-specific routes
-    Route::get('/dashboard', function () {
+    Route::get('/dashboard', function (Request $request) {
+        abort_unless($request->user()?->canAccessUserPanel(), 403);
+
         return view('dashboard');
     })->name('dashboard');
 
     Route::post('/astrologers/{astrologer}/book', [AppointmentController::class, 'store'])->name('appointments.store');
     Route::patch('/appointments/{appointment}/rating', [AppointmentController::class, 'rate'])->name('appointments.rate');
     Route::post('/astrologers/{astrologer}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::post('/astrologers/{astrologer}/reports', [AstrologerReportController::class, 'store'])
+        ->middleware('verified')
+        ->name('astrologer.reports.store');
     Route::get('/my-appointments', [AppointmentController::class, 'userIndex'])->name('appointments.user.index');
 });
 
@@ -55,9 +64,14 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::patch('/blogs/{blog}/approve', [AdminBlogController::class, 'approve'])->name('admin.blogs.approve');
     Route::patch('/blogs/{blog}/reject', [AdminBlogController::class, 'reject'])->name('admin.blogs.reject');
     Route::delete('/blogs/{blog}', [AdminBlogController::class, 'destroy'])->name('admin.blogs.destroy');
+
+    Route::get('/reports', [AdminReportController::class, 'index'])->name('admin.reports.index');
+    Route::patch('/reports/{report}/flag', [AdminReportController::class, 'flag'])->name('admin.reports.flag');
+    Route::patch('/reports/{report}/disable', [AdminReportController::class, 'disable'])->name('admin.reports.disable');
+    Route::delete('/reports/{report}/account', [AdminReportController::class, 'deleteAstrologer'])->name('admin.reports.delete-account');
 });
 
-Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class])->group(function () {
+Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class, RedirectAdminFromUserSide::class])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
