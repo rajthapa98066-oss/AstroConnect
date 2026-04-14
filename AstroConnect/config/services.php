@@ -41,4 +41,13 @@ return [
         'base_url' => env('KHALTI_BASE_URL'),
     ],
 
+    'api_ninjas' => [
+        'key' => env('API_NINJAS_KEY'),
+    ],
+
+    'free_astrology' => [
+        'key' => env('FREE_ASTROLOGY_API_KEY'),
+        'base_url' => env('FREE_ASTROLOGY_API_URL'),
+    ],
+
 ];
