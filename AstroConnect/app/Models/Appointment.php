@@ -50,4 +50,20 @@ class Appointment extends Model
     {
         return $this->belongsTo(Astrologer::class);
     }
+
+    /**
+     * Payment record for this appointment.
+     */
+    public function payment(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Payment::class);
+    }
+
+    /**
+     * Determine if the appointment has been paid successfully.
+     */
+    public function isPaid(): bool
+    {
+        return $this->payment && $this->payment->status === 'completed';
+    }
 }

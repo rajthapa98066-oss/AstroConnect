@@ -36,11 +36,11 @@ Route::middleware([RedirectApprovedAstrologerFromUserSide::class, RedirectAdminF
 
 Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class, RedirectAdminFromUserSide::class, IsUser::class])->group(function () {
     // User-specific routes
-    Route::get('/dashboard', function (Request $request) {
+    Route::get('/home', function (Request $request) {
         abort_unless($request->user()?->canAccessUserPanel(), 403);
 
-        return view('dashboard');
-    })->name('dashboard');
+        return view('home');
+    })->name('user.home');
 
     Route::post('/astrologers/{astrologer}/book', [AppointmentController::class, 'store'])->name('appointments.store');
     Route::patch('/appointments/{appointment}/rating', [AppointmentController::class, 'rate'])->name('appointments.rate');
@@ -49,6 +49,10 @@ Route::middleware(['auth', RedirectApprovedAstrologerFromUserSide::class, Redire
         ->middleware('verified')
         ->name('astrologer.reports.store');
     Route::get('/my-appointments', [AppointmentController::class, 'userIndex'])->name('appointments.user.index');
+
+    // Khalti Payment Routes
+    Route::post('/appointments/{appointment}/pay', [App\Http\Controllers\KhaltiController::class, 'initiate'])->name('khalti.initiate');
+    Route::get('/khalti/callback', [App\Http\Controllers\KhaltiController::class, 'callback'])->name('khalti.callback');
 });
 
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
@@ -101,4 +105,4 @@ Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () 
     Route::patch('/astrologers/{astrologer}/reject', [AdminAstrologerController::class, 'reject'])->name('admin.astrologers.reject');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

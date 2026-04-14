@@ -136,6 +136,6 @@ class User extends Authenticatable implements MustVerifyEmail
             return route('astrologer.dashboard', absolute: false);
         }
 
-        return route('dashboard', absolute: false);
+        return route('home', absolute: false);
     }
 }

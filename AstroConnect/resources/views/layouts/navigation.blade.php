@@ -35,8 +35,8 @@
 
         <div class="hidden items-center gap-3 lg:flex">
             @auth
-                <a href="{{ $isAdmin ? route('admin.dashboard') : ($isApprovedAstrologer ? route('astrologer.dashboard') : route('dashboard')) }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:text-white">
-                    {{ $isAdmin ? 'Admin Panel' : ($isApprovedAstrologer ? 'Astrologer Panel' : 'Dashboard') }}
+                <a href="{{ $isAdmin ? route('admin.dashboard') : ($isApprovedAstrologer ? route('astrologer.dashboard') : route('home')) }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:text-white">
+                    {{ $isAdmin ? 'Admin Panel' : ($isApprovedAstrologer ? 'Astrologer Panel' : 'Home') }}
                 </a>
 
                 @if (! $isApprovedAstrologer && ! $isAdmin)
@@ -103,8 +103,8 @@
 
             <div class="mt-3 grid gap-2 border-t border-white/10 pt-3">
                 @auth
-                    <a href="{{ $isAdmin ? route('admin.dashboard') : ($isApprovedAstrologer ? route('astrologer.dashboard') : route('dashboard')) }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
-                        {{ $isAdmin ? 'Admin Panel' : ($isApprovedAstrologer ? 'Astrologer Panel' : 'Dashboard') }}
+                    <a href="{{ $isAdmin ? route('admin.dashboard') : ($isApprovedAstrologer ? route('astrologer.dashboard') : route('home')) }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
+                        {{ $isAdmin ? 'Admin Panel' : ($isApprovedAstrologer ? 'Astrologer Panel' : 'Home') }}
                     </a>
                     @if (! $isApprovedAstrologer && ! $isAdmin)
                         <a href="{{ route('astrologer.apply') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">

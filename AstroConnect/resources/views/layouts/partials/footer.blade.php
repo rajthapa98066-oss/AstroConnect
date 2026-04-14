@@ -42,7 +42,7 @@
                     <li><a href="{{ url('/about') }}" class="transition hover:text-amber-300">About Us</a></li>
                     <li><a href="{{ url('/blog') }}" class="transition hover:text-amber-300">Blog</a></li>
                     <li><a href="{{ url('/astrologers') }}" class="transition hover:text-amber-300">Astrologers</a></li>
-                    <li><a href="{{ url('/dashboard') }}" class="transition hover:text-amber-300">Appointment</a></li>
+                    <li><a href="{{ route('appointments.user.index') }}" class="transition hover:text-amber-300">Appointment</a></li>
                     <li><a href="{{ url('/contact') }}" class="transition hover:text-amber-300">Contact Us</a></li>
                 </ul>
             </div>
