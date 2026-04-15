@@ -14,12 +14,15 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminAstrologerController;
 use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminReportController;
+use App\Http\Controllers\ChatController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\EnsureUserIsAstrologer;
 use App\Http\Middleware\IsUser;
 use App\Http\Middleware\RedirectApprovedAstrologerFromUserSide;
 use App\Http\Middleware\RedirectAdminFromUserSide;
 use Illuminate\Http\Request;
+
+Route::middleware('auth')->post('/chat/messages', [ChatController::class, 'store'])->name('chat.messages.store');
 
 Route::middleware([RedirectApprovedAstrologerFromUserSide::class, RedirectAdminFromUserSide::class])->group(function () {
     Route::view('/', 'home')->name('home');
