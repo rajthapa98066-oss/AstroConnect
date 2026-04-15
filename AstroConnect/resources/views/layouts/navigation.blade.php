@@ -10,6 +10,7 @@
         ['label' => 'Services', 'href' => url('/services'), 'active' => request()->is('services')],
         ['label' => 'Astrologers', 'href' => url('/astrologers'), 'active' => request()->is('astrologers') || request()->is('astrologers/*')],
         ['label' => 'Horoscope', 'href' => url('/horoscope'), 'active' => request()->is('horoscope')],
+        ['label' => 'Calendar', 'href' => url('/calendar'), 'active' => request()->is('calendar') || request()->is('calendar/*')],
         ['label' => 'Blog', 'href' => url('/blog'), 'active' => request()->is('blog')],
         ['label' => 'Contact', 'href' => url('/contact'), 'active' => request()->is('contact')],
     ];

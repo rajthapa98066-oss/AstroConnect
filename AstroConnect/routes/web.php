@@ -26,7 +26,10 @@ Route::middleware([RedirectApprovedAstrologerFromUserSide::class, RedirectAdminF
     Route::view('/about', 'pages.user.about')->name('about');
     Route::view('/services', 'pages.user.services')->name('services');
     Route::get('/horoscope', [App\Http\Controllers\HoroscopeController::class, 'index'])->name('horoscope');
-Route::get('/horoscope/{sign}', [App\Http\Controllers\HoroscopeController::class, 'show'])->name('horoscope.show');
+    Route::get('/horoscope/{sign}', [App\Http\Controllers\HoroscopeController::class, 'show'])->name('horoscope.show');
+
+    // Nepali Calendar Route
+    Route::view('/calendar', 'pages.user.calendar')->name('calendar.index');
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');
     Route::view('/contact', 'pages.user.contact')->name('contact');

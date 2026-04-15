@@ -40,58 +40,55 @@ class HoroscopeController extends Controller
      */
     public function show($sign)
     {
-        $apiKey = config('services.api_ninjas.key');
         $allSigns = $this->getSigns();
-        
-        // Find the specific sign data
         $signData = collect($allSigns)->first(function ($item) use ($sign) {
             return strtolower($item['name']) === strtolower($sign);
         });
 
-        // The API explicitly asked for 'zodiac' instead of 'sign'
-        $url = "https://api.api-ninjas.com/v1/horoscope?zodiac=" . strtolower($sign);
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'X-Api-Key: ' . $apiKey
-        ));
-
-        $output = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $error = curl_error($ch);
-        curl_close($ch);
-
-        if ($httpCode === 200) {
-            $data = json_decode($output, true);
-            return view('pages.user.horoscope-details', [
-                'sign' => ucfirst($sign),
-                'nepaliSign' => $signData['nepali'] ?? '',
-                'prediction' => $data['horoscope'] ?? $data['prediction'] ?? 'Prediction not available.',
-                'date' => $data['date'] ?? now()->format('Y-m-d')
-            ]);
+        if (!$signData) {
+            return redirect()->route('horoscope')->with('error', 'Sign not found.');
         }
 
-        Log::error('API Ninjas Horoscope Failed (Native CURL)', [
-            'sign' => $sign,
-            'http_code' => $httpCode,
-            'error' => $error,
-            'response' => $output
+        $cacheKey = 'horoscope_' . strtolower($sign) . '_' . now()->format('Y-m-d');
+        
+        $data = \Illuminate\Support\Facades\Cache::remember($cacheKey, now()->endOfDay(), function () use ($sign) {
+            $apiKey = config('services.api_ninjas.key');
+            $url = "https://api.api-ninjas.com/v1/horoscope?zodiac=" . strtolower($sign);
+
+            try {
+                $response = \Illuminate\Support\Facades\Http::withHeaders([
+                    'X-Api-Key' => $apiKey
+                ])->withoutVerifying()->get($url);
+
+                if ($response->successful()) {
+                    return $response->json();
+                }
+
+                \Illuminate\Support\Facades\Log::error('API Ninjas Horoscope Failed', [
+                    'sign' => $sign,
+                    'status' => $response->status(),
+                    'body' => $response->body()
+                ]);
+
+                return null;
+            } catch (\Exception $e) {
+                \Illuminate\Support\Facades\Log::error('API Ninjas Horoscope Exception', [
+                    'message' => $e->getMessage()
+                ]);
+                return null;
+            }
+        });
+
+        if (!$data) {
+            return back()->with('error', 'Celestial connection interrupted. Please try again later.');
+        }
+
+        return view('pages.user.horoscope-details', [
+            'sign' => ucfirst($sign),
+            'nepaliSign' => $signData['nepali'] ?? '',
+            'prediction' => $data['horoscope'] ?? $data['prediction'] ?? 'Prediction not available.',
+            'date' => $data['date'] ?? now()->format('Y-m-d')
         ]);
-        
-        if ($httpCode !== 200) {
-            dd([
-                'error' => 'API Request Failed',
-                'http_code' => $httpCode,
-                'curl_error' => $error,
-                'response_body' => $output
-            ]);
-        }
-
-        return back()->with('error', 'Celestial connection interrupted. Please ensure your API key is correct.');
     }
 }
+

@@ -25,12 +25,12 @@
 
         {{-- The Oracle Card --}}
         <div class="mt-16 mx-auto max-w-3xl">
-            <div class="relative rounded-[3rem] border border-white/10 bg-slate-900/60 p-10 md:p-20 shadow-2xl backdrop-blur-xl">
+            <div class="relative rounded-[3rem] border border-white/10 bg-slate-900/60 p-10 md:p-20 shadow-2xl backdrop-blur-lg">
                 <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-slate-950 px-6 py-1 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-200">
                     Prophecy
                 </div>
                 
-                <p class="text-2xl md:text-4xl text-white leading-relaxed [font-family:'Cormorant_Garamond',serif] italic font-light">
+                <p class="text-2xl md:text-4xl text-white leading-relaxed [font-family:'Cormorant_Garamond',serif] italic font-light antialiased" style="text-rendering: optimizeLegibility;">
                     "{{ $prediction }}"
                 </p>
 
