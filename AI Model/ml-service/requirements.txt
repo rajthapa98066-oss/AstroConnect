@@ -1,0 +1,41 @@
+# AstroConnect ML Data Collection Pipeline
+# Install with: pip install -r requirements.txt
+
+# Web scraping
+selenium
+beautifulsoup4
+lxml
+webdriver-manager
+
+# HTTP requests & API
+requests
+
+# Data processing
+pandas
+numpy
+
+# Environment variables
+python-dotenv
+
+# Geocoding (convert place names to lat/lon)
+geopy
+
+# Swiss Ephemeris for Vedic astrology calculations
+pyswisseph
+
+# Timezone lookup from coordinates
+timezonefinder
+pytz
+
+# Machine Learning & Preprocessing
+scikit-learn
+imbalanced-learn
+catboost
+matplotlib
+seaborn
+joblib
+
+# API Web Server
+fastapi
+uvicorn
+pydantic

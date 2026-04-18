@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Notifications\BlogReviewOutcomeNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -129,6 +130,12 @@ class AdminBlogController extends Controller
             'reviewed_by' => $request->user()->id,
         ]);
 
+        $blog->loadMissing('astrologer.user');
+
+        if ($blog->astrologer?->user) {
+            $blog->astrologer->user->notify(new BlogReviewOutcomeNotification($blog));
+        }
+
         return redirect()
             ->route('admin.blogs.index')
             ->with('status', 'blog-approved');
@@ -145,6 +152,12 @@ class AdminBlogController extends Controller
             'is_published' => false,
             'published_at' => null,
         ]);
+
+        $blog->loadMissing('astrologer.user');
+
+        if ($blog->astrologer?->user) {
+            $blog->astrologer->user->notify(new BlogReviewOutcomeNotification($blog));
+        }
 
         return redirect()
             ->route('admin.blogs.index')

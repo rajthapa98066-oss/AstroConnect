@@ -11,9 +11,7 @@
             </ul>
 
             <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
-                <li class="d-none d-sm-flex">
-                    <a href="{{ route('home') }}" class="btn nav-link">View Site</a>
-                </li>
+
 
                 <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">

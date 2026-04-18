@@ -35,4 +35,23 @@ return [
         ],
     ],
 
+    'khalti' => [
+        'public_key' => env('KHALTI_PUBLIC_KEY'),
+        'secret_key' => env('KHALTI_SECRET_KEY'),
+        'base_url' => env('KHALTI_BASE_URL'),
+    ],
+
+    'api_ninjas' => [
+        'key' => env('API_NINJAS_KEY'),
+    ],
+
+    'free_astrology' => [
+        'key' => env('FREE_ASTROLOGY_API_KEY'),
+        'base_url' => env('FREE_ASTROLOGY_API_URL'),
+    ],
+
+    'machine_learning' => [
+        'base_url' => env('ML_API_URL', 'http://localhost:8001'),
+    ],
+
 ];

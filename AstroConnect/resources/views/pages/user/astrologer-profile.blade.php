@@ -61,6 +61,14 @@
             <h2 class="mt-3 text-4xl text-white [font-family:'Cormorant_Garamond',serif]">Guidance style and reading focus</h2>
             <p class="mt-6 text-base leading-8 text-slate-300">{{ $astrologer->bio }}</p>
 
+            @auth
+                @if (auth()->user()->canAccessUserPanel())
+                    <a href="#report-astrologer" class="mt-6 inline-flex items-center justify-center rounded-full border border-rose-300/30 bg-rose-300/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-rose-200 transition hover:border-rose-300/50 hover:bg-rose-300/20 hover:text-white">
+                        Report Astrologer
+                    </a>
+                @endif
+            @endauth
+
             @if (session('status') === 'appointment-booked')
                 <div class="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-5 py-4 text-sm text-emerald-200">
                     Appointment request submitted successfully.
@@ -70,6 +78,12 @@
             @if (session('status') === 'review-saved')
                 <div class="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-5 py-4 text-sm text-emerald-200">
                     Review submitted successfully.
+                </div>
+            @endif
+
+            @if (session('status') === 'report-submitted')
+                <div class="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-5 py-4 text-sm text-emerald-200">
+                    Report submitted successfully. Admin will review it shortly.
                 </div>
             @endif
 
@@ -201,6 +215,54 @@
                             Sign In
                         </a>
                     </div>
+                @endauth
+
+                @auth
+                    @if (auth()->user()->canAccessUserPanel())
+                        <div id="report-astrologer" class="mt-8 rounded-2xl border border-rose-300/20 bg-rose-300/10 p-6 scroll-mt-24">
+                            <p class="text-sm uppercase tracking-[0.25em] text-rose-200/80">Report astrologer</p>
+                            <h3 class="mt-3 text-3xl text-white [font-family:'Cormorant_Garamond',serif]">Send a moderation report</h3>
+                            <p class="mt-2 text-sm leading-7 text-slate-200">Use this form to alert admins if this profile breaks community rules or looks suspicious.</p>
+
+                            @if (! auth()->user()->hasVerifiedEmail())
+                                <div class="mt-4 rounded-2xl border border-amber-300/20 bg-amber-300/10 px-4 py-3 text-sm text-amber-100">
+                                    Verify your email to submit a report.
+                                </div>
+                            @endif
+
+                            <form method="POST" action="{{ route('astrologer.reports.store', $astrologer) }}" class="mt-5 space-y-4">
+                                @csrf
+
+                                <div>
+                                    <label for="report_reason" class="text-xs uppercase tracking-[0.18em] text-slate-300">Reason</label>
+                                    <select id="report_reason" name="reason" required class="mt-2 block w-full rounded-2xl border border-white/10 bg-slate-900 px-4 py-3 text-slate-100 outline-none focus:border-rose-300/60 focus:ring-2 focus:ring-rose-300/30">
+                                        <option value="" disabled {{ old('reason') === '' ? 'selected' : '' }} class="bg-slate-100 text-slate-900">Select a reason</option>
+                                        <option value="fake_profile" @selected(old('reason') === 'fake_profile') class="bg-slate-100 text-slate-900">Fake profile</option>
+                                        <option value="fraud" @selected(old('reason') === 'fraud') class="bg-slate-100 text-slate-900">Fraud or scam</option>
+                                        <option value="harassment" @selected(old('reason') === 'harassment') class="bg-slate-100 text-slate-900">Harassment</option>
+                                        <option value="abuse" @selected(old('reason') === 'abuse') class="bg-slate-100 text-slate-900">Abusive behavior</option>
+                                        <option value="spam" @selected(old('reason') === 'spam') class="bg-slate-100 text-slate-900">Spam or misleading content</option>
+                                        <option value="other" @selected(old('reason') === 'other') class="bg-slate-100 text-slate-900">Other</option>
+                                    </select>
+                                    @error('reason')
+                                        <p class="mt-2 text-sm text-rose-300">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div>
+                                    <label for="report_details" class="text-xs uppercase tracking-[0.18em] text-slate-300">Details</label>
+                                    <textarea id="report_details" name="details" rows="4" class="mt-2 block w-full rounded-2xl border border-white/10 bg-slate-900 px-4 py-3 text-slate-100 outline-none focus:border-rose-300/60 focus:ring-2 focus:ring-rose-300/30" placeholder="Add any supporting details...">{{ old('details') }}</textarea>
+                                    @error('details')
+                                        <p class="mt-2 text-sm text-rose-300">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <button type="submit" class="inline-flex items-center justify-center rounded-full bg-rose-300 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 transition hover:bg-rose-200">
+                                    Submit Report
+                                </button>
+                            </form>
+                        </div>
+                    @endif
                 @endauth
             </div>
 

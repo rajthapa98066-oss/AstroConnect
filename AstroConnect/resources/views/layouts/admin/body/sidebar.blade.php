@@ -5,6 +5,7 @@
             $usersCount = \App\Models\User::count();
             $astrologerCount = \App\Models\Astrologer::count();
             $blogsCount = \App\Models\Blog::count();
+            $reportsCount = \App\Models\AstrologerReport::where('status', 'pending')->count();
         @endphp
 
         <div id="sidebar-menu">
@@ -60,7 +61,15 @@
                     </a>
                 </li>
 
-                <li class="menu-title mt-2">Content</li>
+                <li>
+                    <a href="{{ route('admin.reports.index') }}" class="d-flex align-items-center {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
+                        <i data-feather="alert-triangle"></i>
+                        <span>Reports</span>
+                        <span class="badge bg-danger ms-auto">{{ $reportsCount }}</span>
+                    </a>
+                </li>
+
+
 
                 <li>
                     <a href="{{ route('admin.blogs.index') }}" class="d-flex align-items-center {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">

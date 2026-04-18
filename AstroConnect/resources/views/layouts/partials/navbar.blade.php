@@ -21,9 +21,9 @@
                 </a>
 
                 @auth
-                    <a href="{{ route('dashboard') }}"
+                    <a href="{{ route('home') }}"
                        class="text-sm text-slate-300 hover:text-white transition">
-                        Dashboard
+                        Home
                     </a>
 
                     @if ($astrologerProfile?->verification_status === 'approved')
@@ -99,8 +99,8 @@
                        class="block text-sm text-slate-300 hover:text-white py-1">Astrologers</a>
 
                     @auth
-                        <a href="{{ route('dashboard') }}"
-                           class="block text-sm text-slate-300 hover:text-white py-1">Dashboard</a>
+                        <a href="{{ route('home') }}"
+                           class="block text-sm text-slate-300 hover:text-white py-1">Home</a>
 
                         @if ($astrologerProfile?->verification_status === 'approved')
                             <a href="{{ route('astrologer.dashboard') }}"

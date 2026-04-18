@@ -29,11 +29,14 @@
                         <th class="px-3 py-3">Message</th>
                         <th class="px-3 py-3">Scheduled At</th>
                         <th class="px-3 py-3">Status</th>
+                        <th class="px-3 py-3">Chat</th>
                         <th class="px-3 py-3">Update</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($appointments as $appointment)
+                        @php($chatTargetId = $appointment->user->id)
+                        @php($chatUrl = url('/' . trim(config('chatify.routes.prefix'), '/') . '/' . $chatTargetId))
                         <tr class="border-b border-white/5">
                             <td class="px-3 py-4">{{ $appointment->user->name }}</td>
                             <td class="px-3 py-4">{{ $appointment->topic }}</td>
@@ -41,6 +44,16 @@
                             <td class="px-3 py-4">{{ $appointment->scheduled_at->format('M d, Y h:i A') }}</td>
                             <td class="px-3 py-4">
                                 <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white">{{ $appointment->status }}</span>
+                            </td>
+                            <td class="px-3 py-4">
+                                @if ($appointment->status === 'confirmed')
+                                    <a href="{{ $chatUrl }}" class="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200 transition-all hover:bg-emerald-300 hover:text-slate-950">
+                                        <span>Chat</span>
+                                        <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                                    </a>
+                                @else
+                                    <span class="text-xs uppercase tracking-[0.15em] text-slate-500 italic">Available after confirm</span>
+                                @endif
                             </td>
                             <td class="px-3 py-4">
                                 <form method="POST" action="{{ route('astrologer.appointments.status', $appointment) }}" class="flex items-center gap-2">
@@ -57,7 +70,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="px-3 py-8 text-center text-slate-400">No appointment requests found.</td>
+                            <td colspan="7" class="px-3 py-8 text-center text-slate-400">No appointment requests found.</td>
                         </tr>
                     @endforelse
                 </tbody>

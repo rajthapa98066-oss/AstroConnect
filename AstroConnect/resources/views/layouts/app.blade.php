@@ -7,9 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'AstroConnect')</title>
+    
+    {{-- Performance Hints --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    {{-- Optimized Font Loading --}}
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    {{-- Asset Loading --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -21,6 +28,27 @@
         @include('layouts.navigation')
 
         <main>
+            {{-- Session Alerts --}}
+            @if(session('error') || session('success') || session('info'))
+                <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+                    @if(session('error'))
+                        <div class="rounded-2xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-200">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if(session('success'))
+                        <div class="rounded-2xl border border-green-500/20 bg-green-500/10 p-4 text-sm text-green-200">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if(session('info'))
+                        <div class="rounded-2xl border border-amber-300/20 bg-amber-300/10 p-4 text-sm text-amber-200">
+                            {{ session('info') }}
+                        </div>
+                    @endif
+                </div>
+            @endif
+
             @isset($header)
                 <header class="border-b border-white/10 bg-slate-950/80 backdrop-blur">
                     <div class="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">

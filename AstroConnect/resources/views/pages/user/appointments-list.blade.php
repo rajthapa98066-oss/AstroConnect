@@ -34,18 +34,50 @@
                         <th class="px-3 py-3">Topic</th>
                         <th class="px-3 py-3">Schedule</th>
                         <th class="px-3 py-3">Status</th>
+                        <th class="px-3 py-3">Chat</th>
+                        <th class="px-3 py-3">Payment</th>
                         <th class="px-3 py-3">Feedback Prompt</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($appointments as $appointment)
                         @php($myReview = $myReviews->get($appointment->astrologer_id))
+                        @php($chatTargetId = $appointment->astrologer->user->id)
+                        @php($chatUrl = url('/' . trim(config('chatify.routes.prefix'), '/') . '/' . $chatTargetId))
                         <tr class="border-b border-white/5">
                             <td class="px-3 py-4">{{ $appointment->astrologer->user->name }}</td>
                             <td class="px-3 py-4">{{ $appointment->topic }}</td>
                             <td class="px-3 py-4">{{ $appointment->scheduled_at->format('M d, Y h:i A') }}</td>
                             <td class="px-3 py-4">
                                 <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white">{{ $appointment->status }}</span>
+                            </td>
+                            <td class="px-3 py-4">
+                                @if ($appointment->status === 'confirmed')
+                                    <a href="{{ $chatUrl }}" class="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200 transition-all hover:bg-emerald-300 hover:text-slate-950">
+                                        <span>Chat</span>
+                                        <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                                    </a>
+                                @else
+                                    <span class="text-xs uppercase tracking-[0.15em] text-slate-500 italic">Available after confirm</span>
+                                @endif
+                            </td>
+                            <td class="px-3 py-4">
+                                @if ($appointment->isPaid())
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.15em] text-emerald-400">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                                        Paid
+                                    </span>
+                                @elseif ($appointment->status === 'completed')
+                                    <form method="POST" action="{{ route('khalti.initiate', $appointment) }}">
+                                        @csrf
+                                        <button type="submit" class="group relative flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-200 transition-all hover:bg-amber-300 hover:text-slate-950">
+                                            <span>Pay Rs. {{ number_format($appointment->astrologer->consultation_fee, 2) }}</span>
+                                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                                        </button>
+                                    </form>
+                                @else
+                                    <span class="text-xs uppercase tracking-[0.15em] text-slate-500 italic">Bill Pending</span>
+                                @endif
                             </td>
                             <td class="px-3 py-4 align-top">
                                 @if ($appointment->status === 'completed')
@@ -91,7 +123,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="px-3 py-8 text-center text-slate-400">No appointments booked yet.</td>
+                            <td colspan="7" class="px-3 py-8 text-center text-slate-400">No appointments booked yet.</td>
                         </tr>
                     @endforelse
                 </tbody>
