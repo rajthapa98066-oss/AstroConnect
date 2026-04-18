@@ -50,4 +50,8 @@ return [
         'base_url' => env('FREE_ASTROLOGY_API_URL'),
     ],
 
+    'machine_learning' => [
+        'base_url' => env('ML_API_URL', 'http://localhost:8001'),
+    ],
+
 ];
