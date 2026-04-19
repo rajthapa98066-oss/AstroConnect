@@ -506,7 +506,6 @@ def generate_compatibility_dataset():
                 "pob": row.get("place_of_birth", ""),
                 "moon_sign": rashi,
                 "nakshatra": nakshatra,
-                "career": row.get("career_category", ""),
             })
     
     logger.info(f"   Computed for {len(persons)} persons")

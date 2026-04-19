@@ -27,6 +27,7 @@ class AstrologerApplicationController extends Controller
 
         return view('pages.astrologer.apply', [
             'astrologer' => $astrologer,
+            'canApply' => ! $astrologer || $astrologer->verification_status === 'rejected',
         ]);
     }
 
@@ -37,6 +38,12 @@ class AstrologerApplicationController extends Controller
     {
         abort_unless($request->user()?->canAccessUserPanel(), 403);
 
+        $astrologer = $request->user()->astrologer;
+
+        if ($astrologer && $astrologer->verification_status !== 'rejected') {
+            return Redirect::route('astrologer.apply')->with('status', 'application-in-review');
+        }
+
         $validated = $request->validate([
             'specialization' => ['required', 'string', 'max:255'],
             'experience_years' => ['required', 'integer', 'min:0', 'max:80'],
@@ -45,8 +52,6 @@ class AstrologerApplicationController extends Controller
             'availability_status' => ['required', 'in:available,busy,unavailable'],
             'profile_photo' => ['nullable', 'image', 'max:2048'],
         ]);
-
-        $astrologer = $request->user()->astrologer;
 
         if ($request->hasFile('profile_photo')) {
             $validated['profile_photo'] = $request->file('profile_photo')->store('astrologers/photos', 'public');

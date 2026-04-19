@@ -33,6 +33,8 @@ def main():
         
     print(f"Train Shape: {train_df.shape}")
     print(f"Test Shape:  {test_df.shape}")
+
+    target_col = 'compatibility_score' if 'compatibility_score' in train_df.columns else 'compatible'
     
     # 1. Check Nulls
     train_nulls = train_df.isnull().sum().sum()
@@ -46,7 +48,7 @@ def main():
         
     # 2. Check Features
     print("\n[Feature Set Check]")
-    actual_features = [col for col in train_df.columns if col != 'compatible']
+    actual_features = [col for col in train_df.columns if col != target_col]
     
     if len(actual_features) == 18:
         print("PASS: Dataset contains exactly 18 features.")
@@ -61,11 +63,11 @@ def main():
     # 3. Print Clean Sample
     print("\n[Sample Rows - Train Data (Features Only)]")
     # .to_string() avoids aggressive truncation
-    print(train_df.drop(columns=['compatible']).head(3).to_string())
+    print(train_df.drop(columns=[target_col]).head(3).to_string())
     
     print("\n[Sample Distribution Check]")
-    print(f"Train 'compatible':\n{train_df['compatible'].value_counts().to_dict()}")
-    print(f"Test  'compatible':\n{test_df['compatible'].value_counts().to_dict()}")
+    print(f"Train '{target_col}':\n{train_df[target_col].value_counts().to_dict()}")
+    print(f"Test  '{target_col}':\n{test_df[target_col].value_counts().to_dict()}")
     
     print("\nValidation complete! Data is ready for Model Training.")
 

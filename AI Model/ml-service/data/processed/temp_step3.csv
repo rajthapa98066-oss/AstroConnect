@@ -1,0 +1,1201 @@
+person1_moon_sign,person1_nakshatra,person2_moon_sign,person2_nakshatra,varna_score,vashya_score,tara_score,yoni_score,graha_maitri_score,gana_score,bhakoot_score,nadi_score,compatible
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,3,5,0,0,8,0
+Libra,Chitra,Virgo,Uttara Phalguni,0,2,1,0,5,0,0,8,0
+Gemini,Mrigashira,Scorpio,Vishakha,0,0,1,2,0,1,0,8,0
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,3,0,0,7,0,0
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,2,0,5,7,8,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Sagittarius,Mula,Capricorn,Uttara Ashadha,1,1,1,3,3,0,0,8,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Scorpio,Vishakha,Virgo,Uttara Phalguni,1,0,1,0,0,0,7,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Scorpio,Vishakha,Virgo,Uttara Phalguni,1,0,1,0,0,0,7,8,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,2,5,6,0,0,1
+Sagittarius,Mula,Libra,Chitra,1,2,1,3,0,6,7,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Gemini,Mrigashira,Libra,Chitra,1,2,3,2,5,1,0,0,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,3,5,0,7,0,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,3,0,6,7,8,1
+Libra,Chitra,Virgo,Uttara Phalguni,0,2,1,0,5,0,0,8,0
+Aries,Ashwini,Sagittarius,Mula,1,1,3,3,5,1,0,0,0
+Leo,Magha,Sagittarius,Mula,1,0,3,3,5,6,0,8,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,2,5,0,0,8,0
+Leo,Magha,Aries,Ashwini,1,0,3,2,5,1,0,8,1
+Cancer,Punarvasu,Pisces,Purva Bhadrapada,1,2,3,2,4,6,0,0,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Libra,Chitra,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,2,0,1,0,8,0
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,3,5,0,7,8,1
+Scorpio,Vishakha,Cancer,Punarvasu,1,0,3,2,4,1,0,8,1
+Cancer,Punarvasu,Gemini,Mrigashira,1,1,1,2,1,6,0,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,3,3,1,7,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Sagittarius,Mula,Scorpio,Vishakha,0,0,1,3,5,6,0,8,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Cancer,Punarvasu,Pisces,Purva Bhadrapada,1,2,3,2,4,6,0,0,1
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,3,4,6,0,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Aries,Ashwini,Libra,Chitra,1,1,1,2,3,1,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,2,0,6,7,0,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,3,4,5,0,0,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Taurus,Krittika,Gemini,Mrigashira,1,1,1,3,5,1,0,8,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,3,4,1,0,0,0
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,3,5,0,0,0,0
+Aquarius,Dhanishta,Leo,Magha,0,0,1,2,0,6,7,8,1
+Taurus,Krittika,Pisces,Purva Bhadrapada,0,1,1,3,0,0,7,8,1
+Aries,Ashwini,Libra,Chitra,1,1,1,3,3,1,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,2,5,6,0,0,0
+Cancer,Punarvasu,Pisces,Purva Bhadrapada,1,2,3,2,4,6,0,0,1
+Gemini,Mrigashira,Cancer,Punarvasu,0,1,1,2,1,6,0,8,1
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Gemini,Mrigashira,Leo,Magha,0,0,1,2,4,1,7,8,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Scorpio,Vishakha,Libra,Chitra,1,0,1,4,3,6,0,8,1
+Leo,Magha,Aries,Ashwini,1,0,3,2,5,1,0,8,1
+Sagittarius,Mula,Aries,Ashwini,1,1,3,2,5,1,0,0,0
+Libra,Chitra,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Libra,Chitra,1,0,1,4,3,6,0,8,1
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,3,3,6,7,8,1
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,7,0,0
+Libra,Chitra,Gemini,Mrigashira,1,2,3,2,5,1,0,0,0
+Cancer,Punarvasu,Virgo,Uttara Phalguni,1,1,1,3,1,6,7,0,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,3,0,0,0,8,0
+Scorpio,Vishakha,Cancer,Punarvasu,1,0,3,3,4,1,0,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,7,0,0
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,3,4,6,7,0,1
+Taurus,Krittika,Sagittarius,Mula,0,1,1,2,0,6,0,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,3,5,0,0,0,0
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,3,5,0,0,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,3,4,5,0,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,2,0,1,0,8,0
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,2,5,0,7,0,0
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Leo,Magha,Gemini,Mrigashira,1,0,1,3,4,1,7,8,1
+Taurus,Krittika,Leo,Magha,0,0,1,3,0,6,7,0,0
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,2,5,6,0,8,1
+Gemini,Mrigashira,Gemini,Mrigashira,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,2,5,0,0,0,0
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Aries,Ashwini,Libra,Chitra,1,1,1,2,3,1,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Libra,Chitra,Leo,Magha,0,0,1,2,0,6,7,8,1
+Aries,Ashwini,Leo,Magha,1,0,3,2,5,1,0,8,1
+Libra,Chitra,Sagittarius,Mula,0,2,1,2,0,6,7,8,1
+Aquarius,Dhanishta,Libra,Chitra,1,2,3,2,5,6,0,0,1
+Sagittarius,Mula,Cancer,Punarvasu,0,1,1,3,4,1,0,0,0
+Scorpio,Vishakha,Scorpio,Vishakha,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,3,4,0,0,8,1
+Cancer,Punarvasu,Gemini,Mrigashira,1,1,1,2,1,6,0,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,3,5,0,7,8,1
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,3,0,0,7,0,0
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,2,5,0,0,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Gemini,Mrigashira,Cancer,Punarvasu,0,1,1,3,1,6,0,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Sagittarius,Mula,Capricorn,Uttara Ashadha,1,1,1,2,3,0,0,8,0
+Gemini,Mrigashira,Scorpio,Vishakha,0,0,1,3,0,1,0,8,0
+Cancer,Punarvasu,Libra,Chitra,1,1,1,2,0,1,7,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,2,5,0,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Scorpio,Vishakha,Leo,Magha,1,0,1,3,5,6,7,0,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,3,0,6,7,0,1
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,3,5,0,0,0,0
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,3,3,6,7,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Leo,Magha,Leo,Magha,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,3,5,0,7,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,3,4,6,0,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,3,0,1,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,3,0,6,7,0,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,2,0,5,0,0,0
+Sagittarius,Mula,Pisces,Purva Bhadrapada,0,1,1,2,5,0,7,0,0
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,3,5,0,0,8,1
+Aries,Ashwini,Gemini,Mrigashira,1,1,1,2,0,6,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Gemini,Mrigashira,Gemini,Mrigashira,1,2,3,4,5,6,7,0,1
+Sagittarius,Mula,Cancer,Punarvasu,0,1,1,3,4,1,0,0,0
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Cancer,Punarvasu,Libra,Chitra,1,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,3,3,6,7,8,1
+Libra,Chitra,Gemini,Mrigashira,1,2,3,2,5,1,0,0,0
+Cancer,Punarvasu,Pisces,Purva Bhadrapada,1,2,3,3,4,6,0,0,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,2,5,6,7,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,2,5,0,0,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,2,5,0,7,8,1
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,3,0,0,0,8,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,2,0,1,0,8,0
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,2,0,0,7,0,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,2,5,0,0,0,0
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Libra,Chitra,Leo,Magha,0,0,1,2,0,6,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Cancer,Punarvasu,0,1,1,2,1,6,0,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,3,3,1,0,8,1
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Libra,Chitra,Leo,Magha,0,0,1,2,0,6,7,8,1
+Capricorn,Uttara Ashadha,Sagittarius,Mula,0,1,1,2,3,0,0,8,0
+Sagittarius,Mula,Libra,Chitra,1,2,1,3,0,6,7,8,1
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Scorpio,Vishakha,Virgo,Uttara Phalguni,1,0,1,0,0,0,7,8,0
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,3,0,1,0,8,0
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,3,4,5,0,0,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,2,5,0,0,8,1
+Aquarius,Dhanishta,Virgo,Uttara Phalguni,0,2,1,3,4,0,0,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Gemini,Mrigashira,Leo,Magha,0,0,1,2,4,1,7,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,2,0,0,7,0,0
+Sagittarius,Mula,Cancer,Punarvasu,0,1,1,3,4,1,0,0,0
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Leo,Magha,1,0,1,3,5,0,0,8,1
+Leo,Magha,Taurus,Krittika,1,0,1,3,0,6,7,0,1
+Cancer,Punarvasu,Leo,Magha,1,0,1,0,5,1,0,8,0
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,3,3,1,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,3,0,0,0,8,0
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Cancer,Punarvasu,Libra,Chitra,1,1,1,3,0,1,7,8,1
+Aquarius,Dhanishta,Scorpio,Vishakha,0,0,1,2,0,6,7,8,1
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,3,4,0,0,8,1
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,2,3,6,7,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,3,5,0,0,0,0
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,2,5,6,0,0,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,2,5,0,0,8,0
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,2,4,5,0,0,0
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Libra,Chitra,Gemini,Mrigashira,1,2,3,3,5,1,0,0,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Cancer,Punarvasu,Sagittarius,Mula,1,1,1,2,4,1,0,0,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Leo,Magha,Taurus,Krittika,1,0,1,3,0,6,7,0,1
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,3,5,6,0,0,1
+Pisces,Purva Bhadrapada,Leo,Magha,1,0,1,2,5,0,0,8,0
+Cancer,Punarvasu,Scorpio,Vishakha,1,0,3,2,4,1,0,8,1
+Leo,Magha,Leo,Magha,1,2,3,4,5,6,7,0,1
+Virgo,Uttara Phalguni,Cancer,Punarvasu,0,1,1,3,1,5,7,0,1
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Cancer,Punarvasu,Virgo,Uttara Phalguni,1,1,1,2,1,6,7,0,1
+Gemini,Mrigashira,Capricorn,Uttara Ashadha,0,1,1,0,4,6,0,8,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,2,5,0,7,8,1
+Sagittarius,Mula,Sagittarius,Mula,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,2,0,0,0,0,0
+Sagittarius,Mula,Libra,Chitra,1,2,1,3,0,6,7,8,1
+Sagittarius,Mula,Aries,Ashwini,1,1,3,3,5,1,0,0,0
+Taurus,Krittika,Sagittarius,Mula,0,1,1,2,0,6,0,8,1
+Pisces,Purva Bhadrapada,Scorpio,Vishakha,1,0,3,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Gemini,Mrigashira,Cancer,Punarvasu,0,1,1,2,1,6,0,8,1
+Leo,Magha,Taurus,Krittika,1,0,1,2,0,6,7,0,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,2,5,6,7,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,3,0,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Leo,Magha,Leo,Magha,1,2,3,4,5,6,7,0,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Sagittarius,Mula,Scorpio,Vishakha,0,0,1,3,5,6,0,8,1
+Sagittarius,Mula,Leo,Magha,1,0,3,3,5,6,0,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,2,5,0,0,8,0
+Virgo,Uttara Phalguni,Sagittarius,Mula,0,2,1,2,0,0,7,0,0
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,2,3,6,7,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,2,0,5,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Leo,Magha,Aries,Ashwini,1,0,3,2,5,1,0,8,1
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Leo,Magha,Sagittarius,Mula,1,0,3,3,5,6,0,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,2,0,6,7,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,2,4,1,0,0,0
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,2,4,5,0,0,0
+Cancer,Punarvasu,Leo,Magha,1,0,1,0,5,1,0,8,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,2,0,6,7,8,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,2,5,6,7,8,1
+Capricorn,Uttara Ashadha,Gemini,Mrigashira,1,1,1,0,4,5,0,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Cancer,Punarvasu,Cancer,Punarvasu,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,2,0,1,0,8,0
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,2,3,6,7,8,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,2,4,1,0,0,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Leo,Magha,Libra,Chitra,1,0,1,3,0,6,7,8,1
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,3,0,0,0,0,0
+Leo,Magha,Sagittarius,Mula,1,0,3,2,5,6,0,8,1
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,3,5,0,7,0,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Taurus,Krittika,Gemini,Mrigashira,1,1,1,3,5,1,0,8,1
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Virgo,Uttara Phalguni,Cancer,Punarvasu,0,1,1,2,1,5,7,0,0
+Gemini,Mrigashira,Libra,Chitra,1,2,3,3,5,1,0,0,0
+Sagittarius,Mula,Pisces,Purva Bhadrapada,0,1,1,2,5,0,7,0,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Virgo,Uttara Phalguni,Cancer,Punarvasu,0,1,1,3,1,5,7,0,1
+Leo,Magha,Virgo,Uttara Phalguni,1,0,1,3,4,0,0,8,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,2,0,6,7,0,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,2,5,0,0,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,0,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,3,0,6,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Virgo,Uttara Phalguni,Sagittarius,Mula,0,2,1,2,0,0,7,0,0
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Virgo,Uttara Phalguni,Gemini,Mrigashira,1,2,1,3,5,5,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,2,0,0,0,8,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,3,5,0,0,8,0
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Scorpio,Vishakha,Leo,Magha,1,0,1,2,5,6,7,0,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,2,0,5,7,8,1
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,3,4,1,0,0,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Scorpio,Vishakha,Cancer,Punarvasu,1,0,3,2,4,1,0,8,1
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,3,0,0,0,0,0
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Taurus,Krittika,Scorpio,Vishakha,0,0,1,0,3,6,7,0,0
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,3,0,1,7,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Virgo,Uttara Phalguni,Cancer,Punarvasu,0,1,1,3,1,5,7,0,1
+Scorpio,Vishakha,Virgo,Uttara Phalguni,1,0,1,0,0,0,7,8,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,2,4,0,0,8,1
+Leo,Magha,Taurus,Krittika,1,0,1,2,0,6,7,0,0
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Scorpio,Vishakha,Cancer,Punarvasu,1,0,3,3,4,1,0,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,3,5,0,0,8,1
+Libra,Chitra,Sagittarius,Mula,0,2,1,2,0,6,7,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,2,5,0,0,0,0
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,3,4,6,0,8,1
+Sagittarius,Mula,Cancer,Punarvasu,0,1,1,3,4,1,0,0,0
+Virgo,Uttara Phalguni,Leo,Magha,0,0,1,3,4,0,0,8,0
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Taurus,Krittika,Sagittarius,Mula,0,1,1,2,0,6,0,8,1
+Virgo,Uttara Phalguni,Leo,Magha,0,0,1,2,4,0,0,8,0
+Sagittarius,Mula,Taurus,Krittika,1,1,1,2,0,6,0,8,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,2,5,0,0,8,0
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Leo,Magha,Virgo,Uttara Phalguni,1,0,1,2,4,0,0,8,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,3,5,0,7,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,3,0,1,0,8,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,3,0,0,0,8,0
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,2,5,6,0,0,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,2,4,5,0,0,0
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Gemini,Mrigashira,Leo,Magha,0,0,1,3,4,1,7,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,2,4,1,0,0,0
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,2,4,6,0,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,2,4,1,0,0,0
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Libra,Chitra,Gemini,Mrigashira,1,2,3,3,5,1,0,0,0
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Cancer,Punarvasu,Libra,Chitra,1,1,1,3,0,1,7,8,1
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,2,5,0,0,0,0
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Sagittarius,Mula,Taurus,Krittika,1,1,1,2,0,6,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,3,5,0,7,8,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Leo,Magha,0,0,1,2,0,6,7,8,1
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,2,0,1,0,8,0
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,2,4,1,0,0,0
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,3,0,6,7,0,1
+Gemini,Mrigashira,Libra,Chitra,1,2,3,2,5,1,0,0,0
+Sagittarius,Mula,Aries,Ashwini,1,1,3,3,5,1,0,0,0
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Cancer,Punarvasu,Libra,Chitra,1,1,1,3,0,1,7,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,2,5,0,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,2,3,6,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,2,0,6,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,3,4,1,0,0,0
+Gemini,Mrigashira,Libra,Chitra,1,2,3,3,5,1,0,0,0
+Taurus,Krittika,Sagittarius,Mula,0,1,1,3,0,6,0,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,2,4,5,0,0,0
+Gemini,Mrigashira,Libra,Chitra,1,2,3,3,5,1,0,0,0
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,2,4,5,0,0,0
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Cancer,Punarvasu,Libra,Chitra,1,1,1,3,0,1,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Virgo,Uttara Phalguni,1,1,3,3,5,0,0,8,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,3,5,0,7,8,1
+Pisces,Purva Bhadrapada,Leo,Magha,1,0,1,3,5,0,0,8,1
+Gemini,Mrigashira,Gemini,Mrigashira,1,2,3,4,5,6,7,0,1
+Leo,Magha,Gemini,Mrigashira,1,0,1,3,4,1,7,8,1
+Cancer,Punarvasu,Scorpio,Vishakha,1,0,3,3,4,1,0,8,1
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,2,5,0,7,8,1
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,2,0,0,7,0,0
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,2,4,1,0,0,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,3,0,0,0,8,0
+Virgo,Uttara Phalguni,Sagittarius,Mula,0,2,1,3,0,0,7,0,0
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,3,0,0,0,0,0
+Scorpio,Vishakha,Gemini,Mrigashira,1,0,1,3,0,1,0,8,0
+Scorpio,Vishakha,Gemini,Mrigashira,1,0,1,2,0,1,0,8,0
+Sagittarius,Mula,Aries,Ashwini,1,1,3,2,5,1,0,0,0
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Scorpio,Vishakha,Gemini,Mrigashira,1,0,1,2,0,1,0,8,0
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,2,5,0,0,8,0
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Scorpio,Vishakha,Gemini,Mrigashira,1,0,1,2,0,1,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Scorpio,Vishakha,Leo,Magha,1,0,1,3,5,6,7,0,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,2,0,6,7,0,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,2,5,0,7,8,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,3,5,0,0,8,1
+Libra,Chitra,Gemini,Mrigashira,1,2,3,3,5,1,0,0,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Gemini,Mrigashira,Cancer,Punarvasu,0,1,1,3,1,6,0,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Gemini,Mrigashira,Virgo,Uttara Phalguni,0,2,1,2,5,6,7,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Gemini,Mrigashira,Cancer,Punarvasu,0,1,1,3,1,6,0,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Aquarius,Dhanishta,Leo,Magha,0,0,1,2,0,6,7,8,1
+Taurus,Krittika,Sagittarius,Mula,0,1,1,3,0,6,0,8,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,2,5,0,0,8,1
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,3,4,0,0,8,1
+Aquarius,Dhanishta,Libra,Chitra,1,2,3,2,5,6,0,0,1
+Aquarius,Dhanishta,Scorpio,Vishakha,0,0,1,3,0,6,7,8,1
+Gemini,Mrigashira,Capricorn,Uttara Ashadha,0,1,1,0,4,6,0,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,2,0,6,7,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,2,5,6,0,0,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,3,0,1,7,8,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Taurus,Krittika,Virgo,Uttara Phalguni,1,1,3,2,5,0,0,8,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,2,5,0,7,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Pisces,Purva Bhadrapada,Leo,Magha,1,0,1,2,5,0,0,8,0
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,2,4,1,0,0,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,2,4,6,7,0,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Taurus,Krittika,Sagittarius,Mula,0,1,1,2,0,6,0,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,3,5,0,0,8,0
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,2,0,0,7,0,0
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,2,5,0,7,0,0
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,2,5,0,0,8,1
+Gemini,Mrigashira,Capricorn,Uttara Ashadha,0,1,1,0,4,6,0,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,3,3,1,0,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,2,5,0,0,0,0
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,3,0,6,7,8,1
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,2,3,6,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Gemini,Mrigashira,Sagittarius,Mula,0,2,1,2,0,1,7,8,1
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,2,4,6,7,0,1
+Capricorn,Uttara Ashadha,Sagittarius,Mula,0,1,1,2,3,0,0,8,0
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,2,0,0,0,8,0
+Leo,Magha,Leo,Magha,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Sagittarius,Mula,0,2,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,2,5,0,0,8,0
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,3,0,1,0,8,0
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,3,3,6,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,3,5,0,0,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Cancer,Punarvasu,Capricorn,Uttara Ashadha,1,1,1,3,0,6,7,8,1
+Scorpio,Vishakha,Leo,Magha,1,0,1,2,5,6,7,0,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,3,3,6,7,8,1
+Cancer,Punarvasu,Sagittarius,Mula,1,1,1,3,4,1,0,0,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Virgo,Uttara Phalguni,Sagittarius,Mula,0,2,1,2,0,0,7,0,0
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,3,0,1,7,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,3,0,1,0,8,0
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Gemini,Mrigashira,Sagittarius,Mula,0,2,1,3,0,1,7,8,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,3,3,1,0,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Gemini,Mrigashira,Scorpio,Vishakha,0,0,1,2,0,1,0,8,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Gemini,Mrigashira,1,1,1,2,5,1,0,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,3,0,5,7,8,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,3,5,0,7,8,1
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,2,5,6,7,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,2,0,6,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,3,3,1,7,8,1
+Gemini,Mrigashira,Scorpio,Vishakha,0,0,1,2,0,1,0,8,0
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Libra,Chitra,Leo,Magha,0,0,1,3,0,6,7,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,3,0,0,0,8,0
+Cancer,Punarvasu,Libra,Chitra,1,1,1,2,0,1,7,8,1
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Gemini,Mrigashira,Capricorn,Uttara Ashadha,0,1,1,0,4,6,0,8,1
+Aries,Ashwini,Libra,Chitra,1,1,1,2,3,1,7,8,1
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,2,4,5,0,0,0
+Taurus,Krittika,Sagittarius,Mula,0,1,1,2,0,6,0,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Sagittarius,Mula,Virgo,Uttara Phalguni,1,2,1,3,0,0,7,0,0
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,2,0,0,7,0,0
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,3,5,6,0,0,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Leo,Magha,0,0,1,2,0,6,7,8,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,2,5,0,0,8,1
+Cancer,Punarvasu,Gemini,Mrigashira,1,1,1,2,1,6,0,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,3,3,6,7,8,1
+Leo,Magha,Taurus,Krittika,1,0,1,3,0,6,7,0,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,3,4,6,7,0,1
+Scorpio,Vishakha,Cancer,Punarvasu,1,0,3,3,4,1,0,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Libra,Chitra,Libra,Chitra,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,2,5,6,0,0,1
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,3,0,1,0,8,0
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Pisces,Purva Bhadrapada,Scorpio,Vishakha,1,0,3,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Pisces,Purva Bhadrapada,Leo,Magha,1,0,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,3,0,5,7,8,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,2,5,6,0,0,0
+Taurus,Krittika,Leo,Magha,0,0,1,3,0,6,7,0,0
+Virgo,Uttara Phalguni,Gemini,Mrigashira,1,2,1,3,5,5,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,3,4,6,0,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,3,5,6,0,0,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,3,0,6,0,0,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,3,3,6,7,8,1
+Taurus,Krittika,Leo,Magha,0,0,1,3,0,6,7,0,0
+Leo,Magha,Gemini,Mrigashira,1,0,1,3,4,1,7,8,1
+Pisces,Purva Bhadrapada,Scorpio,Vishakha,1,0,3,3,5,0,0,8,1
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,2,0,0,7,0,0
+Libra,Chitra,Aries,Ashwini,0,1,1,3,3,1,7,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,2,4,6,7,0,1
+Scorpio,Vishakha,Libra,Chitra,1,0,1,4,3,6,0,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Leo,Magha,Aries,Ashwini,1,0,3,2,5,1,0,8,1
+Aquarius,Dhanishta,Virgo,Uttara Phalguni,0,2,1,3,4,0,0,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Leo,Magha,Sagittarius,Mula,1,0,3,3,5,6,0,8,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,3,5,6,0,0,0
+Cancer,Punarvasu,Sagittarius,Mula,1,1,1,2,4,1,0,0,0
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,3,4,6,7,0,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Leo,Magha,Sagittarius,Mula,1,0,3,2,5,6,0,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Cancer,Punarvasu,Capricorn,Uttara Ashadha,1,1,1,2,0,6,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Cancer,Punarvasu,Cancer,Punarvasu,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,2,0,0,0,8,0
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,2,0,0,7,0,0
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,2,0,1,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,3,5,0,7,0,1
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,8,1
+Taurus,Krittika,Pisces,Purva Bhadrapada,0,1,1,3,0,0,7,8,1
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Leo,Magha,Leo,Magha,1,2,3,4,5,6,7,0,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,2,0,0,0,0,0
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,3,5,6,0,0,1
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,2,0,6,7,8,1
+Taurus,Krittika,Sagittarius,Mula,0,1,1,2,0,6,0,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,2,3,1,7,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,2,4,6,7,0,1
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,3,0,0,0,8,0
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,3,3,6,7,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Leo,Magha,Aries,Ashwini,1,0,3,2,5,1,0,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Virgo,Uttara Phalguni,Gemini,Mrigashira,1,2,1,2,5,5,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,3,0,6,7,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,2,5,0,0,0,0
+Taurus,Krittika,Gemini,Mrigashira,1,1,1,2,5,1,0,8,1
+Capricorn,Uttara Ashadha,Sagittarius,Mula,0,1,1,3,3,0,0,8,0
+Gemini,Mrigashira,Capricorn,Uttara Ashadha,0,1,1,0,4,6,0,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,2,3,6,7,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,3,0,6,7,8,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,3,4,5,0,0,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,3,4,5,0,0,1
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,3,3,6,7,8,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,3,0,0,7,8,1
+Libra,Chitra,Sagittarius,Mula,0,2,1,2,0,6,7,8,1
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,2,0,5,0,0,0
+Capricorn,Uttara Ashadha,Sagittarius,Mula,0,1,1,2,3,0,0,8,0
+Aries,Ashwini,Libra,Chitra,1,1,1,3,3,1,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Aquarius,Dhanishta,Libra,Chitra,1,2,3,2,5,6,0,0,1
+Virgo,Uttara Phalguni,Virgo,Uttara Phalguni,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Leo,Magha,0,0,1,2,0,6,7,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,3,4,6,7,0,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,2,0,6,7,0,0
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Cancer,Punarvasu,Libra,Chitra,1,1,1,2,0,1,7,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,2,0,1,0,8,0
+Sagittarius,Mula,Taurus,Krittika,1,1,1,2,0,6,0,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Virgo,Uttara Phalguni,Libra,Chitra,1,2,1,0,5,0,0,8,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Aries,Ashwini,Gemini,Mrigashira,1,1,1,3,0,6,7,8,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,2,5,6,0,0,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Taurus,Krittika,Taurus,Krittika,1,2,3,4,5,6,7,0,1
+Sagittarius,Mula,Aries,Ashwini,1,1,3,2,5,1,0,0,0
+Libra,Chitra,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Cancer,Punarvasu,Capricorn,Uttara Ashadha,1,1,1,3,0,6,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,3,5,0,0,0,0
+Taurus,Krittika,Gemini,Mrigashira,1,1,1,2,5,1,0,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Pisces,Purva Bhadrapada,Gemini,Mrigashira,1,1,1,2,0,5,7,8,1
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,3,3,6,7,8,1
+Taurus,Krittika,Leo,Magha,0,0,1,2,0,6,7,0,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,2,4,0,0,8,1
+Gemini,Mrigashira,Scorpio,Vishakha,0,0,1,3,0,1,0,8,0
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,2,4,1,0,0,0
+Capricorn,Uttara Ashadha,Sagittarius,Mula,0,1,1,3,3,0,0,8,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Libra,Chitra,Leo,Magha,0,0,1,2,0,6,7,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,2,3,6,7,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,2,5,0,0,8,0
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,0,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,2,5,1,0,0,0
+Virgo,Uttara Phalguni,Gemini,Mrigashira,1,2,1,3,5,5,7,8,1
+Gemini,Mrigashira,Libra,Chitra,1,2,3,2,5,1,0,0,0
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,3,0,5,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Taurus,Krittika,Pisces,Purva Bhadrapada,0,1,1,2,0,0,7,8,1
+Virgo,Uttara Phalguni,Leo,Magha,0,0,1,2,4,0,0,8,0
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,3,3,6,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,3,0,6,7,8,1
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Leo,Magha,Sagittarius,Mula,1,0,3,2,5,6,0,8,1
+Cancer,Punarvasu,Leo,Magha,1,0,1,0,5,1,0,8,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,3,0,0,0,8,0
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,2,0,5,0,0,0
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,3,5,0,0,0,0
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,2,5,0,0,0,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,2,0,1,0,8,0
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Pisces,Purva Bhadrapada,Scorpio,Vishakha,1,0,3,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,3,5,0,0,0,0
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,3,4,6,7,0,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,2,0,0,0,8,0
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,2,4,0,0,8,1
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,2,5,0,0,8,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,3,0,1,7,8,1
+Aquarius,Dhanishta,Scorpio,Vishakha,0,0,1,2,0,6,7,8,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Sagittarius,Mula,Capricorn,Uttara Ashadha,1,1,1,3,3,0,0,8,0
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,3,3,6,7,8,1
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,0,1
+Sagittarius,Mula,Gemini,Mrigashira,1,2,1,2,0,1,7,8,1
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,0,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Sagittarius,Mula,Aquarius,Dhanishta,1,2,1,3,3,6,7,8,1
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Cancer,Punarvasu,Leo,Magha,1,0,1,0,5,1,0,8,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Taurus,Krittika,Gemini,Mrigashira,1,1,1,3,5,1,0,8,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,3,5,0,7,8,1
+Libra,Chitra,Virgo,Uttara Phalguni,0,2,1,0,5,0,0,8,0
+Virgo,Uttara Phalguni,Sagittarius,Mula,0,2,1,2,0,0,7,0,0
+Sagittarius,Mula,Leo,Magha,1,0,3,3,5,6,0,8,1
+Cancer,Punarvasu,Capricorn,Uttara Ashadha,1,1,1,2,0,6,7,8,1
+Cancer,Punarvasu,Pisces,Purva Bhadrapada,1,2,3,2,4,6,0,0,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Cancer,Punarvasu,Aries,Ashwini,1,1,1,2,4,6,7,0,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,2,5,0,0,8,1
+Gemini,Mrigashira,Capricorn,Uttara Ashadha,0,1,1,0,4,6,0,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,3,0,6,7,0,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Leo,Magha,Aries,Ashwini,1,0,3,2,5,1,0,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,3,0,6,7,0,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,3,5,0,0,0,0
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,7,0,0
+Taurus,Krittika,Pisces,Purva Bhadrapada,0,1,1,2,0,0,7,8,1
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,3,5,0,7,0,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Leo,Magha,Pisces,Purva Bhadrapada,0,0,1,3,5,0,0,8,0
+Gemini,Mrigashira,Taurus,Krittika,0,1,1,2,5,1,0,8,1
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,2,4,6,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Aries,Ashwini,Sagittarius,Mula,1,1,3,3,5,1,0,0,0
+Pisces,Purva Bhadrapada,Cancer,Punarvasu,1,2,3,3,4,5,0,0,1
+Libra,Chitra,Virgo,Uttara Phalguni,0,2,1,0,5,0,0,8,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,2,0,6,7,0,1
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Gemini,Mrigashira,Sagittarius,Mula,0,2,1,2,0,1,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Gemini,Mrigashira,1,2,3,4,5,6,7,0,1
+Leo,Magha,Taurus,Krittika,1,0,1,2,0,6,7,0,0
+Cancer,Punarvasu,Sagittarius,Mula,1,1,1,2,4,1,0,0,0
+Scorpio,Vishakha,Libra,Chitra,1,0,1,4,3,6,0,8,1
+Cancer,Punarvasu,Capricorn,Uttara Ashadha,1,1,1,2,0,6,7,8,1
+Aquarius,Dhanishta,Libra,Chitra,1,2,3,3,5,6,0,0,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,2,5,0,0,0,0
+Scorpio,Vishakha,Cancer,Punarvasu,1,0,3,3,4,1,0,8,1
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,3,5,6,0,0,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Capricorn,Uttara Ashadha,Virgo,Uttara Phalguni,1,1,3,2,4,6,0,8,1
+Capricorn,Uttara Ashadha,Sagittarius,Mula,0,1,1,3,3,0,0,8,0
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,3,5,0,7,8,1
+Libra,Chitra,Aries,Ashwini,0,1,1,3,3,1,7,8,1
+Aquarius,Dhanishta,Libra,Chitra,1,2,3,3,5,6,0,0,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,3,5,0,7,8,1
+Aquarius,Dhanishta,Leo,Magha,0,0,1,2,0,6,7,8,1
+Cancer,Punarvasu,Sagittarius,Mula,1,1,1,3,4,1,0,0,0
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,2,5,0,7,0,0
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Leo,Magha,Taurus,Krittika,1,0,1,3,0,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Gemini,Mrigashira,Sagittarius,Mula,0,2,1,3,0,1,7,8,1
+Sagittarius,Mula,Gemini,Mrigashira,1,2,1,3,0,1,7,8,1
+Aries,Ashwini,Gemini,Mrigashira,1,1,1,2,0,6,7,8,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Taurus,Krittika,Virgo,Uttara Phalguni,1,1,3,3,5,0,0,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Leo,Magha,Sagittarius,Mula,1,0,3,3,5,6,0,8,1
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,3,0,1,7,8,1
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,2,4,1,0,0,0
+Leo,Magha,Taurus,Krittika,1,0,1,2,0,6,7,0,0
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,2,3,6,7,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,2,0,5,7,8,1
+Capricorn,Uttara Ashadha,Gemini,Mrigashira,1,1,1,0,4,5,0,8,1
+Aries,Ashwini,Sagittarius,Mula,1,1,3,3,5,1,0,0,0
+Virgo,Uttara Phalguni,Libra,Chitra,1,2,1,0,5,0,0,8,0
+Aries,Ashwini,Capricorn,Uttara Ashadha,1,2,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Libra,Chitra,Aries,Ashwini,0,1,1,3,3,1,7,8,1
+Capricorn,Uttara Ashadha,Aries,Ashwini,0,2,1,3,0,5,7,8,1
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,7,0,0
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Gemini,Mrigashira,1,0,1,2,0,1,0,8,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,2,0,0,0,8,0
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,3,5,0,7,8,1
+Cancer,Punarvasu,Gemini,Mrigashira,1,1,1,3,1,6,0,8,1
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,3,5,0,7,0,1
+Capricorn,Uttara Ashadha,Cancer,Punarvasu,0,1,1,2,0,5,7,8,1
+Capricorn,Uttara Ashadha,Libra,Chitra,1,1,1,3,5,0,7,8,1
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Leo,Magha,Gemini,Mrigashira,1,0,1,2,4,1,7,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,3,0,1,0,8,0
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,2,5,0,0,8,1
+Aquarius,Dhanishta,Virgo,Uttara Phalguni,0,2,1,2,4,0,0,8,0
+Sagittarius,Mula,Gemini,Mrigashira,1,2,1,2,0,1,7,8,1
+Aries,Ashwini,Gemini,Mrigashira,1,1,1,3,0,6,7,8,1
+Virgo,Uttara Phalguni,Leo,Magha,0,0,1,3,4,0,0,8,0
+Aquarius,Dhanishta,Aquarius,Dhanishta,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,3,0,0,0,0,0
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,0,0,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Sagittarius,Mula,Taurus,Krittika,1,1,1,3,0,6,0,8,1
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,3,4,6,0,8,1
+Virgo,Uttara Phalguni,Leo,Magha,0,0,1,2,4,0,0,8,0
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,2,5,0,0,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Gemini,Mrigashira,Sagittarius,Mula,0,2,1,3,0,1,7,8,1
+Taurus,Krittika,Scorpio,Vishakha,0,0,1,0,3,6,7,0,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,2,0,6,7,8,1
+Virgo,Uttara Phalguni,Libra,Chitra,1,2,1,0,5,0,0,8,0
+Pisces,Purva Bhadrapada,Scorpio,Vishakha,1,0,3,2,5,0,0,8,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,2,5,0,0,8,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,2,0,0,7,0,0
+Cancer,Punarvasu,Taurus,Krittika,1,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Taurus,Krittika,1,0,1,0,3,6,7,0,1
+Libra,Chitra,Capricorn,Uttara Ashadha,0,1,1,2,5,0,7,8,1
+Taurus,Krittika,Leo,Magha,0,0,1,3,0,6,7,0,0
+Taurus,Krittika,Cancer,Punarvasu,0,1,1,3,0,1,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,2,4,1,0,0,0
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Scorpio,Vishakha,1,0,3,2,5,0,0,8,1
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,3,3,6,7,8,1
+Pisces,Purva Bhadrapada,Sagittarius,Mula,1,1,1,2,5,0,7,0,0
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,2,0,0,0,0,0
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Gemini,Mrigashira,Taurus,Krittika,0,1,1,3,5,1,0,8,1
+Scorpio,Vishakha,Libra,Chitra,1,0,1,4,3,6,0,8,1
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,3,4,1,0,0,0
+Aries,Ashwini,Leo,Magha,1,0,3,3,5,1,0,8,1
+Aries,Ashwini,Virgo,Uttara Phalguni,1,1,1,2,0,6,0,0,0
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Aquarius,Dhanishta,Virgo,Uttara Phalguni,0,2,1,2,4,0,0,8,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Virgo,Uttara Phalguni,Scorpio,Vishakha,0,0,1,0,0,0,7,8,0
+Pisces,Purva Bhadrapada,Pisces,Purva Bhadrapada,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Capricorn,Uttara Ashadha,Leo,Magha,0,0,1,3,0,0,0,0,0
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Virgo,Uttara Phalguni,1,1,1,2,0,6,7,0,1
+Virgo,Uttara Phalguni,Gemini,Mrigashira,1,2,1,3,5,5,7,8,1
+Virgo,Uttara Phalguni,Sagittarius,Mula,0,2,1,3,0,0,7,0,0
+Pisces,Purva Bhadrapada,Aquarius,Dhanishta,1,1,1,4,3,0,0,8,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Gemini,Mrigashira,Libra,Chitra,1,2,3,3,5,1,0,0,0
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,2,0,1,7,8,1
+Sagittarius,Mula,Cancer,Punarvasu,0,1,1,3,4,1,0,0,0
+Leo,Magha,Aries,Ashwini,1,0,3,3,5,1,0,8,1
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Taurus,Krittika,Aries,Ashwini,0,2,1,3,3,1,0,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Aquarius,Dhanishta,Pisces,Purva Bhadrapada,0,1,1,4,3,0,0,8,0
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Libra,Chitra,Cancer,Punarvasu,0,1,1,2,0,1,7,8,1
+Scorpio,Vishakha,Capricorn,Uttara Ashadha,1,0,1,3,0,0,7,0,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Aries,Ashwini,Cancer,Punarvasu,0,1,1,2,4,6,7,0,1
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,2,4,0,0,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,2,0,0,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Virgo,Uttara Phalguni,Libra,Chitra,1,2,1,0,5,0,0,8,0
+Sagittarius,Mula,Taurus,Krittika,1,1,1,3,0,6,0,8,1
+Capricorn,Uttara Ashadha,Gemini,Mrigashira,1,1,1,0,4,5,0,8,1
+Capricorn,Uttara Ashadha,Scorpio,Vishakha,0,0,1,2,0,0,7,0,0
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Scorpio,Vishakha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Aquarius,Dhanishta,Gemini,Mrigashira,1,2,3,2,4,1,0,0,0
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,3,0,0,0,8,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Capricorn,Uttara Ashadha,Aquarius,Dhanishta,1,1,1,3,5,0,0,8,1
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,2,5,6,7,8,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,3,5,0,0,8,1
+Virgo,Uttara Phalguni,Cancer,Punarvasu,0,1,1,3,1,5,7,0,1
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,3,3,6,7,8,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,3,0,1,7,8,1
+Gemini,Mrigashira,Aries,Ashwini,0,1,1,2,0,6,7,8,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,3,3,1,0,8,1
+Aquarius,Dhanishta,Libra,Chitra,1,2,3,2,5,6,0,0,1
+Taurus,Krittika,Virgo,Uttara Phalguni,1,1,3,3,5,0,0,8,1
+Virgo,Uttara Phalguni,Pisces,Purva Bhadrapada,0,1,1,3,0,6,7,0,1
+Taurus,Krittika,Libra,Chitra,1,1,1,0,5,6,0,8,1
+Taurus,Krittika,Capricorn,Uttara Ashadha,1,2,3,2,5,0,0,0,0
+Taurus,Krittika,Aries,Ashwini,0,2,1,2,3,1,0,8,0
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Virgo,Uttara Phalguni,Capricorn,Uttara Ashadha,1,1,3,3,4,6,0,8,1
+Virgo,Uttara Phalguni,Virgo,Uttara Phalguni,1,2,3,4,5,6,7,0,1
+Leo,Magha,Cancer,Punarvasu,0,0,1,0,5,1,0,8,0
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Gemini,Mrigashira,Aquarius,Dhanishta,1,2,3,3,4,1,0,0,0
+Leo,Magha,Libra,Chitra,1,0,1,2,0,6,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,2,5,5,0,0,0
+Capricorn,Uttara Ashadha,Taurus,Krittika,1,2,3,3,5,0,0,0,0
+Scorpio,Vishakha,Sagittarius,Mula,1,0,1,3,5,6,0,8,1
+Cancer,Punarvasu,Gemini,Mrigashira,1,1,1,3,1,6,0,8,1
+Libra,Chitra,Scorpio,Vishakha,0,0,1,4,3,6,0,8,1
+Leo,Magha,Aquarius,Dhanishta,1,0,1,2,0,6,7,8,1
+Libra,Chitra,Sagittarius,Mula,0,2,1,3,0,6,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,2,5,1,0,8,1
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,2,0,1,0,8,0
+Leo,Magha,Aquarius,Dhanishta,1,0,1,3,0,6,7,8,1
+Scorpio,Vishakha,Aries,Ashwini,1,0,1,3,5,1,0,8,1
+Aquarius,Dhanishta,Cancer,Punarvasu,0,1,1,3,0,1,0,8,0
+Cancer,Punarvasu,Aquarius,Dhanishta,1,1,1,3,0,1,0,8,0
+Aquarius,Dhanishta,Capricorn,Uttara Ashadha,0,1,1,2,5,0,0,8,0
+Scorpio,Vishakha,Scorpio,Vishakha,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Capricorn,Uttara Ashadha,1,2,3,4,5,6,7,0,1
+Leo,Magha,Leo,Magha,1,2,3,4,5,6,7,0,1
+Aquarius,Dhanishta,Aries,Ashwini,0,1,1,2,0,1,7,8,1
+Cancer,Punarvasu,Cancer,Punarvasu,1,2,3,4,5,6,7,0,1
+Capricorn,Uttara Ashadha,Virgo,Uttara Phalguni,1,1,3,3,4,6,0,8,1
+Scorpio,Vishakha,Gemini,Mrigashira,1,0,1,2,0,1,0,8,0
+Pisces,Purva Bhadrapada,Taurus,Krittika,1,1,1,2,0,0,7,8,1
+Leo,Magha,Taurus,Krittika,1,0,1,3,0,6,7,0,1
+Aries,Ashwini,Taurus,Krittika,1,2,1,2,3,1,0,8,1
+Pisces,Purva Bhadrapada,Capricorn,Uttara Ashadha,1,1,1,3,3,6,7,8,1
+Leo,Magha,Capricorn,Uttara Ashadha,1,0,1,2,0,0,0,0,0
+Taurus,Krittika,Aquarius,Dhanishta,1,1,1,3,5,6,7,8,1
+Capricorn,Uttara Ashadha,Pisces,Purva Bhadrapada,0,1,1,3,3,6,7,8,1
+Aries,Ashwini,Pisces,Purva Bhadrapada,0,1,1,2,5,6,0,0,0
+Gemini,Mrigashira,Libra,Chitra,1,2,3,3,5,1,0,0,0
+Gemini,Mrigashira,Virgo,Uttara Phalguni,0,2,1,2,5,6,7,8,1
+Pisces,Purva Bhadrapada,Libra,Chitra,1,1,1,3,0,0,0,8,0
+Aquarius,Dhanishta,Sagittarius,Mula,0,2,1,2,3,6,7,8,1
+Aries,Ashwini,Aries,Ashwini,1,2,3,4,5,6,7,0,1
+Virgo,Uttara Phalguni,Taurus,Krittika,1,1,3,3,5,0,0,8,1
+Aquarius,Dhanishta,Scorpio,Vishakha,0,0,1,2,0,6,7,8,1
+Aries,Ashwini,Aquarius,Dhanishta,1,1,1,3,0,1,7,8,1
+Virgo,Uttara Phalguni,Aquarius,Dhanishta,1,2,1,2,4,0,0,8,1
+Aquarius,Dhanishta,Taurus,Krittika,0,1,1,3,5,6,7,8,1
+Pisces,Purva Bhadrapada,Aries,Ashwini,1,1,1,3,5,5,0,0,0
+Virgo,Uttara Phalguni,Aries,Ashwini,0,1,1,3,0,5,0,0,0
+Libra,Chitra,Aquarius,Dhanishta,1,2,3,2,5,6,0,0,1
+Libra,Chitra,Pisces,Purva Bhadrapada,0,1,1,2,0,0,0,8,0
+Libra,Chitra,Taurus,Krittika,0,1,1,0,5,6,0,8,1
+Scorpio,Vishakha,Pisces,Purva Bhadrapada,1,0,3,3,5,0,0,8,1
+Leo,Magha,Virgo,Uttara Phalguni,1,0,1,3,4,0,0,8,0

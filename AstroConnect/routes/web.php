@@ -39,8 +39,6 @@ Route::middleware([RedirectApprovedAstrologerFromUserSide::class, RedirectAdminF
 
     Route::get('/astrologers', [AstrologerController::class, 'index'])->name('astrologers.index');
     Route::get('/astrologers/{astrologer}', [AstrologerController::class, 'show'])->name('astrologers.show');
-    Route::get('/predictions/career', [App\Http\Controllers\PredictionController::class, 'showCareerForm'])->name('predictions.career');
-    Route::post('/predictions/career', [App\Http\Controllers\PredictionController::class, 'processCareer'])->name('predictions.career.process');
     Route::get('/predictions/compatibility', [App\Http\Controllers\PredictionController::class, 'showCompatibilityForm'])->name('predictions.compatibility');
     Route::post('/predictions/compatibility', [App\Http\Controllers\PredictionController::class, 'processCompatibility'])->name('predictions.compatibility.process');
 });

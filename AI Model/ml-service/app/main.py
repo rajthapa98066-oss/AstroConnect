@@ -1,11 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from .schemas import CompatibilityRequest, CareerRequest
+from .schemas import CompatibilityRequest
 from .services.prediction_service import prediction_service_instance
 
 app = FastAPI(
     title="AstroConnect ML API", 
-    description="Machine Learning Microservice for predicting Career and Compatibility.",
+    description="Machine Learning Microservice for compatibility prediction.",
     version="1.0.0"
 )
 
@@ -32,19 +32,6 @@ def get_compatibility(request: CompatibilityRequest):
     try:
         data_dict = request.model_dump()
         result = prediction_service_instance.predict_compatibility(data_dict)
-        return {"status": "success", "data": result}
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Prediction failed: {str(e)}")
-
-@app.post("/api/v1/predict/career")
-def get_career(request: CareerRequest):
-    """
-    Accepts 9 Planetary sign placements (Sun, Moon, etc),
-    and relies on the SMOTE-Resampled Random Forest to predict optimal Career paths.
-    """
-    try:
-        data_dict = request.model_dump()
-        result = prediction_service_instance.predict_career(data_dict)
         return {"status": "success", "data": result}
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Prediction failed: {str(e)}")

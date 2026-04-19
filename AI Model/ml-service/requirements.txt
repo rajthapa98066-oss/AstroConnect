@@ -21,7 +21,9 @@ python-dotenv
 geopy
 
 # Swiss Ephemeris for Vedic astrology calculations
-pyswisseph
+# pyswisseph currently fails to build on Python 3.14 without MSVC toolchain.
+# It is only used by scrapers and has an approximate fallback in code.
+pyswisseph; python_version < "3.14"
 
 # Timezone lookup from coordinates
 timezonefinder
@@ -31,6 +33,8 @@ pytz
 scikit-learn
 imbalanced-learn
 catboost
+xgboost
+optuna
 matplotlib
 seaborn
 joblib

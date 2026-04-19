@@ -1,9 +1,11 @@
 {{-- View: resources\views\layouts\astrologer\body\sidebar.blade.php --}}
 @php
+    $canAccessAstrologerPanel = auth()->check() && auth()->user()->canAccessAstrologerPanel();
+
     $items = [
         [
             'label' => 'Dashboard',
-            'route' => route('astrologer.dashboard'),
+            'route' => $canAccessAstrologerPanel ? route('astrologer.dashboard') : route('astrologer.apply'),
             'active' => request()->routeIs('astrologer.dashboard'),
         ],
         [
@@ -30,7 +32,7 @@
 @endphp
 
 <div class="flex h-full min-h-screen flex-col overflow-y-auto border-r border-white/10 bg-slate-950/95 p-6 backdrop-blur-xl">
-    <a href="{{ route('astrologer.dashboard') }}" class="flex items-center gap-3 border-b border-white/10 pb-5">
+    <a href="{{ $canAccessAstrologerPanel ? route('astrologer.dashboard') : route('astrologer.apply') }}" class="flex items-center gap-3 border-b border-white/10 pb-5">
         <span class="flex h-10 w-10 items-center justify-center rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-200">✦</span>
         <div>
             <p class="text-xs uppercase tracking-[0.3em] text-amber-200/70">Astrologer Panel</p>

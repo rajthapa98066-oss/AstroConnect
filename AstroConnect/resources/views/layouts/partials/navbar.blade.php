@@ -21,10 +21,10 @@
                 </a>
 
                 @auth
-                    <a href="{{ route('home') }}"
+                    {{-- <a href="{{ route('home') }}"
                        class="text-sm text-slate-300 hover:text-white transition">
                         Home
-                    </a>
+                    </a> --}}
 
                     @if ($astrologerProfile?->verification_status === 'approved')
                         <a href="{{ route('astrologer.dashboard') }}"

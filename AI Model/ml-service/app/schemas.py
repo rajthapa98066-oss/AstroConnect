@@ -13,14 +13,3 @@ class CompatibilityRequest(BaseModel):
     gana_score: int
     bhakoot_score: int
     nadi_score: int
-
-class CareerRequest(BaseModel):
-    sun_sign: str
-    moon_sign: str
-    mars_sign: str
-    mercury_sign: str
-    jupiter_sign: str
-    venus_sign: str
-    saturn_sign: str
-    rahu_sign: str
-    ketu_sign: str

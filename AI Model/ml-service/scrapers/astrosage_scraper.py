@@ -7,7 +7,6 @@ multiple profession categories, and scrapes each celebrity's:
   - Date of birth
   - Time of birth
   - Place of birth
-  - Career category (mapped to our 7 categories)
 
 It uses Selenium (for JavaScript-rendered pages) plus BeautifulSoup (for parsing).
 Results are saved incrementally to data/raw/celebrities_raw.csv.
@@ -44,22 +43,21 @@ from scrapers.utils import setup_logger, append_row_to_csv, DATA_RAW
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 
-# AstroSage celebrity category URLs → our career labels
-# Maps AstroSage's category names to our 7 simplified career categories
-CATEGORY_MAP = {
-    "Cricket":    "Sports",
-    "Sports":     "Sports",
-    "Football":   "Sports",
-    "Hockey":     "Sports",
-    "Bollywood":  "Actor",
-    "Hollywood":  "Actor",
-    "Politician": "Politician",
-    "Businessman":"Business",
-    "Musician":   "Musician",
-    "Singer":     "Musician",
-    "Literature": "Writer",
-    "Scientist":  "Scientist",
-}
+# AstroSage celebrity categories to scrape
+CATEGORIES = [
+    "Cricket",
+    "Sports",
+    "Football",
+    "Hockey",
+    "Bollywood",
+    "Hollywood",
+    "Politician",
+    "Businessman",
+    "Musician",
+    "Singer",
+    "Literature",
+    "Scientist",
+]
 
 # How many celebrities to scrape per category (adjust as needed)
 # Set higher numbers if you want more data; scraping will stop
@@ -331,12 +329,12 @@ def scrape_all_categories():
     total_scraped = len(already_scraped)
     
     try:
-        for category, career_label in CATEGORY_MAP.items():
+        for category in CATEGORIES:
             target = TARGET_PER_CATEGORY.get(category, 50)
             category_count = 0
             
             logger.info(f"\n{'='*60}")
-            logger.info(f"📂 Category: {category} → Career Label: {career_label}")
+            logger.info(f"📂 Category: {category}")
             logger.info(f"   Target: {target} celebrities")
             logger.info(f"{'='*60}")
             
@@ -377,9 +375,6 @@ def scrape_all_categories():
                     data = scrape_celebrity_profile(driver, link)
                     
                     if data:
-                        # Add career category
-                        data["career_category"] = career_label
-                        
                         # Save immediately (so we don't lose progress on crash)
                         append_row_to_csv(data, OUTPUT_FILE)
                         already_scraped.add(link)
@@ -389,8 +384,7 @@ def scrape_all_categories():
                         logger.info(
                             f"  ✅ [{total_scraped}] {data['full_name']} | "
                             f"DOB: {data['date_of_birth']} | "
-                            f"TOB: {data['time_of_birth']} | "
-                            f"Career: {career_label}"
+                            f"TOB: {data['time_of_birth']}"
                         )
                     
                     # Random delay to be respectful
@@ -411,13 +405,6 @@ def scrape_all_categories():
         logger.info(f"\n{'='*60}")
         logger.info(f"🏁 COMPLETE! Total celebrities scraped: {total_scraped}")
         logger.info(f"   Output file: {OUTPUT_FILE}")
-        
-        # Print summary
-        if OUTPUT_FILE.exists():
-            df = pd.read_csv(OUTPUT_FILE, encoding="utf-8-sig")
-            logger.info(f"\n📊 Summary by Career Category:")
-            for cat, count in df["career_category"].value_counts().items():
-                logger.info(f"   {cat}: {count}")
         logger.info(f"{'='*60}")
 
 
@@ -428,7 +415,7 @@ if __name__ == "__main__":
     print("       AstroConnect — AstroSage Celebrity Scraper          ")
     print("                                                           ")
     print("  This will scrape celebrity birth data from AstroSage.    ")
-    print("  Target: ~500+ celebrities across 7 career categories.    ")
+    print("  Target: ~500+ celebrities across multiple categories.    ")
     print("  Estimated time: 2-4 hours (with respectful rate limits). ")
     print("                                                           ")
     print("  Press Ctrl+C at any time to stop. Progress is saved.     ")

@@ -18,54 +18,6 @@ class PredictionController extends Controller
     }
 
     /**
-     * Show the Career Prediction Form
-     */
-    public function showCareerForm()
-    {
-        return view('pages.predictions.career');
-    }
-
-    /**
-     * Process the Career Prediction
-     */
-    public function processCareer(Request $request)
-    {
-        // 1. Validate incoming birth details
-        $validated = $request->validate([
-            'dob' => 'required|date',
-            'time' => 'required',
-            'lat' => 'required|numeric',
-            'lon' => 'required|numeric',
-            'tzone' => 'required|numeric',
-        ]);
-
-        try {
-            // Parse Date and Time
-            $timestamp = strtotime($validated['dob'] . ' ' . $validated['time']);
-            $day = (int)date('d', $timestamp);
-            $month = (int)date('m', $timestamp);
-            $year = (int)date('Y', $timestamp);
-            $hour = (int)date('H', $timestamp);
-            $min = (int)date('i', $timestamp);
-
-            // 2. Fetch Planetary Signs from Astrology API Bridge
-            $planetarySigns = $this->astrologyService->getPlanetarySigns(
-                $day, $month, $year, $hour, $min, 
-                $validated['lat'], $validated['lon'], $validated['tzone']
-            );
-
-            // 3. Pass Planetary Signs to Machine Learning Service
-            $predictedCareer = $this->mlService->predictCareer($planetarySigns);
-
-            // 4. Return result view
-            return view('pages.predictions.career-result', compact('predictedCareer', 'planetarySigns'));
-
-        } catch (\Exception $e) {
-            return back()->with('error', $e->getMessage())->withInput();
-        }
-    }
-
-    /**
      * Show the Compatibility Prediction Form
      */
     public function showCompatibilityForm()
@@ -85,7 +37,7 @@ class PredictionController extends Controller
             'p1_lat' => 'required|numeric',
             'p1_lon' => 'required|numeric',
             'p1_tzone' => 'required|numeric',
-            
+
             'p2_dob' => 'required|date',
             'p2_time' => 'required',
             'p2_lat' => 'required|numeric',

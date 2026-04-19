@@ -1,5 +1,5 @@
 {{-- View: resources\views\pages\astrologer\apply.blade.php --}}
-@extends('layouts.astrologer.master')
+@extends('layouts.app')
 
 @section('title', 'AstroConnect | Apply as Astrologer')
 
@@ -36,6 +36,12 @@
             </div>
         @endif
 
+        @if (session('status') === 'application-in-review')
+            <div class="mb-6 rounded-2xl border border-amber-300/20 bg-amber-300/10 px-5 py-4 text-sm font-medium text-amber-200">
+                Your application is still pending review. You can apply again only after it is rejected.
+            </div>
+        @endif
+
         @if ($errors->any())
             <div class="mb-6 rounded-2xl border border-rose-300/20 bg-rose-300/10 px-5 py-4 text-sm text-rose-200">
                 <ul class="space-y-1">
@@ -46,6 +52,7 @@
             </div>
         @endif
 
+        @if ($canApply)
         <form method="POST" action="{{ route('astrologer.apply.store') }}" enctype="multipart/form-data" class="grid gap-6 lg:grid-cols-2">
             @csrf
 
@@ -96,6 +103,11 @@
                 </button>
             </div>
         </form>
+        @else
+        <div class="rounded-2xl border border-amber-300/20 bg-amber-300/10 px-5 py-4 text-sm leading-7 text-amber-100">
+            Your current application is pending review. Re-application is available only when your status changes to rejected.
+        </div>
+        @endif
     </div>
 </section>
 @endsection

@@ -14,6 +14,9 @@
 </head>
 
 <body class="min-h-screen bg-slate-950 text-slate-100 [font-family:'Outfit',sans-serif]">
+    @php
+        $canAccessAstrologerPanel = auth()->check() && auth()->user()->canAccessAstrologerPanel();
+    @endphp
     <div x-data="{ sidebarOpen: false }" class="relative isolate min-h-screen overflow-x-hidden">
         <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.18),_transparent_38%),radial-gradient(circle_at_top_right,_rgba(99,102,241,0.12),_transparent_30%)]"></div>
         <div class="pointer-events-none absolute inset-x-0 top-72 -z-10 h-80 bg-[linear-gradient(180deg,rgba(15,23,42,0),rgba(15,23,42,0.8),rgba(2,6,23,1))]"></div>
@@ -42,8 +45,8 @@
                             <p class="text-lg text-white [font-family:'Cormorant_Garamond',serif]">Manage Your AstroConnect Presence</p>
                         </div>
 
-                        <a href="{{ route('astrologer.dashboard') }}" class="hidden rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/25 hover:text-white sm:inline-flex">
-                            Panel Home
+                        <a href="{{ $canAccessAstrologerPanel ? route('astrologer.dashboard') : route('home') }}" class="hidden rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-white/25 hover:text-white sm:inline-flex">
+                            {{ $canAccessAstrologerPanel ? 'Panel Home' : 'Home' }}
                         </a>
                     </div>
                 </div>

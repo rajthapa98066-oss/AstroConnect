@@ -11,7 +11,7 @@
     <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Choose from focused readings, relationship insights, and horoscope guidance shaped around the way people actually seek clarity.</p>
 </section>
 
-{{-- Service cards listing the six core offering types. --}}
+{{-- Service cards listing the core offering types. --}}
 <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
@@ -26,21 +26,16 @@
         </article>
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
             <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">03</p>
-            <h2 class="mt-4 text-3xl text-white [font-family:'Cormorant_Garamond',serif]">Career Astrology</h2>
-            <p class="mt-4 text-base leading-7 text-slate-300">Use planetary timing and chart signatures to navigate direction, purpose, and professional growth.</p>
-        </article>
-        <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
-            <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">04</p>
             <h2 class="mt-4 text-3xl text-white [font-family:'Cormorant_Garamond',serif]">Transit Forecast</h2>
             <p class="mt-4 text-base leading-7 text-slate-300">A focused session on the major astrological cycles currently shaping your choices and momentum.</p>
         </article>
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
-            <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">05</p>
+            <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">04</p>
             <h2 class="mt-4 text-3xl text-white [font-family:'Cormorant_Garamond',serif]">Love & Relationship Reading</h2>
             <p class="mt-4 text-base leading-7 text-slate-300">Reveal recurring patterns in attraction, attachment, timing, and emotional intimacy.</p>
         </article>
         <article class="rounded-[2rem] border border-white/10 bg-slate-900/70 p-8">
-            <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">06</p>
+            <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">05</p>
             <h2 class="mt-4 text-3xl text-white [font-family:'Cormorant_Garamond',serif]">Daily Horoscope Guidance</h2>
             <p class="mt-4 text-base leading-7 text-slate-300">Lightweight, ongoing insight for the energies influencing work, rest, love, and decision-making.</p>
         </article>
