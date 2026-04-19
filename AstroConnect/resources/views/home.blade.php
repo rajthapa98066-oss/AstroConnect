@@ -43,7 +43,7 @@
         <div class="absolute inset-0 m-auto h-80 w-80 rounded-full bg-amber-300/10 blur-3xl sm:h-[28rem] sm:w-[28rem]"></div>
         <div class="relative flex aspect-square w-full max-w-[34rem] items-center justify-center rounded-full border border-amber-300/20 bg-white/5 p-8 shadow-[0_0_80px_rgba(15,23,42,0.7)] backdrop-blur">
             <div class="absolute inset-6 rounded-full border border-dashed border-white/10"></div>
-            <img src="{{ asset('images/zodiac-wheel.png') }}" alt="Rotating zodiac wheel" class="relative z-10 w-full max-w-md animate-spin drop-shadow-[0_0_40px_rgba(251,191,36,0.18)] motion-reduce:animate-none [animation-duration:36s]">
+            <img src="{{ asset('images/rotating-zodiac-wheel.png') }}" alt="Rotating zodiac wheel" class="relative z-10 w-full max-w-md animate-spin drop-shadow-[0_0_40px_rgba(251,191,36,0.18)] motion-reduce:animate-none [animation-duration:36s]">
             <div class="absolute inset-0 bg-[radial-gradient(circle,_rgba(15,23,42,0)_38%,rgba(15,23,42,0.65)_100%)]"></div>
         </div>
     </div>
