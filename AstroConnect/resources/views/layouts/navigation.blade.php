@@ -10,6 +10,7 @@
         ['label' => 'Services', 'href' => url('/services'), 'active' => request()->is('services')],
         ['label' => 'Astrologers', 'href' => url('/astrologers'), 'active' => request()->is('astrologers') || request()->is('astrologers/*')],
         ['label' => 'Horoscope', 'href' => url('/horoscope'), 'active' => request()->is('horoscope')],
+        ['label' => 'Compatibility', 'href' => route('predictions.compatibility'), 'active' => request()->routeIs('predictions.compatibility*')],
         ['label' => 'Calendar', 'href' => url('/calendar'), 'active' => request()->is('calendar') || request()->is('calendar/*')],
         ['label' => 'Blog', 'href' => url('/blog'), 'active' => request()->is('blog')],
         ['label' => 'Contact', 'href' => url('/contact'), 'active' => request()->is('contact')],
@@ -36,7 +37,7 @@
 
         <div class="hidden items-center gap-3 lg:flex">
             @auth
-                
+
 
                 @if (! $isApprovedAstrologer && ! $isAdmin)
                     <a href="{{ route('astrologer.apply') }}" class="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">

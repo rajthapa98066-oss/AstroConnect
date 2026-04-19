@@ -3,11 +3,44 @@
 
 @section('title', 'AstroConnect | Cosmic Nepali Calendar')
 
+@php
+    $stars = collect(range(1, 120))->map(function () {
+        return [
+            'size' => mt_rand(5, 20) / 10,
+            'left' => mt_rand(0, 10000) / 100,
+            'top' => mt_rand(0, 10000) / 100,
+            'delay' => mt_rand(0, 500) / 100,
+            'duration' => mt_rand(300, 1000) / 100,
+        ];
+    });
+
+    $eventWidgetConfig = [
+        'width' => 'responsive',
+        'height' => 330,
+        'defaultLanguage' => 'np',
+        'apiId' => 44720260415468,
+    ];
+@endphp
+
 @section('content')
 <div class="relative min-h-screen bg-slate-950 overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
     {{-- Dynamic Background Elements --}}
     <div class="absolute inset-0 pointer-events-none">
-        <div id="stars-container" class="absolute inset-0"></div>
+        <div id="stars-container" class="absolute inset-0">
+            @foreach ($stars as $star)
+                <div
+                    class="star absolute bg-white rounded-full opacity-0"
+                    style="
+                        width: {{ $star['size'] }}px;
+                        height: {{ $star['size'] }}px;
+                        left: {{ $star['left'] }}%;
+                        top: {{ $star['top'] }}%;
+                        animation-duration: {{ $star['duration'] }}s;
+                        animation-delay: {{ $star['delay'] }}s;
+                    "
+                ></div>
+            @endforeach
+        </div>
         <div class="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-indigo-500/5 blur-[120px] animate-pulse"></div>
         <div class="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-amber-500/5 blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
     </div>
@@ -26,19 +59,19 @@
 
         {{-- Main Dashboard Grid --}}
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {{-- Main Calendar Section --}}
             <div class="lg:col-span-8 group">
                 <div class="relative">
                     {{-- Decorative Glow --}}
                     <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                    
+
                     <div class="relative bg-slate-900/40 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] overflow-hidden shadow-2xl p-4 md:p-8">
                         <div class="flex items-center gap-3 mb-6 px-2">
                             <div class="h-2 w-2 rounded-full bg-amber-300 animate-ping"></div>
                             <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Main Patro</h2>
                         </div>
-                        
+
                         <div class="calendar-wrapper min-h-[725px]">
                             {{-- Start of nepali calendar widget --}}
                             <script src="https://www.ashesh.com.np/calendar-widget/calendar.js?width=100%&height=725&tithi=1&event=1&radius=12&api=501249q146"></script>
@@ -52,7 +85,7 @@
                 {{-- Events Widget --}}
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-b from-amber-500/20 to-transparent rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-                    
+
                     <div class="relative bg-slate-900/30 backdrop-blur-2xl border border-white/5 rounded-[2rem] p-6 shadow-xl">
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-xs font-bold uppercase tracking-widest text-amber-200/80">Upcoming Events</h2>
@@ -62,10 +95,10 @@
                         <div class="events-wrapper min-h-[330px]">
                             {{-- Start of upcoming event widget --}}
                             <script type="text/javascript"> <!--
-                            var nc_ev_width = 'responsive';
-                            var nc_ev_height = 330;
-                            var nc_ev_def_lan = 'np';
-                            var nc_ev_api_id = 44720260415468; //-->
+                            var nc_ev_width = @js($eventWidgetConfig['width']);
+                            var nc_ev_height = {{ $eventWidgetConfig['height'] }};
+                            var nc_ev_def_lan = @js($eventWidgetConfig['defaultLanguage']);
+                            var nc_ev_api_id = {{ $eventWidgetConfig['apiId'] }}; //-->
                             </script>
                             <script type="text/javascript" src="https://www.ashesh.com.np/calendar-event/ev.js"></script>
                         </div>
@@ -102,49 +135,23 @@
 @push('styles')
 <style>
     @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes twinkle {
+        0%, 100% { opacity: 0; transform: scale(0.5); }
+        50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
     .animate-fade-in { animation: fade-in 1s ease-out forwards; }
-    
+
+    .star {
+        animation-name: twinkle;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
     .calendar-wrapper iframe {
         border-radius: 1.5rem !important;
         background: transparent !important;
     }
 </style>
-@endpush
-
-@push('scripts')
-<script>
-    function createStars() {
-        const container = document.getElementById('stars-container');
-        if (!container) return;
-        
-        for (let i = 0; i < 120; i++) {
-            const star = document.createElement('div');
-            const size = Math.random() * 2;
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const delay = Math.random() * 5;
-            const duration = 3 + Math.random() * 7;
-
-            star.className = 'absolute bg-white rounded-full opacity-0';
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.left = `${x}%`;
-            star.style.top = `${y}%`;
-            star.style.animation = `twinkle ${duration}s infinite ${delay}s ease-in-out`;
-            
-            container.appendChild(star);
-        }
-    }
-
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-    `;
-    document.head.appendChild(style);
-    createStars();
-</script>
 @endpush
 @endsection
