@@ -54,7 +54,7 @@
                     </button>
 
                     <div x-show="menu" x-transition @click.outside="menu = false" class="absolute right-0 mt-3 w-52 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/95 shadow-2xl shadow-slate-950/60">
-                        @if (Auth::user()->role === 'user' && ! $isApprovedAstrologer && ! $isAdmin)
+                        @if (Auth::user()->canAccessUserPanel() && ! $isAdmin)
                             <a href="{{ route('appointments.user.index') }}" class="block px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5 hover:text-white">
                                 My Appointments
                             </a>
@@ -111,7 +111,7 @@
                             Apply as Astrologer
                         </a>
                     @endif
-                    @if (Auth::user()->role === 'user' && ! $isApprovedAstrologer && ! $isAdmin)
+                    @if (Auth::user()->canAccessUserPanel() && ! $isAdmin)
                         <a href="{{ route('appointments.user.index') }}" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 hover:text-white">
                             My Appointments
                         </a>

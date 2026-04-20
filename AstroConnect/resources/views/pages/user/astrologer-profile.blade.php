@@ -88,7 +88,7 @@
             @endif
 
             @auth
-                @if (auth()->user()->role === 'user')
+                @if (auth()->user()->canAccessUserPanel())
                     {{-- Authenticated user booking form for appointment requests. --}}
                     <div class="mt-8 rounded-[1.75rem] border border-white/10 bg-slate-900/70 p-6">
                         <p class="text-sm uppercase tracking-[0.3em] text-amber-200/70">Book Session</p>
@@ -163,7 +163,7 @@
                 </div>
 
                 @auth
-                    @if (auth()->user()->role === 'user')
+                    @if (auth()->user()->canAccessUserPanel())
                         @if ($hasCompletedSession)
                             <div class="mt-8 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-5">
                                 <p class="text-sm uppercase tracking-[0.25em] text-amber-200/70">Leave a review</p>

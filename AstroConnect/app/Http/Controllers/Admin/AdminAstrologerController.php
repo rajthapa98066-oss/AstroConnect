@@ -29,6 +29,10 @@ class AdminAstrologerController extends Controller
      */
     public function approve(Astrologer $astrologer): RedirectResponse
     {
+        if ($astrologer->user) {
+            $astrologer->user->forceFill(['role' => 'astrologer'])->save();
+        }
+
         $astrologer->update([
             'verification_status' => 'approved',
             'moderation_status' => 'active',
@@ -48,6 +52,10 @@ class AdminAstrologerController extends Controller
      */
     public function reject(Astrologer $astrologer): RedirectResponse
     {
+        if ($astrologer->user) {
+            $astrologer->user->forceFill(['role' => 'user'])->save();
+        }
+
         $astrologer->update(['verification_status' => 'rejected']);
 
         $astrologer->loadMissing('user');

@@ -59,7 +59,7 @@ class AstrologerController extends Controller
         $reviewAppointmentId = null;
         $hasCompletedSession = false;
 
-        if ($request->user()?->role === 'user') {
+        if ($request->user()?->canAccessUserPanel()) {
             $myReview = Review::query()
                 ->where('astrologer_id', $astrologer->id)
                 ->where('user_id', $request->user()->id)

@@ -31,7 +31,12 @@ class AppServiceProvider extends ServiceProvider
                 ]);
         });
 
-        ResetPassword::toMailUsing(function (object $notifiable, string $url): MailMessage {
+        ResetPassword::toMailUsing(function (object $notifiable, string $token): MailMessage {
+            $url = url(route('password.reset', [
+                'token' => $token,
+                'email' => $notifiable->getEmailForPasswordReset(),
+            ], false));
+
             return (new MailMessage)
                 ->subject('Reset your AstroConnect password')
                 ->view('emails.auth-reset-password', [
