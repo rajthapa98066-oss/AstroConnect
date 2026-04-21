@@ -53,6 +53,8 @@ class KhaltiController extends Controller
             Payment::updateOrCreate(
                 ['appointment_id' => $appointment->id],
                 [
+                    'user_id' => $appointment->user_id,
+                    'astrologer_id' => $appointment->astrologer_id,
                     'khalti_pidx' => $data['pidx'],
                     'amount' => $appointment->astrologer->consultation_fee,
                     'status' => 'pending',

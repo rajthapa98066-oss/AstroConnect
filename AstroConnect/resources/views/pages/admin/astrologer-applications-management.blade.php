@@ -1,12 +1,11 @@
-{{-- View: resources\views\pages\admin\astrologers-management.blade.php --}}
+{{-- View: resources/views/pages/admin/astrologer-applications-management.blade.php --}}
 @extends('layouts.admin.master')
 
 @section('admin')
     <div class="container-xxl">
-        {{-- Page title and context for approved astrologer profiles. --}}
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Astrologers</h4>
+                <h4 class="fs-18 fw-semibold m-0">Astrologer Applications</h4>
             </div>
         </div>
 
@@ -14,7 +13,6 @@
             <div class="alert alert-success">Action completed: {{ session('status') }}</div>
         @endif
 
-        {{-- Paginated approved astrologer table (view-only). --}}
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -27,29 +25,45 @@
                                 <th>Specialization</th>
                                 <th>Experience</th>
                                 <th>Fee</th>
-                                <th>Availability</th>
-                                <th>Moderation</th>
                                 <th>Status</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($astrologers as $astrologer)
                                 <tr>
                                     <td>{{ $astrologer->id }}</td>
-                                    <td>{{ $astrologer->user->name }}</td>
-                                    <td>{{ $astrologer->user->email }}</td>
+                                    <td>{{ $astrologer->user?->name ?? 'Deleted user' }}</td>
+                                    <td>{{ $astrologer->user?->email ?? '-' }}</td>
                                     <td>{{ $astrologer->specialization }}</td>
                                     <td>{{ $astrologer->experience_years }} years</td>
                                     <td>{{ number_format((float) $astrologer->consultation_fee, 2) }}</td>
-                                    <td>{{ ucfirst((string) $astrologer->availability_status) }}</td>
-                                    <td>{{ ucfirst((string) ($astrologer->moderation_status ?? 'active')) }}</td>
                                     <td>
                                         <span class="badge bg-secondary">{{ ucfirst($astrologer->verification_status) }}</span>
+                                    </td>
+                                    <td>
+                                        @if ($astrologer->verification_status === 'pending')
+                                            <div class="d-flex gap-2">
+                                                <form method="POST" action="{{ route('admin.astrologers.approve', $astrologer) }}">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                                                </form>
+
+                                                <form method="POST" action="{{ route('admin.astrologers.reject', $astrologer) }}">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                                                </form>
+                                            </div>
+                                        @else
+                                            <span class="text-muted">No actions</span>
+                                        @endif
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center">No approved astrologers found.</td>
+                                    <td colspan="8" class="text-center">No astrologer applications found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

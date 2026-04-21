@@ -55,22 +55,28 @@
                                         @endif
                                     </td>
                                     <td>{{ $report->created_at?->format('M d, Y h:i A') }}</td>
-                                    <td class="d-flex gap-2 flex-wrap">
-                                        <form method="POST" action="{{ route('admin.reports.flag', $report) }}">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="btn btn-warning btn-sm">Flag</button>
-                                        </form>
-                                        <form method="POST" action="{{ route('admin.reports.disable', $report) }}">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="btn btn-dark btn-sm">Disable</button>
-                                        </form>
-                                        <form method="POST" action="{{ route('admin.reports.delete-account', $report) }}" onsubmit="return confirm('Delete this astrologer account?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete Account</button>
-                                        </form>
+                                    <td>
+                                        @if ($report->status === 'pending')
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <form method="POST" action="{{ route('admin.reports.flag', $report) }}">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-warning btn-sm">Flag</button>
+                                                </form>
+                                                <form method="POST" action="{{ route('admin.reports.disable', $report) }}">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-dark btn-sm">Disable</button>
+                                                </form>
+                                                <form method="POST" action="{{ route('admin.reports.delete-account', $report) }}" onsubmit="return confirm('Delete this astrologer account?');">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">Delete Account</button>
+                                                </form>
+                                            </div>
+                                        @else
+                                            <span class="text-muted">Resolved</span>
+                                        @endif
                                     </td>
                                 </tr>
                             @empty

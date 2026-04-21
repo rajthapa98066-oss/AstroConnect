@@ -19,12 +19,8 @@
                     </span>
                 </a>
                 <a href="{{ route('admin.dashboard') }}" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="AstroConnect" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="AstroConnect" height="24">
-                    </span>
+                    <span class="logo-sm fw-bold fs-5 text-dark">AC</span>
+                    <span class="logo-lg fw-bold fs-5 text-dark">Astro Connect</span>
                 </a>
             </div>
 
@@ -39,7 +35,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.astrologers.index') }}" class="{{ request()->routeIs('admin.astrologers.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.astrologer-applications.index') }}" class="{{ request()->routeIs('admin.astrologer-applications.*') ? 'active' : '' }}">
                         <i data-feather="user-check"></i>
                         <span>Astrologer Applications</span>
                     </a>
@@ -54,7 +50,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.astrologers.index') }}" class="d-flex align-items-center {{ request()->routeIs('admin.astrologers.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.astrologers.index') }}" class="d-flex align-items-center {{ request()->routeIs('admin.astrologers.index') ? 'active' : '' }}">
                         <i data-feather="user-check"></i>
                         <span>Astrologers</span>
                         <span class="badge bg-info ms-auto">{{ $astrologerCount }}</span>

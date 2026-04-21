@@ -30,7 +30,7 @@
                             <span>Dashboard</span>
                         </a>
 
-                        <a href="{{ route('admin.astrologers.index') }}" class="dropdown-item notify-item">
+                        <a href="{{ route('admin.astrologer-applications.index') }}" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-check-outline fs-16 align-middle"></i>
                             <span>Astrologer Applications</span>
                         </a>

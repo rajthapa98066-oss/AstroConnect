@@ -108,6 +108,7 @@ Route::prefix('astrologer')->middleware(['auth', EnsureUserIsAstrologer::class])
 });
 
 Route::prefix('admin')->middleware(['auth', IsAdmin::class])->group(function () {
+    Route::get('/astrologer-applications', [AdminAstrologerController::class, 'applications'])->name('admin.astrologer-applications.index');
     Route::get('/astrologers', [AdminAstrologerController::class, 'index'])->name('admin.astrologers.index');
     Route::patch('/astrologers/{astrologer}', [AdminAstrologerController::class, 'update'])->name('admin.astrologers.update');
     Route::patch('/astrologers/{astrologer}/approve', [AdminAstrologerController::class, 'approve'])->name('admin.astrologers.approve');

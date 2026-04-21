@@ -32,6 +32,8 @@ class AdminReportController extends Controller
      */
     public function flag(AstrologerReport $report): RedirectResponse
     {
+        abort_if($report->status !== 'pending', 422, 'This report has already been resolved.');
+
         $this->applyModeration($report, 'flag', 'flagged', 'Report flagged and astrologer marked for review.');
 
         return Redirect::route('admin.reports.index')->with('status', 'report-flagged');
@@ -42,6 +44,8 @@ class AdminReportController extends Controller
      */
     public function disable(AstrologerReport $report): RedirectResponse
     {
+        abort_if($report->status !== 'pending', 422, 'This report has already been resolved.');
+
         $this->applyModeration($report, 'disable', 'disabled', 'Report resolved by disabling the astrologer account.');
 
         return Redirect::route('admin.reports.index')->with('status', 'report-disabled');
@@ -52,6 +56,8 @@ class AdminReportController extends Controller
      */
     public function deleteAstrologer(AstrologerReport $report): RedirectResponse
     {
+        abort_if($report->status !== 'pending', 422, 'This report has already been resolved.');
+
         DB::transaction(function () use ($report): void {
             $this->applyModeration($report, 'delete', 'resolved', 'Reported astrologer account deleted.');
 

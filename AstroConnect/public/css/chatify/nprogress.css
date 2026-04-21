@@ -1,0 +1,10 @@
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar,
+#nprogress .peg,
+#nprogress .spinner,
+#nprogress .spinner-icon {
+  display: none;
+}

@@ -1,5 +1,3 @@
-<script src="https://js.pusher.com/7.2.0/pusher.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
 @php
     $allowedImages = config('chatify.attachments.allowed_images');
     $allowedFiles = config('chatify.attachments.allowed_files');
@@ -19,5 +17,6 @@
     // Gloabl Chatify variables from PHP to JS
     window.chatify = @json($chatifyConfig);
 </script>
+<script src="{{ asset('js/chatify/emoji-button.js') }}"></script>
 <script src="{{ asset('js/chatify/utils.js') }}"></script>
 <script src="{{ asset('js/chatify/code.js') }}"></script>

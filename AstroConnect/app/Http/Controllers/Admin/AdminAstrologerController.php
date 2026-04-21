@@ -13,13 +13,29 @@ use Illuminate\View\View;
 class AdminAstrologerController extends Controller
 {
     /**
-     * Show astrologer applications and profile details for admin review.
+     * Show approved astrologer profiles.
      */
     public function index(): View
     {
-        $astrologers = Astrologer::with('user')->latest()->paginate(20);
+        $astrologers = Astrologer::query()
+            ->with('user')
+            ->where('verification_status', 'approved')
+            ->latest()
+            ->paginate(20);
 
         return view('pages.admin.astrologers-management', [
+            'astrologers' => $astrologers,
+        ]);
+    }
+
+    /**
+     * Show astrologer application queue for admin review.
+     */
+    public function applications(): View
+    {
+        $astrologers = Astrologer::with('user')->latest()->paginate(20);
+
+        return view('pages.admin.astrologer-applications-management', [
             'astrologers' => $astrologers,
         ]);
     }
@@ -44,7 +60,7 @@ class AdminAstrologerController extends Controller
             $astrologer->user->notify(new AstrologerApplicationReviewedNotification($astrologer));
         }
 
-        return Redirect::route('admin.astrologers.index')->with('status', 'astrologer-approved');
+        return Redirect::route('admin.astrologer-applications.index')->with('status', 'astrologer-approved');
     }
 
     /**
@@ -64,7 +80,7 @@ class AdminAstrologerController extends Controller
             $astrologer->user->notify(new AstrologerApplicationReviewedNotification($astrologer));
         }
 
-        return Redirect::route('admin.astrologers.index')->with('status', 'astrologer-rejected');
+        return Redirect::route('admin.astrologer-applications.index')->with('status', 'astrologer-rejected');
     }
 
     /**
